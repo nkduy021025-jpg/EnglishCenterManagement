@@ -98,7 +98,7 @@ namespace EnglishCenterManagement
             this.BangCap = bangCap;
             this.NgayVaoLam = ngayVaoLam;
             this.Luong = luong;
-        }
+        }//code thu 
 
     }
 }
