@@ -69,7 +69,7 @@
             this.lblHoTen = new System.Windows.Forms.Label();
             this.lblMaHV = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTenTT = new System.Windows.Forms.Label();
             this.pageGiaoVien = new System.Windows.Forms.TabPage();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -165,7 +165,7 @@
             this.pageHocVien.Controls.Add(this.lblHoTen);
             this.pageHocVien.Controls.Add(this.lblMaHV);
             this.pageHocVien.Controls.Add(this.label2);
-            this.pageHocVien.Controls.Add(this.label1);
+            this.pageHocVien.Controls.Add(this.lblTenTT);
             this.pageHocVien.Location = new System.Drawing.Point(4, 25);
             this.pageHocVien.Name = "pageHocVien";
             this.pageHocVien.Padding = new System.Windows.Forms.Padding(3);
@@ -416,6 +416,7 @@
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(211, 22);
             this.txtDiaChi.TabIndex = 46;
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
             // 
             // txtCCCD
             // 
@@ -423,6 +424,7 @@
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(219, 22);
             this.txtCCCD.TabIndex = 45;
+            this.txtCCCD.Text = "2005";
             // 
             // txtHoTen
             // 
@@ -430,6 +432,8 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(219, 22);
             this.txtHoTen.TabIndex = 44;
+            this.txtHoTen.Text = "Nguyễn Duy";
+            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             // 
             // txtMaHV
             // 
@@ -437,6 +441,8 @@
             this.txtMaHV.Name = "txtMaHV";
             this.txtMaHV.Size = new System.Drawing.Size(219, 22);
             this.txtMaHV.TabIndex = 43;
+            this.txtMaHV.Text = "DuyNguyen";
+            this.txtMaHV.TextChanged += new System.EventHandler(this.txtMaHV_TextChanged);
             // 
             // lblNgayDangKy
             // 
@@ -539,17 +545,17 @@
             this.label2.TabIndex = 32;
             this.label2.Text = "Quản Lý Học Viên";
             // 
-            // label1
+            // lblTenTT
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
-            this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(188, -3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(729, 58);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "ENGLISH CENTER DOUBLE D";
+            this.lblTenTT.AutoSize = true;
+            this.lblTenTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
+            this.lblTenTT.ForeColor = System.Drawing.Color.Crimson;
+            this.lblTenTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTenTT.Location = new System.Drawing.Point(188, -3);
+            this.lblTenTT.Name = "lblTenTT";
+            this.lblTenTT.Size = new System.Drawing.Size(729, 58);
+            this.lblTenTT.TabIndex = 31;
+            this.lblTenTT.Text = "ENGLISH CENTER DOUBLE D";
             // 
             // pageGiaoVien
             // 
@@ -1053,7 +1059,7 @@
         private System.Windows.Forms.Label lblHoTen;
         private System.Windows.Forms.Label lblMaHV;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTenTT;
         private System.Windows.Forms.TabPage pageGiaoVien;
         private System.Windows.Forms.TabPage pageThoiKhoaBieu;
         private System.Windows.Forms.TabPage pageThietBi;

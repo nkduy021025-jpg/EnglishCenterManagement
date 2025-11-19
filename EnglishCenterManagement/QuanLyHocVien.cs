@@ -45,23 +45,29 @@ namespace EnglishCenterManagement
             else
             {
                 MessageBox.Show("Mã học viên này đã tồn tại, vui lòng nhập 1 mã khác!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                
             }
         }
         private void HienThiDanhSach(DataGridView dgv,List<HocVien> ds)
         {
             dgv.DataSource = ds.ToList();
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
            DialogResult ketQuaChon=MessageBox.Show("Bạn có chắc chắn muốn xóa học viên này không?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            bool ketQuaXoa=danhSachHocVien.XoaHocVien(viTri);
-            if (ketQuaXoa == true)
+            if(ketQuaChon == DialogResult.Yes)
             {
-                MessageBox.Show("Đã xóa học viên.","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
+                bool ketQuaXoa = danhSachHocVien.XoaHocVien(viTri);
+                if (ketQuaXoa == true)
+                {
+                    MessageBox.Show("Đã xóa học viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
+                }
             }
-            
+            else
+            {
+                MessageBox.Show("Không xóa!", "Lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void dgvDanhSachHocVien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -145,6 +151,21 @@ namespace EnglishCenterManagement
             List<HocVien> dsKetQua=new List<HocVien>();
             dsKetQua.Add(ketQua);
             HienThiDanhSach(dgvDanhSachHocVien, dsKetQua);
+        }
+
+        private void txtMaHV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDiaChi_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

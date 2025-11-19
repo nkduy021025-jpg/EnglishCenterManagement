@@ -16,7 +16,7 @@ namespace EnglishCenterManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new QuanLyHocVien());
+            Application.Run(new DangNhap());
         }
     }
 }
