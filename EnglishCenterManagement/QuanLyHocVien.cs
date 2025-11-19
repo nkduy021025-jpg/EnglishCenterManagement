@@ -76,7 +76,7 @@ namespace EnglishCenterManagement
                 dtpNgaySinh.Value = hv.ngaySinh;
                 txtDiaChi.Text = hv.diaChi;
                 txtSDT.Text = hv.SDT.ToString();
-                txtCCCD.Text = hv.cccd;
+                txtCCCD.Text = hv.cccdhv;
                 cbbTrinhDo.Text = hv.trinhDo;
                 cbbChuongTrinhHoc.Text = hv.chuongTrinhHoc;
                 dtpNgayDangKy.Value = hv.ngayDangKy;
@@ -118,7 +118,7 @@ namespace EnglishCenterManagement
                 hv.ngaySinh = dtpNgaySinh.Value;
                 hv.diaChi = txtDiaChi.Text;
                 hv.SDT = txtSDT.Text;
-                hv.cccd = txtCCCD.Text;
+                hv.cccdhv = txtCCCD.Text;
                 hv.trinhDo = cbbTrinhDo.Text;
                 hv.chuongTrinhHoc = cbbChuongTrinhHoc.Text;
                 hv.ngayDangKy = dtpNgayDangKy.Value;
@@ -145,6 +145,11 @@ namespace EnglishCenterManagement
             List<HocVien> dsKetQua=new List<HocVien>();
             dsKetQua.Add(ketQua);
             HienThiDanhSach(dgvDanhSachHocVien, dsKetQua);
+        }
+
+        private void btnThemTB_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

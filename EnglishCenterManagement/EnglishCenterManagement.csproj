@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DanhSachGiaoVien.cs" />
     <Compile Include="DanhSachHocVien.cs" />
+    <Compile Include="DanhSachThietBi.cs" />
     <Compile Include="GiaoVien.cs" />
     <Compile Include="HocVien.cs" />
     <Compile Include="Program.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="QuanLyHocVien.Designer.cs">
       <DependentUpon>QuanLyHocVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="ThietBi.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

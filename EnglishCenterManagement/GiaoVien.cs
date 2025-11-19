@@ -14,7 +14,8 @@ namespace EnglishCenterManagement
         private string HoTen;
         private string CCCD;
         private DateTime NgaySinh;
-        private int SDT;
+        private string SDT;
+        private string DiaChi;
         private string Email;
         private int ThamNien;
         private string BangCap;
@@ -26,22 +27,27 @@ namespace EnglishCenterManagement
             get { return this.MaGV; }
             set { this.MaGV = value; }
         }
-        public string hoTen
+        public string hoTenGV
         {
             get { return this.HoTen; }
             set { this.HoTen = value; }
         }
-        public string cccd
+        public string cccdgv
         {
             get { return this.CCCD; }
             set { this.CCCD = value; }
         }
-        public DateTime ngaySinh
+        public DateTime ngaySinhGV
         {
             get { return this.NgaySinh; }
             set { this.NgaySinh = value; }
         }
-        public int sdt
+        private string diaChiGV
+        {
+            get { return this.DiaChi; }
+            set { this.DiaChi = value; }
+        }
+        public string sdtGV
         {
             get { return this.SDT; }
             set { this.SDT = value; }
@@ -78,7 +84,7 @@ namespace EnglishCenterManagement
             this.HoTen= "";
             this.CCCD= "";
             this.NgaySinh= DateTime.Now;
-            this.SDT= 0;
+            this.SDT= "";
             this.Email= "";
             this.ThamNien= 0;
             this.BangCap= "";
@@ -86,11 +92,11 @@ namespace EnglishCenterManagement
             this.Luong= 0;
         }
 
-        public GiaoVien(string maGV, string hoTen, string cccd, DateTime ngaySinh, int sdt, string email, int thamNien, string bangCap, DateTime ngayVaoLam, double luong)
+        public GiaoVien(string maGV, string hoTenGV, string cccdgv, DateTime ngaySinh, string sdt, string email, int thamNien, string bangCap, DateTime ngayVaoLam, double luong)
         {
             this.MaGV = maGV;
-            this.HoTen = hoTen;
-            this.CCCD = cccd;
+            this.HoTen = hoTenGV;
+            this.CCCD = cccdgv;
             this.NgaySinh = ngaySinh;
             this.SDT = sdt;
             this.Email = email;
@@ -98,7 +104,7 @@ namespace EnglishCenterManagement
             this.BangCap = bangCap;
             this.NgayVaoLam = ngayVaoLam;
             this.Luong = luong;
-        }//code thu 
+        }
 
     }
 }
