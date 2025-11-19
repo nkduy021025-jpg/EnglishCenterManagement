@@ -102,5 +102,42 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lưu file không thành công.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(string.IsNullOrWhiteSpace(txtMaHV.Text))
+                {
+                    MessageBox.Show("Vui lòng nhập mã học viên cần sửa");
+                    return;
+                }
+                HocVien hv = new HocVien();
+                hv.maHV = txtMaHV.Text;
+                hv.hoTen = txtHoTen.Text;
+                hv.ngaySinh = dtpNgaySinh.Value;
+                hv.diaChi = txtDiaChi.Text;
+                hv.SDT = int.Parse(txtSDT.Text);
+                hv.cccd = txtCCCD.Text;
+                hv.trinhDo = cbbTrinhDo.Text;
+                hv.chuongTrinhHoc = cbbChuongTrinhHoc.Text;
+                hv.ngayDangKy = dtpNgayDangKy.Value;
+                if(radNam.Checked == true)
+                    hv.gioiTinh = "Nam";
+                else
+                    hv.gioiTinh = "Nữ";
+                if (DanhSachHocVien.SuaHocVien(hv, viTri) == true)
+                {
+                    MessageBox.Show("Đã sửa được học viên","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HienThiDanhSach(dgvDanhSachHocVien, DanhSachHocVien.DSHocVien);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi không sửa được");
+            }
+        }
+
+
     }
 }

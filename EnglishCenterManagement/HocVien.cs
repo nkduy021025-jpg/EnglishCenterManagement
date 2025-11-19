@@ -37,8 +37,8 @@ namespace EnglishCenterManagement
         }
         public DateTime ngaySinh
         {
-            get { return this.ngaySinh; }
-            set { this.ngaySinh = value; }
+            get { return this.NgaySinh; }
+            set { this.NgaySinh = value; }
         }
         public string gioiTinh
         {

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pageHocVien = new System.Windows.Forms.TabPage();
             this.cbbChuongTrinhHoc = new System.Windows.Forms.ComboBox();
             this.cbbTrinhDo = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -70,64 +70,75 @@
             this.lblMaHV = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pageGiaoVien = new System.Windows.Forms.TabPage();
+            this.pageThoiKhoaBieu = new System.Windows.Forms.TabPage();
+            this.pageThietBi = new System.Windows.Forms.TabPage();
+            this.pageThuChi = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.pageHocVien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocVien)).BeginInit();
             this.gbGioTinh.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.pageHocVien);
+            this.tabControl1.Controls.Add(this.pageGiaoVien);
+            this.tabControl1.Controls.Add(this.pageThoiKhoaBieu);
+            this.tabControl1.Controls.Add(this.pageThietBi);
+            this.tabControl1.Controls.Add(this.pageThuChi);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1136, 718);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // pageHocVien
             // 
-            this.tabPage1.Controls.Add(this.cbbChuongTrinhHoc);
-            this.tabPage1.Controls.Add(this.cbbTrinhDo);
-            this.tabPage1.Controls.Add(this.btnTimKiem);
-            this.tabPage1.Controls.Add(this.btnLuu);
-            this.tabPage1.Controls.Add(this.btnSua);
-            this.tabPage1.Controls.Add(this.btnXoa);
-            this.tabPage1.Controls.Add(this.btnThem);
-            this.tabPage1.Controls.Add(this.dgvDanhSachHocVien);
-            this.tabPage1.Controls.Add(this.gbGioTinh);
-            this.tabPage1.Controls.Add(this.dtpNgayDangKy);
-            this.tabPage1.Controls.Add(this.dtpNgaySinh);
-            this.tabPage1.Controls.Add(this.txtSDT);
-            this.tabPage1.Controls.Add(this.txtDiaChi);
-            this.tabPage1.Controls.Add(this.txtCCCD);
-            this.tabPage1.Controls.Add(this.txtHoTen);
-            this.tabPage1.Controls.Add(this.txtMaHV);
-            this.tabPage1.Controls.Add(this.lblNgayDangKy);
-            this.tabPage1.Controls.Add(this.lblChuongTrinhHoc);
-            this.tabPage1.Controls.Add(this.lblTrinhDo);
-            this.tabPage1.Controls.Add(this.lblSDT);
-            this.tabPage1.Controls.Add(this.lblDiaChi);
-            this.tabPage1.Controls.Add(this.lblGioiTinh);
-            this.tabPage1.Controls.Add(this.lblNgaySinh);
-            this.tabPage1.Controls.Add(this.lblCCCD);
-            this.tabPage1.Controls.Add(this.lblHoTen);
-            this.tabPage1.Controls.Add(this.lblMaHV);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1128, 689);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Admin";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.pageHocVien.Controls.Add(this.cbbChuongTrinhHoc);
+            this.pageHocVien.Controls.Add(this.cbbTrinhDo);
+            this.pageHocVien.Controls.Add(this.btnTimKiem);
+            this.pageHocVien.Controls.Add(this.btnLuu);
+            this.pageHocVien.Controls.Add(this.btnSua);
+            this.pageHocVien.Controls.Add(this.btnXoa);
+            this.pageHocVien.Controls.Add(this.btnThem);
+            this.pageHocVien.Controls.Add(this.dgvDanhSachHocVien);
+            this.pageHocVien.Controls.Add(this.gbGioTinh);
+            this.pageHocVien.Controls.Add(this.dtpNgayDangKy);
+            this.pageHocVien.Controls.Add(this.dtpNgaySinh);
+            this.pageHocVien.Controls.Add(this.txtSDT);
+            this.pageHocVien.Controls.Add(this.txtDiaChi);
+            this.pageHocVien.Controls.Add(this.txtCCCD);
+            this.pageHocVien.Controls.Add(this.txtHoTen);
+            this.pageHocVien.Controls.Add(this.txtMaHV);
+            this.pageHocVien.Controls.Add(this.lblNgayDangKy);
+            this.pageHocVien.Controls.Add(this.lblChuongTrinhHoc);
+            this.pageHocVien.Controls.Add(this.lblTrinhDo);
+            this.pageHocVien.Controls.Add(this.lblSDT);
+            this.pageHocVien.Controls.Add(this.lblDiaChi);
+            this.pageHocVien.Controls.Add(this.lblGioiTinh);
+            this.pageHocVien.Controls.Add(this.lblNgaySinh);
+            this.pageHocVien.Controls.Add(this.lblCCCD);
+            this.pageHocVien.Controls.Add(this.lblHoTen);
+            this.pageHocVien.Controls.Add(this.lblMaHV);
+            this.pageHocVien.Controls.Add(this.label2);
+            this.pageHocVien.Controls.Add(this.label1);
+            this.pageHocVien.Location = new System.Drawing.Point(4, 25);
+            this.pageHocVien.Name = "pageHocVien";
+            this.pageHocVien.Padding = new System.Windows.Forms.Padding(3);
+            this.pageHocVien.Size = new System.Drawing.Size(1128, 689);
+            this.pageHocVien.TabIndex = 0;
+            this.pageHocVien.Text = "Học Viên";
+            this.pageHocVien.UseVisualStyleBackColor = true;
             // 
             // cbbChuongTrinhHoc
             // 
             this.cbbChuongTrinhHoc.FormattingEnabled = true;
+            this.cbbChuongTrinhHoc.Items.AddRange(new object[] {
+            "Toeic 450",
+            "Toeic 700",
+            "Ielts 7.0",
+            "Huy Forum"});
             this.cbbChuongTrinhHoc.Location = new System.Drawing.Point(611, 238);
             this.cbbChuongTrinhHoc.Name = "cbbChuongTrinhHoc";
             this.cbbChuongTrinhHoc.Size = new System.Drawing.Size(211, 24);
@@ -175,6 +186,7 @@
             this.btnSua.TabIndex = 54;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -495,15 +507,42 @@
             this.label1.TabIndex = 31;
             this.label1.Text = "ENGLISH CENTER DOUBLE D";
             // 
-            // tabPage2
+            // pageGiaoVien
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1128, 689);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "User";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.pageGiaoVien.Location = new System.Drawing.Point(4, 25);
+            this.pageGiaoVien.Name = "pageGiaoVien";
+            this.pageGiaoVien.Padding = new System.Windows.Forms.Padding(3);
+            this.pageGiaoVien.Size = new System.Drawing.Size(1128, 689);
+            this.pageGiaoVien.TabIndex = 1;
+            this.pageGiaoVien.Text = "Giáo Viên";
+            this.pageGiaoVien.UseVisualStyleBackColor = true;
+            // 
+            // pageThoiKhoaBieu
+            // 
+            this.pageThoiKhoaBieu.Location = new System.Drawing.Point(4, 25);
+            this.pageThoiKhoaBieu.Name = "pageThoiKhoaBieu";
+            this.pageThoiKhoaBieu.Size = new System.Drawing.Size(1128, 689);
+            this.pageThoiKhoaBieu.TabIndex = 2;
+            this.pageThoiKhoaBieu.Text = "Thời Khóa Biểu";
+            this.pageThoiKhoaBieu.UseVisualStyleBackColor = true;
+            // 
+            // pageThietBi
+            // 
+            this.pageThietBi.Location = new System.Drawing.Point(4, 25);
+            this.pageThietBi.Name = "pageThietBi";
+            this.pageThietBi.Size = new System.Drawing.Size(1128, 689);
+            this.pageThietBi.TabIndex = 3;
+            this.pageThietBi.Text = "Thiết Bị";
+            this.pageThietBi.UseVisualStyleBackColor = true;
+            // 
+            // pageThuChi
+            // 
+            this.pageThuChi.Location = new System.Drawing.Point(4, 25);
+            this.pageThuChi.Name = "pageThuChi";
+            this.pageThuChi.Size = new System.Drawing.Size(1128, 689);
+            this.pageThuChi.TabIndex = 4;
+            this.pageThuChi.Text = "Thu/Chi";
+            this.pageThuChi.UseVisualStyleBackColor = true;
             // 
             // QuanLyHocVien
             // 
@@ -514,8 +553,8 @@
             this.Name = "QuanLyHocVien";
             this.Text = "QuanLyHocVien";
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.pageHocVien.ResumeLayout(false);
+            this.pageHocVien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocVien)).EndInit();
             this.gbGioTinh.ResumeLayout(false);
             this.gbGioTinh.PerformLayout();
@@ -526,7 +565,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage pageHocVien;
         private System.Windows.Forms.ComboBox cbbChuongTrinhHoc;
         private System.Windows.Forms.ComboBox cbbTrinhDo;
         private System.Windows.Forms.Button btnTimKiem;
@@ -567,6 +606,9 @@
         private System.Windows.Forms.Label lblMaHV;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage pageGiaoVien;
+        private System.Windows.Forms.TabPage pageThoiKhoaBieu;
+        private System.Windows.Forms.TabPage pageThietBi;
+        private System.Windows.Forms.TabPage pageThuChi;
     }
 }
