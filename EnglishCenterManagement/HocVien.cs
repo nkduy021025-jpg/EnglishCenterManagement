@@ -95,6 +95,5 @@ namespace EnglishCenterManagement
             ChuongTrinhHoc = chuongTrinhHoc;
             NgayDangKy = ngayDangKy;
         }
-
     }
 }
