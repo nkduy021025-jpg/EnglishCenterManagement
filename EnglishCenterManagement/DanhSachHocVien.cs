@@ -82,6 +82,15 @@ namespace EnglishCenterManagement
                 return false;
             }
         }
+        public HocVien TimKiemHocVien(string maHV)
+        {
+            foreach(HocVien hv in this.dsHocVien)
+            {
+                if (hv.maHV.Equals(maHV))
+                    return hv;
+            }
+            return null;
+        }
 
     }
 }

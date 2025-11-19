@@ -15,7 +15,7 @@ namespace EnglishCenterManagement
         private DateTime NgaySinh;
         private string GioiTinh;
         private string DiaChi;
-        private int SoDienThoai;
+        private string SoDienThoai;
         private string TrinhDo;
         private string ChuongTrinhHoc;
         private DateTime NgayDangKy;
@@ -50,7 +50,7 @@ namespace EnglishCenterManagement
             get { return this.DiaChi; }
             set { this.DiaChi = value; }
         }
-        public int SDT
+        public string SDT
         {
             get { return this.SoDienThoai; }
             set { this.SoDienThoai = value; }
@@ -77,12 +77,12 @@ namespace EnglishCenterManagement
         NgaySinh = DateTime.Now;
         GioiTinh = "";
         DiaChi = "";
-        SoDienThoai = 0;
+        SoDienThoai = "";
         TrinhDo = "";
         ChuongTrinhHoc = "";
         NgayDangKy = DateTime.Now;
         }
-        public HocVien(string maHV, string hoTen, string cccd, DateTime ngaySinh, string gioiTinh, string diaChi, int sdt, string trinhDo, string chuongTrinhHoc, DateTime ngayDangKy)
+        public HocVien(string maHV, string hoTen, string cccd, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt, string trinhDo, string chuongTrinhHoc, DateTime ngayDangKy)
         {
             MaHV = maHV;
             HoTen = hoTen;

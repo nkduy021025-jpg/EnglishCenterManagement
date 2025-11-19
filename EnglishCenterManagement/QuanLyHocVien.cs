@@ -12,7 +12,7 @@ namespace EnglishCenterManagement
 {
     public partial class QuanLyHocVien : Form
     {
-        private DanhSachHocVien DanhSachHocVien=new DanhSachHocVien();
+        private DanhSachHocVien danhSachHocVien=new DanhSachHocVien();
         private int viTri = 0;
         public QuanLyHocVien()
         {
@@ -25,7 +25,7 @@ namespace EnglishCenterManagement
             string hoTen=txtHoTen.Text;
             DateTime ngaySinh=dtpNgaySinh.Value;
             string diaChi=txtDiaChi.Text;
-            int sdt = int .Parse(txtSDT.Text);
+            string sdt=txtSDT.Text;
             string cccd =txtCCCD.Text;
             string trinhDo=cbbTrinhDo.Text;
             string chuongTrinhHoc=cbbChuongTrinhHoc.Text;
@@ -36,11 +36,11 @@ namespace EnglishCenterManagement
             else 
                 gioiTinh="Nữ";
             HocVien hv=new HocVien(maHV,hoTen,cccd,ngaySinh,gioiTinh,diaChi,sdt,trinhDo,chuongTrinhHoc,ngayDangKy);
-            bool ketQuaThem= DanhSachHocVien.ThemHocVien(hv);
+            bool ketQuaThem= danhSachHocVien.ThemHocVien(hv);
             if (ketQuaThem == true)
             {
                 MessageBox.Show("Đã thêm 1 học viên.","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDanhSach(dgvDanhSachHocVien, DanhSachHocVien.DSHocVien);
+                HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
             }
             else
             {
@@ -55,11 +55,11 @@ namespace EnglishCenterManagement
         private void btnXoa_Click(object sender, EventArgs e)
         {
            DialogResult ketQuaChon=MessageBox.Show("Bạn có chắc chắn muốn xóa học viên này không?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            bool ketQuaXoa=DanhSachHocVien.XoaHocVien(viTri);
+            bool ketQuaXoa=danhSachHocVien.XoaHocVien(viTri);
             if (ketQuaXoa == true)
             {
                 MessageBox.Show("Đã xóa học viên.","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDanhSach(dgvDanhSachHocVien, DanhSachHocVien.DSHocVien);
+                HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
             }
             
         }
@@ -70,7 +70,7 @@ namespace EnglishCenterManagement
             {
                 viTri = e.RowIndex;
                 HocVien hv = new HocVien();
-                hv = DanhSachHocVien.DSHocVien[viTri];
+                hv = danhSachHocVien.DSHocVien[viTri];
                 txtMaHV.Text = hv.maHV;
                 txtHoTen.Text = hv.hoTen;
                 dtpNgaySinh.Value = hv.ngaySinh;
@@ -93,7 +93,7 @@ namespace EnglishCenterManagement
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(DanhSachHocVien.GhiFile("DanhSachHocVien.dat")==true)
+            if(danhSachHocVien.GhiFile("DanhSachHocVien.dat")==true)
             {
                 MessageBox.Show("Đã lưu danh sách học viên vào file.","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
@@ -117,7 +117,7 @@ namespace EnglishCenterManagement
                 hv.hoTen = txtHoTen.Text;
                 hv.ngaySinh = dtpNgaySinh.Value;
                 hv.diaChi = txtDiaChi.Text;
-                hv.SDT = int.Parse(txtSDT.Text);
+                hv.SDT = txtSDT.Text;
                 hv.cccd = txtCCCD.Text;
                 hv.trinhDo = cbbTrinhDo.Text;
                 hv.chuongTrinhHoc = cbbChuongTrinhHoc.Text;
@@ -126,10 +126,10 @@ namespace EnglishCenterManagement
                     hv.gioiTinh = "Nam";
                 else
                     hv.gioiTinh = "Nữ";
-                if (DanhSachHocVien.SuaHocVien(hv, viTri) == true)
+                if (danhSachHocVien.SuaHocVien(hv, viTri) == true)
                 {
                     MessageBox.Show("Đã sửa được học viên","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    HienThiDanhSach(dgvDanhSachHocVien, DanhSachHocVien.DSHocVien);
+                    HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
                 }
             }
             catch (Exception)
@@ -138,6 +138,13 @@ namespace EnglishCenterManagement
             }
         }
 
-
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            HocVien ketQua;
+            ketQua = danhSachHocVien.TimKiemHocVien(txtMaHV.Text);
+            List<HocVien> dsKetQua=new List<HocVien>();
+            dsKetQua.Add(ketQua);
+            HienThiDanhSach(dgvDanhSachHocVien, dsKetQua);
+        }
     }
 }
