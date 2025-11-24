@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DangNhap));
             this.lblTenTT = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@
             this.lblTenTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.lblTenTT.ForeColor = System.Drawing.Color.Crimson;
             this.lblTenTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTenTT.Location = new System.Drawing.Point(40, 49);
+            this.lblTenTT.Location = new System.Drawing.Point(106, 31);
             this.lblTenTT.Name = "lblTenTT";
             this.lblTenTT.Size = new System.Drawing.Size(729, 58);
             this.lblTenTT.TabIndex = 32;
@@ -76,6 +77,7 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(175, 22);
             this.txtTaiKhoan.TabIndex = 35;
+
             // 
             // txtMatKhau
             // 
@@ -95,14 +97,13 @@
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            this.btnDangNhap.Enter += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(309, 117);
+            this.label1.Location = new System.Drawing.Point(110, 103);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 32);
             this.label1.TabIndex = 38;
@@ -141,9 +142,10 @@
             // 
             // DangNhap
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(938, 450);
             this.Controls.Add(this.lblGiaoVienDangNhap);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnHocVienDangKi);
@@ -154,8 +156,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblTenTT);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DangNhap";
             this.Text = "DangNhap";
+            this.TopMost = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 

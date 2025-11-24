@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace EnglishCenterManagement
+{
+    public partial class FormMain : Form
+    {
+        private DanhSachHocVien danhSachHocVien=new DanhSachHocVien();
+        private int viTri = 0;
+        public FormMain()
+        {
+            InitializeComponent();
+        }
+
+        
+        private void AddUserControl(UserControl uc)
+        {
+            uc.Dock = DockStyle.Fill; 
+            pannelMEnu.Controls.Clear(); 
+            pannelMEnu.Controls.Add(uc); 
+            uc.BringToFront();
+        }
+
+        private void btnHocVien_Click(object sender, EventArgs e)
+        {
+            UC_HocVien ucHV = new UC_HocVien();
+            AddUserControl(ucHV);
+        }
+
+        private void btnGiaoVien_Click(object sender, EventArgs e)
+        {
+            UC_GiaoVien ucGV = new UC_GiaoVien();
+            AddUserControl(ucGV);
+        }
+
+        private void btnThietBi_Click(object sender, EventArgs e)
+        {
+            UC_ThietBi ucTB = new UC_ThietBi();
+            AddUserControl(ucTB);
+        }
+    }
+}

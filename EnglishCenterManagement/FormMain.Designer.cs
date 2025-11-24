@@ -1,0 +1,117 @@
+﻿namespace EnglishCenterManagement
+{
+    partial class FormMain
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            this.pannelMEnu = new System.Windows.Forms.Panel();
+            this.btnHocVien = new System.Windows.Forms.Button();
+            this.btnGiaoVien = new System.Windows.Forms.Button();
+            this.btnThietBi = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // pannelMEnu
+            // 
+            this.pannelMEnu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pannelMEnu.Location = new System.Drawing.Point(81, 0);
+            this.pannelMEnu.Name = "pannelMEnu";
+            this.pannelMEnu.Size = new System.Drawing.Size(1099, 624);
+            this.pannelMEnu.TabIndex = 0;
+            // 
+            // btnHocVien
+            // 
+            this.btnHocVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnHocVien.Location = new System.Drawing.Point(0, 166);
+            this.btnHocVien.Name = "btnHocVien";
+            this.btnHocVien.Size = new System.Drawing.Size(74, 49);
+            this.btnHocVien.TabIndex = 1;
+            this.btnHocVien.Text = "Học viên";
+            this.btnHocVien.UseVisualStyleBackColor = false;
+            this.btnHocVien.Click += new System.EventHandler(this.btnHocVien_Click);
+            // 
+            // btnGiaoVien
+            // 
+            this.btnGiaoVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnGiaoVien.Location = new System.Drawing.Point(1, 48);
+            this.btnGiaoVien.Name = "btnGiaoVien";
+            this.btnGiaoVien.Size = new System.Drawing.Size(74, 55);
+            this.btnGiaoVien.TabIndex = 2;
+            this.btnGiaoVien.Text = "Giáo viên";
+            this.btnGiaoVien.UseVisualStyleBackColor = false;
+            this.btnGiaoVien.Click += new System.EventHandler(this.btnGiaoVien_Click);
+            // 
+            // btnThietBi
+            // 
+            this.btnThietBi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThietBi.Location = new System.Drawing.Point(1, 109);
+            this.btnThietBi.Name = "btnThietBi";
+            this.btnThietBi.Size = new System.Drawing.Size(74, 51);
+            this.btnThietBi.TabIndex = 3;
+            this.btnThietBi.Text = "Thiết bị";
+            this.btnThietBi.UseVisualStyleBackColor = false;
+            this.btnThietBi.Click += new System.EventHandler(this.btnThietBi_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.btnThietBi);
+            this.groupBox1.Controls.Add(this.btnGiaoVien);
+            this.groupBox1.Controls.Add(this.btnHocVien);
+            this.groupBox1.Location = new System.Drawing.Point(0, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(75, 621);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Chức năng";
+            // 
+            // FormMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1180, 624);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pannelMEnu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FormMain";
+            this.Text = "Trang chủ";
+            this.groupBox1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Panel pannelMEnu;
+        private System.Windows.Forms.Button btnHocVien;
+        private System.Windows.Forms.Button btnGiaoVien;
+        private System.Windows.Forms.Button btnThietBi;
+        private System.Windows.Forms.GroupBox groupBox1;
+    }
+}

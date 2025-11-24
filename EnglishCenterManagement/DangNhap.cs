@@ -20,9 +20,9 @@ namespace EnglishCenterManagement
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (txtTaiKhoan.Text == "adminDuy" && txtMatKhau.Text == "2005")
+            if (txtTaiKhoan.Text == "Dung" && txtMatKhau.Text == "1")
             {
-                QuanLyHocVien qlhv = new QuanLyHocVien();
+                FormMain qlhv = new FormMain();
                 qlhv.FormClosed += (s, args) => this.Close();
                 qlhv.Show();
                 this.Hide();
@@ -32,26 +32,14 @@ namespace EnglishCenterManagement
                 LanNhap++;
                 DialogResult NhapSai = MessageBox.Show
                     (
-                    "Bạn đã nhập sai " + (3 - LanNhap) + " lần. Vui lòng nhập lại! "
+                    "Bạn còn " + (3 - LanNhap) + " lần nhập. Vui lòng nhập lại! "
                     , "Sai tài khoản hoặc mật khẩu!"
-                    , MessageBoxButtons.YesNo
+                    , MessageBoxButtons.OK
                     , MessageBoxIcon.Error
                     );
-                if (NhapSai == DialogResult.Yes) 
+                if (NhapSai == DialogResult.OK) 
                 {
                     txtMatKhau.Text = "";
-                }
-                else
-                {
-                    DialogResult KhongNhap = MessageBox.Show
-                        ("Bạn lựa chọn không nhập lại, thoát chương trình?"
-                        ,"Cảnh báo"
-                        ,MessageBoxButtons.YesNo
-                        ,MessageBoxIcon.Warning);
-                    if (KhongNhap == DialogResult.Yes)
-                    {
-                        Close();
-                    }
                 }
                 if (LanNhap == 3)
                 {
@@ -62,6 +50,6 @@ namespace EnglishCenterManagement
             }
         }
 
-
+      
     }
 }

@@ -30,7 +30,7 @@ namespace EnglishCenterManagement
             get { return this.HoTen; }
             set { this.HoTen = value; }
         }
-        public string cccd
+        public string cccdhv
         {
             get { return this.CCCD; }
             set { this.CCCD = value; }
@@ -82,11 +82,11 @@ namespace EnglishCenterManagement
         ChuongTrinhHoc = "";
         NgayDangKy = DateTime.Now;
         }
-        public HocVien(string maHV, string hoTen, string cccd, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt, string trinhDo, string chuongTrinhHoc, DateTime ngayDangKy)
+        public HocVien(string maHV, string hoTen, string cccdhv, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt, string trinhDo, string chuongTrinhHoc, DateTime ngayDangKy)
         {
             MaHV = maHV;
             HoTen = hoTen;
-            CCCD = cccd;
+            CCCD = cccdhv;
             NgaySinh = ngaySinh;
             GioiTinh = gioiTinh;
             DiaChi = diaChi;

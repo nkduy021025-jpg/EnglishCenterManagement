@@ -54,18 +54,41 @@
     </Compile>
     <Compile Include="DanhSachGiaoVien.cs" />
     <Compile Include="DanhSachHocVien.cs" />
+    <Compile Include="DanhSachThietBi.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="GiaoVien.cs" />
     <Compile Include="HocVien.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyHocVien.cs">
-      <SubType>Form</SubType>
+    <Compile Include="ThietBi.cs" />
+    <Compile Include="UC_GiaoVien.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="QuanLyHocVien.Designer.cs">
-      <DependentUpon>QuanLyHocVien.cs</DependentUpon>
+    <Compile Include="UC_GiaoVien.Designer.cs">
+      <DependentUpon>UC_GiaoVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_HocVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_HocVien.Designer.cs">
+      <DependentUpon>UC_HocVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ThietBi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ThietBi.Designer.cs">
+      <DependentUpon>UC_ThietBi.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -76,8 +99,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="QuanLyHocVien.resx">
-      <DependentUpon>QuanLyHocVien.cs</DependentUpon>
+    <EmbeddedResource Include="UC_GiaoVien.resx">
+      <DependentUpon>UC_GiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_HocVien.resx">
+      <DependentUpon>UC_HocVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ThietBi.resx">
+      <DependentUpon>UC_ThietBi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
