@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace EnglishCenterManagement
 {
-    public partial class UC_ThietBi : UserControl
+    public partial class UC_ThuChi : UserControl
     {
-        public UC_ThietBi()
+        public UC_ThuChi()
         {
             InitializeComponent();
         }
 
-        private void txtMaThietBi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
