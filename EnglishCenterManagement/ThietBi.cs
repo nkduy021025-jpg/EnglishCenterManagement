@@ -38,5 +38,21 @@ namespace EnglishCenterManagement
             get { return this.GiaTien; }
             set { this.GiaTien = value; }
         }
+        public ThietBi()
+        {
+            this.MaTB = null;
+            this.TenTB = null;
+            this.TinhTrang = null;
+            this.NgayNhap= DateTime.Now;
+            this.GiaTien = 0;
+        }
+        public ThietBi(string maTB, string tenTB, string tinhTrang, DateTime ngayNhap, double giaTien)
+        {
+            this.MaTB = maTB;
+            this.TenTB = tenTB;
+            this.TinhTrang = tinhTrang;
+            this.NgayNhap = ngayNhap;
+            this.GiaTien = giaTien;
+        }
     }
 }
