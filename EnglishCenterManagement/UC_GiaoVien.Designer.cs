@@ -85,6 +85,7 @@
             this.btnDocFileGV.TabIndex = 119;
             this.btnDocFileGV.Text = "Đọc File";
             this.btnDocFileGV.UseVisualStyleBackColor = true;
+            this.btnDocFileGV.Click += new System.EventHandler(this.btnDocFileGV_Click);
             // 
             // txtEmail
             // 
@@ -119,9 +120,9 @@
             // 
             this.cbbThamNien.FormattingEnabled = true;
             this.cbbThamNien.Items.AddRange(new object[] {
-            "A1",
-            "A2",
-            "B1"});
+            "5",
+            "10",
+            "15"});
             this.cbbThamNien.Location = new System.Drawing.Point(606, 242);
             this.cbbThamNien.Name = "cbbThamNien";
             this.cbbThamNien.Size = new System.Drawing.Size(211, 24);
@@ -136,6 +137,7 @@
             this.btnTimGV.TabIndex = 114;
             this.btnTimGV.Text = "Tìm kiếm";
             this.btnTimGV.UseVisualStyleBackColor = true;
+            this.btnTimGV.Click += new System.EventHandler(this.btnTimGV_Click);
             // 
             // btnLuuGV
             // 
@@ -146,6 +148,7 @@
             this.btnLuuGV.TabIndex = 113;
             this.btnLuuGV.Text = "Lưu";
             this.btnLuuGV.UseVisualStyleBackColor = true;
+            this.btnLuuGV.Click += new System.EventHandler(this.btnLuuGV_Click);
             // 
             // btnSuaGV
             // 
@@ -167,6 +170,7 @@
             this.btnXoaGV.TabIndex = 111;
             this.btnXoaGV.Text = "Xóa";
             this.btnXoaGV.UseVisualStyleBackColor = true;
+            this.btnXoaGV.Click += new System.EventHandler(this.btnXoaGV_Click);
             // 
             // btnThemGV
             // 
@@ -177,6 +181,7 @@
             this.btnThemGV.TabIndex = 110;
             this.btnThemGV.Text = "Thêm";
             this.btnThemGV.UseVisualStyleBackColor = true;
+            this.btnThemGV.Click += new System.EventHandler(this.btnThemGV_Click);
             // 
             // dgvDanhSachGiaoVien
             // 
@@ -194,12 +199,13 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.luong});
-            this.dgvDanhSachGiaoVien.Location = new System.Drawing.Point(58, 439);
+            this.dgvDanhSachGiaoVien.Location = new System.Drawing.Point(20, 388);
             this.dgvDanhSachGiaoVien.Name = "dgvDanhSachGiaoVien";
             this.dgvDanhSachGiaoVien.RowHeadersWidth = 51;
             this.dgvDanhSachGiaoVien.RowTemplate.Height = 24;
-            this.dgvDanhSachGiaoVien.Size = new System.Drawing.Size(1018, 256);
+            this.dgvDanhSachGiaoVien.Size = new System.Drawing.Size(1448, 256);
             this.dgvDanhSachGiaoVien.TabIndex = 109;
+            this.dgvDanhSachGiaoVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachGiaoVien_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -518,7 +524,7 @@
             this.Controls.Add(this.lblQuanLyGiaoVien);
             this.Controls.Add(this.label14);
             this.Name = "UC_GiaoVien";
-            this.Size = new System.Drawing.Size(1071, 633);
+            this.Size = new System.Drawing.Size(1471, 633);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachGiaoVien)).EndInit();
             this.gbGioiTinhGV.ResumeLayout(false);
             this.gbGioiTinhGV.PerformLayout();

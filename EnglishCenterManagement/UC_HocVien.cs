@@ -140,11 +140,26 @@ namespace EnglishCenterManagement
         }
         private void btnDocHV_Click(object sender, EventArgs e)
         {
-
+            if(danhSachHocVien.DocFile("DanhSachHocVien.dat"))
+            {
+                MessageBox.Show("Đã đọc danh sách học viên từ file!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
+            }
+            else
+            {
+                MessageBox.Show("Đọc thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void btnLuuHV_Click(object sender, EventArgs e)
         {
-
+            if(danhSachHocVien.GhiFile("DanhSachHocVien.dat"))
+            {
+                MessageBox.Show("Đã lưu danh sách học viên vào file!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

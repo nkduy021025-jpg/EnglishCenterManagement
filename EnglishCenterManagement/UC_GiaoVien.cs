@@ -12,6 +12,8 @@ namespace EnglishCenterManagement
 {
     public partial class UC_GiaoVien : UserControl
     {
+        private DanhSachGiaoVien dsGiaoVien = new DanhSachGiaoVien();
+        private int viTri = 0;
         public UC_GiaoVien()
         {
             InitializeComponent();
@@ -19,7 +21,136 @@ namespace EnglishCenterManagement
 
         private void btnSuaGV_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if(string.IsNullOrEmpty(txtMaGV.Text))
+                {
+                    MessageBox.Show("Vui lòng chọn giáo viên cần sửa từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                GiaoVien gv = new GiaoVien();
+                gv.maGV = txtMaGV.Text;
+                gv.hoTenGV = txtHoTenGV.Text;
+                gv.cccdgv = txtCCCDGV.Text;
+                gv.ngaySinhGV = dtpNgaySinhGV.Value;
+                gv.sdtGV = txtSDTGV.Text;
+                gv.email = txtEmail.Text;
+                gv.thamNien = int.Parse(cbbThamNien.Text);
+                gv.bangCap = cbbBangCap.Text;
+                gv.ngayVaoLam = dtpNgayVaoLam.Value;
+                if (dsGiaoVien.SuaGiaoVien(gv, viTri) == true)
+                {
+                    MessageBox.Show("Đã sửa được giáo viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HienThi(dgvDanhSachGiaoVien, dsGiaoVien.DSGiaoVien);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi không sửa được", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+        private void btnThemGV_Click(object sender, EventArgs e)
+        {
+            string maGV=txtMaGV.Text;
+            string hoTen =txtHoTenGV.Text;
+            string CCCD=txtCCCDGV.Text;
+            DateTime ngaySinh = dtpNgaySinhGV.Value;
+            string SDT=txtSDTGV.Text;
+            string diaChi=txtDiaChiGV.Text;
+            string email=txtEmail.Text;
+            int thamNien=int.Parse(cbbThamNien.Text);
+            string bangCap=cbbBangCap.Text;
+            DateTime ngayVaoLam=dtpNgayVaoLam.Value;
+            
+            GiaoVien gv=new GiaoVien();
+            bool ketQuaThem = dsGiaoVien.ThemGiaoVien(gv);
+            if (ketQuaThem == true)
+            {
+                MessageBox.Show("Đã thêm 1 giáo viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThi(dgvDanhSachGiaoVien, dsGiaoVien.DSGiaoVien);
+            }
+            else
+            {
+                MessageBox.Show("Mã giáo viên này đã tồn tại, vui lòng nhập 1 mã khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void HienThi(DataGridView dgv, List<GiaoVien> ds)
+        {
+            dgv.DataSource = ds.ToList();
+        }
+
+        private void dgvDanhSachGiaoVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            viTri= e.RowIndex;
+            GiaoVien gv = new GiaoVien();
+            txtMaGV.Text = gv.maGV;
+            txtHoTenGV.Text = gv.hoTenGV;
+            txtCCCDGV.Text = gv.cccdgv;
+            dtpNgaySinhGV.Value = gv.ngaySinhGV;
+            txtDiaChiGV.Text = gv.sdtGV;
+            txtSDTGV.Text = gv.sdtGV;
+            txtEmail.Text = gv.email;
+            cbbThamNien.Text = gv.thamNien.ToString();
+            cbbBangCap.Text = gv.bangCap;
+            dtpNgayVaoLam.Value = gv.ngayVaoLam;
+
+        }
+
+        private void btnXoaGV_Click(object sender, EventArgs e)
+        {
+            DialogResult chon = MessageBox.Show(" Bạn có chắc chắn muốn xóa giáo viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (chon == DialogResult.Yes)
+            {
+                bool ketQuaXoa = dsGiaoVien.XoaGiaoVien(viTri);
+                if (ketQuaXoa == true)
+                {
+                    MessageBox.Show("Đã xóa giáo viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    HienThi(dgvDanhSachGiaoVien, dsGiaoVien.DSGiaoVien);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không xóa!", "Lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void btnTimGV_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaGV.Text))
+            {
+                MessageBox.Show("Vui lòng chọn giáo viên cần tìm từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            GiaoVien gv = dsGiaoVien.TimKiemGV(txtMaGV.Text);
+            List<GiaoVien> ketQua = new List<GiaoVien>();
+            ketQua.Add(gv);
+            HienThi(dgvDanhSachGiaoVien, ketQua);
+        }
+
+        private void btnLuuGV_Click(object sender, EventArgs e)
+        {
+            if (dsGiaoVien.GhiFileGV("DanhSachGiaoVien.dat") == true)
+            {
+                MessageBox.Show("Đã lưu file giáo viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Lỗi không lưu được file giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDocFileGV_Click(object sender, EventArgs e)
+        {
+            if(dsGiaoVien.DocFileGV("DanhSachGiaoVien.dat")==true)
+            {
+                MessageBox.Show("Đã đọc file giáo viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThi(dgvDanhSachGiaoVien, dsGiaoVien.DSGiaoVien);
+            }
+            else
+            {
+                MessageBox.Show("Lỗi không đọc được file giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

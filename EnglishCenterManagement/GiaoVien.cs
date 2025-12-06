@@ -20,7 +20,6 @@ namespace EnglishCenterManagement
         private int ThamNien;
         private string BangCap;
         private DateTime NgayVaoLam;
-        private double Luong;
 
         public string maGV
         {
@@ -74,8 +73,24 @@ namespace EnglishCenterManagement
         }
         public double luong
         {
-            get { return this.Luong; }
-            set { this.Luong = value; }
+            get { return TinhLuong(); }
+        }
+        public double TinhLuong()
+        {
+            double luong = 0;
+            if (thamNien <= 5)
+            {
+                luong = thamNien * 2000;
+            }
+            else if (thamNien > 5 && thamNien <= 10)
+            {
+                luong = thamNien * 3000;
+            }
+            else if (thamNien > 10)
+            {
+                luong = thamNien * 3500;
+            }
+            return luong;
         }
 
         public GiaoVien()
@@ -89,10 +104,9 @@ namespace EnglishCenterManagement
             this.ThamNien= 0;
             this.BangCap= "";
             this.NgayVaoLam= DateTime.Now;
-            this.Luong= 0;
         }
 
-        public GiaoVien(string maGV, string hoTenGV, string cccdgv, DateTime ngaySinh, string sdt, string email, int thamNien, string bangCap, DateTime ngayVaoLam, double luong)
+        public GiaoVien(string maGV, string hoTenGV, string cccdgv, DateTime ngaySinh, string sdt, string email, int thamNien, string bangCap, DateTime ngayVaoLam)
         {
             this.MaGV = maGV;
             this.HoTen = hoTenGV;
@@ -103,7 +117,6 @@ namespace EnglishCenterManagement
             this.ThamNien = thamNien;
             this.BangCap = bangCap;
             this.NgayVaoLam = ngayVaoLam;
-            this.Luong = luong;
         }
 
     }
