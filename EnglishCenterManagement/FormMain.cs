@@ -51,5 +51,17 @@ namespace EnglishCenterManagement
             UC_ThoiKhoaBieu uctkb = new  UC_ThoiKhoaBieu();
             AddUserControl(uctkb);
         }
+
+        private void btnThuChi_Click(object sender, EventArgs e)
+        {
+            UC_ThuChi ucTC = new UC_ThuChi();
+            AddUserControl(ucTC);
+        }
+
+        private void btnChuongTrinhHoc_Click(object sender, EventArgs e)
+        {
+            UC_ChuongTrinhHoc ucCTH = new UC_ChuongTrinhHoc();
+            AddUserControl(ucCTH);
+        }
     }
 }

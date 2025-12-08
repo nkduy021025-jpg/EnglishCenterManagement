@@ -34,6 +34,8 @@
             this.btnGiaoVien = new System.Windows.Forms.Button();
             this.btnThietBi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChuongTrinhHoc = new System.Windows.Forms.Button();
+            this.btnThuChi = new System.Windows.Forms.Button();
             this.btnThoiKhoaBieu = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +44,7 @@
             // 
             this.pannelMEnu.Dock = System.Windows.Forms.DockStyle.Right;
             this.pannelMEnu.Location = new System.Drawing.Point(61, 0);
-            this.pannelMEnu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pannelMEnu.Margin = new System.Windows.Forms.Padding(2);
             this.pannelMEnu.Name = "pannelMEnu";
             this.pannelMEnu.Size = new System.Drawing.Size(824, 507);
             this.pannelMEnu.TabIndex = 0;
@@ -51,7 +53,7 @@
             // 
             this.btnHocVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnHocVien.Location = new System.Drawing.Point(1, 38);
-            this.btnHocVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHocVien.Margin = new System.Windows.Forms.Padding(2);
             this.btnHocVien.Name = "btnHocVien";
             this.btnHocVien.Size = new System.Drawing.Size(56, 40);
             this.btnHocVien.TabIndex = 1;
@@ -63,7 +65,7 @@
             // 
             this.btnGiaoVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnGiaoVien.Location = new System.Drawing.Point(0, 82);
-            this.btnGiaoVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGiaoVien.Margin = new System.Windows.Forms.Padding(2);
             this.btnGiaoVien.Name = "btnGiaoVien";
             this.btnGiaoVien.Size = new System.Drawing.Size(56, 45);
             this.btnGiaoVien.TabIndex = 2;
@@ -75,7 +77,7 @@
             // 
             this.btnThietBi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnThietBi.Location = new System.Drawing.Point(0, 131);
-            this.btnThietBi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThietBi.Margin = new System.Windows.Forms.Padding(2);
             this.btnThietBi.Name = "btnThietBi";
             this.btnThietBi.Size = new System.Drawing.Size(56, 41);
             this.btnThietBi.TabIndex = 3;
@@ -86,18 +88,44 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox1.Controls.Add(this.btnChuongTrinhHoc);
+            this.groupBox1.Controls.Add(this.btnThuChi);
             this.groupBox1.Controls.Add(this.btnThoiKhoaBieu);
             this.groupBox1.Controls.Add(this.btnGiaoVien);
             this.groupBox1.Controls.Add(this.btnThietBi);
             this.groupBox1.Controls.Add(this.btnHocVien);
             this.groupBox1.Location = new System.Drawing.Point(0, 2);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(56, 505);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chức năng";
+            // 
+            // btnChuongTrinhHoc
+            // 
+            this.btnChuongTrinhHoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnChuongTrinhHoc.Location = new System.Drawing.Point(1, 280);
+            this.btnChuongTrinhHoc.Margin = new System.Windows.Forms.Padding(2);
+            this.btnChuongTrinhHoc.Name = "btnChuongTrinhHoc";
+            this.btnChuongTrinhHoc.Size = new System.Drawing.Size(56, 47);
+            this.btnChuongTrinhHoc.TabIndex = 6;
+            this.btnChuongTrinhHoc.Text = "Chương trình học";
+            this.btnChuongTrinhHoc.UseVisualStyleBackColor = false;
+            this.btnChuongTrinhHoc.Click += new System.EventHandler(this.btnChuongTrinhHoc_Click);
+            // 
+            // btnThuChi
+            // 
+            this.btnThuChi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThuChi.Location = new System.Drawing.Point(0, 232);
+            this.btnThuChi.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThuChi.Name = "btnThuChi";
+            this.btnThuChi.Size = new System.Drawing.Size(56, 44);
+            this.btnThuChi.TabIndex = 5;
+            this.btnThuChi.Text = "Thu/chi";
+            this.btnThuChi.UseVisualStyleBackColor = false;
+            this.btnThuChi.Click += new System.EventHandler(this.btnThuChi_Click);
             // 
             // btnThoiKhoaBieu
             // 
@@ -119,7 +147,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pannelMEnu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormMain";
             this.Text = "Trang chủ";
             this.groupBox1.ResumeLayout(false);
@@ -135,5 +163,7 @@
         private System.Windows.Forms.Button btnThietBi;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnThoiKhoaBieu;
+        private System.Windows.Forms.Button btnThuChi;
+        private System.Windows.Forms.Button btnChuongTrinhHoc;
     }
 }

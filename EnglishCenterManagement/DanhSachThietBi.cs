@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EnglishCenterManagement
 {
+    [Serializable]
     internal class DanhSachThietBi
     {
         private List<ThietBi> dsThietBi;
