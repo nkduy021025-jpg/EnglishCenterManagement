@@ -45,13 +45,6 @@
             this.lblThoiKhoaBieu = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvChuongTrinh = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbbThoiGianHoc = new System.Windows.Forms.ComboBox();
-            this.txtTenChuongTrinhHoc = new System.Windows.Forms.TextBox();
-            this.txtHocPhi = new System.Windows.Forms.TextBox();
-            this.cbbDoiTuongHoc = new System.Windows.Forms.ComboBox();
-            this.lblThoiGian = new System.Windows.Forms.Label();
-            this.cbbLoTrinh = new System.Windows.Forms.ComboBox();
             this.MaChuongTrinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenChuongTrinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoTrinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +52,13 @@
             this.DoiTuongHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HocPhi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbbThoiGianHoc = new System.Windows.Forms.ComboBox();
+            this.txtTenChuongTrinhHoc = new System.Windows.Forms.TextBox();
+            this.txtHocPhi = new System.Windows.Forms.TextBox();
+            this.cbbDoiTuongHoc = new System.Windows.Forms.ComboBox();
+            this.lblThoiGian = new System.Windows.Forms.Label();
+            this.cbbLoTrinh = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChuongTrinh)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,18 +84,19 @@
             // btnDocFileChuongTrinh
             // 
             this.btnDocFileChuongTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDocFileChuongTrinh.Location = new System.Drawing.Point(729, 321);
+            this.btnDocFileChuongTrinh.Location = new System.Drawing.Point(729, 287);
             this.btnDocFileChuongTrinh.Margin = new System.Windows.Forms.Padding(2);
             this.btnDocFileChuongTrinh.Name = "btnDocFileChuongTrinh";
             this.btnDocFileChuongTrinh.Size = new System.Drawing.Size(70, 26);
             this.btnDocFileChuongTrinh.TabIndex = 162;
             this.btnDocFileChuongTrinh.Text = "Đọc File";
             this.btnDocFileChuongTrinh.UseVisualStyleBackColor = true;
+            this.btnDocFileChuongTrinh.Click += new System.EventHandler(this.btnDocFileChuongTrinh_Click);
             // 
             // btnTimKiemChuongTrinh
             // 
             this.btnTimKiemChuongTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemChuongTrinh.Location = new System.Drawing.Point(729, 284);
+            this.btnTimKiemChuongTrinh.Location = new System.Drawing.Point(729, 318);
             this.btnTimKiemChuongTrinh.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiemChuongTrinh.Name = "btnTimKiemChuongTrinh";
             this.btnTimKiemChuongTrinh.Size = new System.Drawing.Size(70, 30);
@@ -113,6 +114,7 @@
             this.btnLuuChuongTrinh.TabIndex = 160;
             this.btnLuuChuongTrinh.Text = "Lưu";
             this.btnLuuChuongTrinh.UseVisualStyleBackColor = true;
+            this.btnLuuChuongTrinh.Click += new System.EventHandler(this.btnLuuChuongTrinh_Click);
             // 
             // btnSuaChuongTrinh
             // 
@@ -124,6 +126,7 @@
             this.btnSuaChuongTrinh.TabIndex = 159;
             this.btnSuaChuongTrinh.Text = "Sửa";
             this.btnSuaChuongTrinh.UseVisualStyleBackColor = true;
+            this.btnSuaChuongTrinh.Click += new System.EventHandler(this.btnSuaChuongTrinh_Click);
             // 
             // btnXoaChuongTrinh
             // 
@@ -245,8 +248,57 @@
             this.MoTa});
             this.dgvChuongTrinh.Location = new System.Drawing.Point(21, 318);
             this.dgvChuongTrinh.Name = "dgvChuongTrinh";
-            this.dgvChuongTrinh.Size = new System.Drawing.Size(696, 177);
+            this.dgvChuongTrinh.Size = new System.Drawing.Size(703, 177);
             this.dgvChuongTrinh.TabIndex = 169;
+            this.dgvChuongTrinh.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvChuongTrinh_CellClick);
+            // 
+            // MaChuongTrinh
+            // 
+            this.MaChuongTrinh.DataPropertyName = "MaChuongTrinh";
+            this.MaChuongTrinh.HeaderText = "Mã chương trình";
+            this.MaChuongTrinh.Name = "MaChuongTrinh";
+            this.MaChuongTrinh.ReadOnly = true;
+            // 
+            // TenChuongTrinh
+            // 
+            this.TenChuongTrinh.DataPropertyName = "TenChuongTrinh";
+            this.TenChuongTrinh.HeaderText = "Tên chương trình ";
+            this.TenChuongTrinh.Name = "TenChuongTrinh";
+            this.TenChuongTrinh.ReadOnly = true;
+            // 
+            // LoTrinh
+            // 
+            this.LoTrinh.DataPropertyName = "LoTrinhHoc";
+            this.LoTrinh.HeaderText = "Lộ trình học";
+            this.LoTrinh.Name = "LoTrinh";
+            this.LoTrinh.ReadOnly = true;
+            // 
+            // ThoiGianHoc
+            // 
+            this.ThoiGianHoc.DataPropertyName = "ThoiGianHoc";
+            this.ThoiGianHoc.HeaderText = "Thời gian học";
+            this.ThoiGianHoc.Name = "ThoiGianHoc";
+            this.ThoiGianHoc.ReadOnly = true;
+            // 
+            // DoiTuongHoc
+            // 
+            this.DoiTuongHoc.HeaderText = "Đối tượng học";
+            this.DoiTuongHoc.Name = "DoiTuongHoc";
+            this.DoiTuongHoc.ReadOnly = true;
+            // 
+            // HocPhi
+            // 
+            this.HocPhi.DataPropertyName = "HocPhi";
+            this.HocPhi.HeaderText = "Học phí";
+            this.HocPhi.Name = "HocPhi";
+            this.HocPhi.ReadOnly = true;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "Mô tả chương trình học";
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
             // 
             // label1
             // 
@@ -322,54 +374,6 @@
             this.cbbLoTrinh.Name = "cbbLoTrinh";
             this.cbbLoTrinh.Size = new System.Drawing.Size(175, 21);
             this.cbbLoTrinh.TabIndex = 176;
-            // 
-            // MaChuongTrinh
-            // 
-            this.MaChuongTrinh.DataPropertyName = "MaChuongTrinh";
-            this.MaChuongTrinh.HeaderText = "Mã chương trình";
-            this.MaChuongTrinh.Name = "MaChuongTrinh";
-            this.MaChuongTrinh.ReadOnly = true;
-            // 
-            // TenChuongTrinh
-            // 
-            this.TenChuongTrinh.DataPropertyName = "TenChuongTrinh";
-            this.TenChuongTrinh.HeaderText = "Tên chương trình ";
-            this.TenChuongTrinh.Name = "TenChuongTrinh";
-            this.TenChuongTrinh.ReadOnly = true;
-            // 
-            // LoTrinh
-            // 
-            this.LoTrinh.DataPropertyName = "LoTrinhHoc";
-            this.LoTrinh.HeaderText = "Lộ trình học";
-            this.LoTrinh.Name = "LoTrinh";
-            this.LoTrinh.ReadOnly = true;
-            // 
-            // ThoiGianHoc
-            // 
-            this.ThoiGianHoc.DataPropertyName = "ThoiGianHoc";
-            this.ThoiGianHoc.HeaderText = "Thời gian học";
-            this.ThoiGianHoc.Name = "ThoiGianHoc";
-            this.ThoiGianHoc.ReadOnly = true;
-            // 
-            // DoiTuongHoc
-            // 
-            this.DoiTuongHoc.HeaderText = "Đối tượng học";
-            this.DoiTuongHoc.Name = "DoiTuongHoc";
-            this.DoiTuongHoc.ReadOnly = true;
-            // 
-            // HocPhi
-            // 
-            this.HocPhi.DataPropertyName = "HocPhi";
-            this.HocPhi.HeaderText = "Học phí";
-            this.HocPhi.Name = "HocPhi";
-            this.HocPhi.ReadOnly = true;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô tả chương trình học";
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
             // 
             // UC_ChuongTrinhHoc
             // 

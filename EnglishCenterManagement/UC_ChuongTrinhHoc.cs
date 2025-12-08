@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace EnglishCenterManagement
 {
+    [Serializable]
     public partial class UC_ChuongTrinhHoc : UserControl
     {
         DanhSachChuongTrinhHoc dsct = new DanhSachChuongTrinhHoc();
@@ -44,10 +45,89 @@ namespace EnglishCenterManagement
             }
         }
 
-        
+        private void dgvChuongTrinh_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            vitri =e.RowIndex;
+            ChuongTrinhHoc ct = new ChuongTrinhHoc ();
+            ct = dsct.CTrinhHoc[vitri];
+            txtMaChuongTrinhHoc.Text = ct.MaChuongTrinh;
+            txtTenChuongTrinhHoc.Text = ct.TenChuongTrinh;
+            cbbThoiGianHoc.Text = ct.ThoiGianHoc;
+            cbbLoTrinh.Text = ct.LoTrinhHoc;
+            cbbDoiTuongHoc.Text = ct.DoiTuongHoc;
+            txtHocPhi.Text = ct.HocPhi.ToString();
+            txtMoTaCTH.Text = ct.MoTa;
+        }
         private void btnXoaChuongTrinh_Click(object sender, EventArgs e)
         {
+            if (vitri < 0 || vitri > dsct.CTrinhHoc.Count)
+            {
+                MessageBox.Show ("Vui lòng chọn chương trình bạn muốn xóa!", "Thông báo" , MessageBoxButtons.OK, MessageBoxIcon.Error );
+                return;
+            }
+            DialogResult ketqua = MessageBox.Show ("Bạn chắc chắn muốn xóa chương trình học này không", "Cảnh báo" , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (ketqua == DialogResult.Yes)
+            {
+                bool kiemtra = dsct.Xoa(vitri);
+                HienThi(dgvChuongTrinh, dsct.CTrinhHoc);
+            }
+            else
+            {
+                MessageBox.Show("Bạn lựa chọn không xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
 
+        private void btnSuaChuongTrinh_Click(object sender, EventArgs e)
+        {
+            if (vitri < 0 || vitri > dsct.CTrinhHoc.Count)
+            {
+                MessageBox.Show ("Vui lòng chọn chương trình bạn muốn sửa!" , "Thông báo" , MessageBoxButtons .OK, MessageBoxIcon.Error);
+                return;
+            }
+            string maChuongTrinh = txtMaChuongTrinhHoc.Text;
+            string tenChuongTrinh = txtTenChuongTrinhHoc.Text;
+            string thoiGianHoc = cbbThoiGianHoc.Text;
+            string loTrinh = cbbLoTrinh.Text;
+            string doiTuong = cbbDoiTuongHoc.Text;
+            float hocPhi = float.Parse(txtHocPhi.Text);
+            string mota = txtMoTaCTH.Text;  
+            ChuongTrinhHoc ct = new ChuongTrinhHoc(maChuongTrinh,tenChuongTrinh,thoiGianHoc,loTrinh,hocPhi,doiTuong,mota);
+            bool kiemTraSua = dsct.Sua(vitri,ct);
+            if (kiemTraSua)
+            {
+                MessageBox.Show("Đã sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThi(dgvChuongTrinh, dsct.CTrinhHoc);
+            }
+            else
+            {
+                MessageBox.Show("Sửa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLuuChuongTrinh_Click(object sender, EventArgs e)
+        {
+            if (dsct.ghiFileCT("DanhSachChuongTrinh.dat"))
+            {
+                MessageBox.Show ("Đã lưu thành công!","Thành công",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            else
+            {
+                MessageBox.Show("Lưu không thành công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnDocFileChuongTrinh_Click(object sender, EventArgs e)
+        {
+            if (dsct.docFileCT("DanhSachChuongTrinh.dat"))
+            {
+                MessageBox.Show("Đã đọc thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThi(dgvChuongTrinh,dsct.CTrinhHoc);
+            }
+            else 
+            {
+                MessageBox.Show("Đọc không thành công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

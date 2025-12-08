@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EnglishCenterManagement
 {
+    [Serializable]
     internal class ChuongTrinhHoc
     {
         private string maChuongTrinh;
@@ -16,23 +17,23 @@ namespace EnglishCenterManagement
         private string moTa;
         private string loTrinhHoc;
 
-        public ChuongTrinhHoc () 
+        public ChuongTrinhHoc()
         {
             this.maChuongTrinh = "";
-            this.tenChuongTrinh= "";
+            this.tenChuongTrinh = "";
             this.thoiGianHoc = "";
             this.doiTuongHoc = "";
             this.hocPhi = 0.0f;
             this.moTa = string.Empty;
         }
-        public ChuongTrinhHoc (string maChuongTrinh, string tenChuongTrinh, string thoiGianHoc,string doiTuongHoc,float hocPhi,string moTa,string loTrinhHoc)
+        public ChuongTrinhHoc(string maChuongTrinh, string tenChuongTrinh, string thoiGianHoc, string doiTuongHoc, float hocPhi, string moTa, string loTrinhHoc)
         {
             this.maChuongTrinh = maChuongTrinh;
             this.tenChuongTrinh = tenChuongTrinh;
-            this.thoiGianHoc= thoiGianHoc;
-            this.doiTuongHoc= doiTuongHoc;
-            this.hocPhi= hocPhi;
-            this.moTa= moTa;
+            this.thoiGianHoc = thoiGianHoc;
+            this.doiTuongHoc = doiTuongHoc;
+            this.hocPhi = hocPhi;
+            this.moTa = moTa;
             this.loTrinhHoc = loTrinhHoc;
         }
         public string MaChuongTrinh
@@ -45,6 +46,11 @@ namespace EnglishCenterManagement
             get { return this.tenChuongTrinh; }
             set { this.tenChuongTrinh = value; }
         }
+        public string DoiTuongHoc
+        {
+            get { return this.doiTuongHoc; }
+            set { this.doiTuongHoc = value; }
+        } 
         public string ThoiGianHoc
         {
             get { return this.thoiGianHoc ; }

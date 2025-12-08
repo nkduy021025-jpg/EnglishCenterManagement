@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace EnglishCenterManagement
 {
+    [Serializable]
     internal class GiaoVien
     {
         private string MaGV;

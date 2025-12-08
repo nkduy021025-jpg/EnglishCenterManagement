@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace EnglishCenterManagement
 {
+    [Serializable]
     internal class ThietBi
     {
         private string MaTB;

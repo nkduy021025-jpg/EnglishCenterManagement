@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace EnglishCenterManagement
 {
+    [Serializable]
     internal class ThuChi
     {
         private string MaThuChi;

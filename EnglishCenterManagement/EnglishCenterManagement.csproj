@@ -57,6 +57,7 @@
     <Compile Include="DanhSachGiaoVien.cs" />
     <Compile Include="DanhSachHocVien.cs" />
     <Compile Include="DanhSachThietBi.cs" />
+    <Compile Include="DanhSachThoiKhoaBieu.cs" />
     <Compile Include="DanhSachThuChi.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -69,6 +70,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThietBi.cs" />
+    <Compile Include="ThoiKhoaBieu.cs" />
     <Compile Include="ThuChi.cs" />
     <Compile Include="UC_ChuongTrinhHoc.cs">
       <SubType>UserControl</SubType>
