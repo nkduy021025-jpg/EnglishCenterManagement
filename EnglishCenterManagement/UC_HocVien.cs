@@ -161,5 +161,36 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnTimTheoTen_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtHoTen.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên học viên cần tìm từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            List<HocVien> ketqua;
+            ketqua = danhSachHocVien.TimKiemTheoTen(txtHoTen.Text);
+            HienThiDanhSach(dgvDanhSachHocVien, ketqua);
+        }
+
+        private void btnTimTheoGioiTinh_Click(object sender, EventArgs e)
+        {
+            string gioiTinh = "";
+
+            if (radNam.Checked == true)
+                gioiTinh = "Nam";
+            else if (radNu.Checked == true)
+                gioiTinh = "Nữ";
+            else
+            {
+                MessageBox.Show("Vui lòng chọn giới tính cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            List<HocVien> ketQua = danhSachHocVien.TimTheoGioiTinh(gioiTinh);
+
+            HienThiDanhSach(dgvDanhSachHocVien, ketQua);
+        }
     }
 }

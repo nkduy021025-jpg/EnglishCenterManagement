@@ -96,5 +96,10 @@ namespace EnglishCenterManagement
             ChuongTrinhHoc = chuongTrinhHoc;
             NgayDangKy = ngayDangKy;
         }
+        public string TachTen()
+        {
+            string[] parts=hoTen.Trim().Split(' ');
+            return parts[parts.Length - 1];
+        }
     }
 }

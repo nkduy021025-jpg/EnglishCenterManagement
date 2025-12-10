@@ -15,6 +15,7 @@ namespace EnglishCenterManagement
         private string HoTen;
         private string CCCD;
         private DateTime NgaySinh;
+        private string GioiTinhGV;
         private string SDT;
         private string DiaChi;
         private string Email;
@@ -32,6 +33,11 @@ namespace EnglishCenterManagement
             get { return this.HoTen; }
             set { this.HoTen = value; }
         }
+        public string gioiTinh
+        {
+            get { return this.GioiTinhGV; }
+            set { this.GioiTinhGV = value; }
+        }
         public string cccdgv
         {
             get { return this.CCCD; }
@@ -42,7 +48,7 @@ namespace EnglishCenterManagement
             get { return this.NgaySinh; }
             set { this.NgaySinh = value; }
         }
-        private string diaChiGV
+        public string diaChiGV
         {
             get { return this.DiaChi; }
             set { this.DiaChi = value; }
@@ -100,25 +106,33 @@ namespace EnglishCenterManagement
             this.HoTen= "";
             this.CCCD= "";
             this.NgaySinh= DateTime.Now;
+            this.GioiTinhGV = "";
             this.SDT= "";
             this.Email= "";
+            this.DiaChi = "";
             this.ThamNien= 0;
             this.BangCap= "";
             this.NgayVaoLam= DateTime.Now;
         }
 
-        public GiaoVien(string maGV, string hoTenGV, string cccdgv, DateTime ngaySinh, string sdt, string email, int thamNien, string bangCap, DateTime ngayVaoLam)
+        public GiaoVien(string maGV, string hoTenGV, string cccdgv, DateTime ngaySinh,string gioiTinh,string diaChi, string sdt, string email, int thamNien, string bangCap, DateTime ngayVaoLam)
         {
             this.MaGV = maGV;
             this.HoTen = hoTenGV;
             this.CCCD = cccdgv;
             this.NgaySinh = ngaySinh;
+            this.GioiTinhGV = gioiTinh;
+            this.DiaChi = diaChi;
             this.SDT = sdt;
             this.Email = email;
             this.ThamNien = thamNien;
             this.BangCap = bangCap;
             this.NgayVaoLam = ngayVaoLam;
         }
-
+        public string TachTen()
+        {
+            string[] parts = hoTenGV.Trim().Split(' ');
+            return parts[parts.Length - 1];
+        }
     }
 }

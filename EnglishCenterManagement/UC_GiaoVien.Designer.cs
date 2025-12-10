@@ -72,6 +72,10 @@
             this.lblMaGiaoVien = new System.Windows.Forms.Label();
             this.lblQuanLyGiaoVien = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnTimTheoTen = new System.Windows.Forms.Button();
+            this.lblCCCDGV = new System.Windows.Forms.Label();
+            this.btnTimTheoThamNien = new System.Windows.Forms.Button();
+            this.btnTimTheoGioiTinh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachGiaoVien)).BeginInit();
             this.gbGioiTinhGV.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +97,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(211, 22);
             this.txtEmail.TabIndex = 118;
+            this.txtEmail.Text = "DungDaiTo@gmail.com";
             // 
             // lblEmail
             // 
@@ -203,7 +208,7 @@
             this.dgvDanhSachGiaoVien.Name = "dgvDanhSachGiaoVien";
             this.dgvDanhSachGiaoVien.RowHeadersWidth = 51;
             this.dgvDanhSachGiaoVien.RowTemplate.Height = 24;
-            this.dgvDanhSachGiaoVien.Size = new System.Drawing.Size(1448, 256);
+            this.dgvDanhSachGiaoVien.Size = new System.Drawing.Size(1327, 256);
             this.dgvDanhSachGiaoVien.TabIndex = 109;
             this.dgvDanhSachGiaoVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachGiaoVien_CellClick);
             // 
@@ -356,6 +361,7 @@
             this.txtSDTGV.Name = "txtSDTGV";
             this.txtSDTGV.Size = new System.Drawing.Size(211, 22);
             this.txtSDTGV.TabIndex = 105;
+            this.txtSDTGV.Text = "012345";
             // 
             // txtDiaChiGV
             // 
@@ -363,6 +369,7 @@
             this.txtDiaChiGV.Name = "txtDiaChiGV";
             this.txtDiaChiGV.Size = new System.Drawing.Size(211, 22);
             this.txtDiaChiGV.TabIndex = 104;
+            this.txtDiaChiGV.Text = "Bình Phước";
             // 
             // txtCCCDGV
             // 
@@ -370,6 +377,7 @@
             this.txtCCCDGV.Name = "txtCCCDGV";
             this.txtCCCDGV.Size = new System.Drawing.Size(219, 22);
             this.txtCCCDGV.TabIndex = 103;
+            this.txtCCCDGV.Text = "123456";
             // 
             // txtHoTenGV
             // 
@@ -377,6 +385,7 @@
             this.txtHoTenGV.Name = "txtHoTenGV";
             this.txtHoTenGV.Size = new System.Drawing.Size(219, 22);
             this.txtHoTenGV.TabIndex = 102;
+            this.txtHoTenGV.Text = "Nguyễn Tuấn Dũng";
             // 
             // txtMaGV
             // 
@@ -384,6 +393,7 @@
             this.txtMaGV.Name = "txtMaGV";
             this.txtMaGV.Size = new System.Drawing.Size(219, 22);
             this.txtMaGV.TabIndex = 101;
+            this.txtMaGV.Text = "GV001";
             // 
             // lblNgayVaoLam
             // 
@@ -489,10 +499,56 @@
             this.label14.TabIndex = 90;
             this.label14.Text = "ENGLISH CENTER DOUBLE D";
             // 
+            // btnTimTheoTen
+            // 
+            this.btnTimTheoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimTheoTen.Location = new System.Drawing.Point(1046, 132);
+            this.btnTimTheoTen.Name = "btnTimTheoTen";
+            this.btnTimTheoTen.Size = new System.Drawing.Size(138, 40);
+            this.btnTimTheoTen.TabIndex = 120;
+            this.btnTimTheoTen.Text = "Tìm theo tên";
+            this.btnTimTheoTen.UseVisualStyleBackColor = true;
+            this.btnTimTheoTen.Click += new System.EventHandler(this.btnTimTheoTen_Click);
+            // 
+            // lblCCCDGV
+            // 
+            this.lblCCCDGV.AutoSize = true;
+            this.lblCCCDGV.Location = new System.Drawing.Point(17, 210);
+            this.lblCCCDGV.Name = "lblCCCDGV";
+            this.lblCCCDGV.Size = new System.Drawing.Size(44, 16);
+            this.lblCCCDGV.TabIndex = 121;
+            this.lblCCCDGV.Text = "CCCD";
+            // 
+            // btnTimTheoThamNien
+            // 
+            this.btnTimTheoThamNien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimTheoThamNien.Location = new System.Drawing.Point(1046, 193);
+            this.btnTimTheoThamNien.Name = "btnTimTheoThamNien";
+            this.btnTimTheoThamNien.Size = new System.Drawing.Size(190, 40);
+            this.btnTimTheoThamNien.TabIndex = 122;
+            this.btnTimTheoThamNien.Text = "Tìm theo thâm niên";
+            this.btnTimTheoThamNien.UseVisualStyleBackColor = true;
+            this.btnTimTheoThamNien.Click += new System.EventHandler(this.btnTimTheoThamNien_Click);
+            // 
+            // btnTimTheoGioiTinh
+            // 
+            this.btnTimTheoGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimTheoGioiTinh.Location = new System.Drawing.Point(1046, 253);
+            this.btnTimTheoGioiTinh.Name = "btnTimTheoGioiTinh";
+            this.btnTimTheoGioiTinh.Size = new System.Drawing.Size(190, 40);
+            this.btnTimTheoGioiTinh.TabIndex = 123;
+            this.btnTimTheoGioiTinh.Text = "Tìm theo giới tính";
+            this.btnTimTheoGioiTinh.UseVisualStyleBackColor = true;
+            this.btnTimTheoGioiTinh.Click += new System.EventHandler(this.btnTimTheoGioiTinh_Click);
+            // 
             // UC_GiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnTimTheoGioiTinh);
+            this.Controls.Add(this.btnTimTheoThamNien);
+            this.Controls.Add(this.lblCCCDGV);
+            this.Controls.Add(this.btnTimTheoTen);
             this.Controls.Add(this.btnDocFileGV);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
@@ -579,5 +635,9 @@
         private System.Windows.Forms.Label lblMaGiaoVien;
         private System.Windows.Forms.Label lblQuanLyGiaoVien;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnTimTheoTen;
+        private System.Windows.Forms.Label lblCCCDGV;
+        private System.Windows.Forms.Button btnTimTheoThamNien;
+        private System.Windows.Forms.Button btnTimTheoGioiTinh;
     }
 }

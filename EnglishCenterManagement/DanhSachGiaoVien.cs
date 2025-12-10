@@ -45,14 +45,14 @@ namespace EnglishCenterManagement
         }
         public bool XoaGiaoVien(int viTri)
         {
-            if(viTri<0 || viTri>this.dsGiaoVien.Count)
+            if(viTri<0 || viTri>=this.dsGiaoVien.Count)
                 return false;
             this.dsGiaoVien.RemoveAt(viTri);
             return true;
         }
         public bool SuaGiaoVien(GiaoVien gv,int viTri)
         {
-            if (viTri < 0 || viTri > this.dsGiaoVien.Count)
+            if (viTri < 0 || viTri >= this.dsGiaoVien.Count)
                 return false;
             this.dsGiaoVien[viTri] = gv;
             return true;
@@ -96,5 +96,42 @@ namespace EnglishCenterManagement
             }
             return null;
         }
+        public List<GiaoVien> TimKiemTheoTen(string ten)
+        {
+            List<GiaoVien> ketQua=new List<GiaoVien>();
+            foreach(GiaoVien gv in this.dsGiaoVien)
+            {
+                if (gv.TachTen().Equals(ten))
+                {
+                    ketQua.Add(gv);
+                }
+            }
+            return ketQua;
+        }
+        public List<GiaoVien> TimTheoThamNien(int nam)
+        {
+            List<GiaoVien> ketQua=new List<GiaoVien>();
+            foreach(GiaoVien gv in dsGiaoVien)
+            {
+                if (gv.thamNien.Equals(nam))
+                    ketQua.Add(gv);
+            }
+            return ketQua;
+        }
+        public List<GiaoVien> TimTheoGioiTinh(string gioiTinh)
+        {
+            List<GiaoVien> ketQua = new List<GiaoVien>();
+
+            foreach (GiaoVien gv in this.dsGiaoVien)
+            {
+                if (gv.gioiTinh.Equals(gioiTinh))
+                {
+                    ketQua.Add(gv);
+                }
+            }
+
+            return ketQua;
+        }
+
     }
 }

@@ -92,6 +92,31 @@ namespace EnglishCenterManagement
             }
             return null;
         }
+        public List<HocVien> TimKiemTheoTen(string ten)
+        {
+            List<HocVien> ketQua = new List<HocVien>();
+            foreach (HocVien hv in this.dsHocVien)
+            {
+                if (hv.TachTen().Equals(ten))
+                {
+                    ketQua.Add(hv);
+                }
+            }
+            return ketQua;
+        }
+        public List<HocVien> TimTheoGioiTinh(string gioiTinh)
+        {
+            List<HocVien> ketQua = new List<HocVien>();
 
+            foreach (HocVien hv in this.dsHocVien)
+            {
+                if (hv.gioiTinh.Equals(gioiTinh))
+                {
+                    ketQua.Add(hv);
+                }
+            }
+
+            return ketQua;
+        }
     }
 }

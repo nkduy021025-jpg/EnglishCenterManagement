@@ -33,6 +33,10 @@ namespace EnglishCenterManagement
                 gv.hoTenGV = txtHoTenGV.Text;
                 gv.cccdgv = txtCCCDGV.Text;
                 gv.ngaySinhGV = dtpNgaySinhGV.Value;
+                if (radNamGV.Checked == true)
+                    gv.gioiTinh = "Nam";
+                else if (radNuGV.Checked == true)
+                    gv.gioiTinh = "Nữ";
                 gv.sdtGV = txtSDTGV.Text;
                 gv.email = txtEmail.Text;
                 gv.thamNien = int.Parse(cbbThamNien.Text);
@@ -56,14 +60,19 @@ namespace EnglishCenterManagement
             string hoTen =txtHoTenGV.Text;
             string CCCD=txtCCCDGV.Text;
             DateTime ngaySinh = dtpNgaySinhGV.Value;
-            string SDT=txtSDTGV.Text;
+            string gioiTinh="";
+            if (radNamGV.Checked == true)
+                gioiTinh = "Nam";
+            else if (radNuGV.Checked == true)
+                gioiTinh = "Nữ";
+                string SDT = txtSDTGV.Text;
             string diaChi=txtDiaChiGV.Text;
             string email=txtEmail.Text;
             int thamNien=int.Parse(cbbThamNien.Text);
             string bangCap=cbbBangCap.Text;
             DateTime ngayVaoLam=dtpNgayVaoLam.Value;
             
-            GiaoVien gv=new GiaoVien();
+            GiaoVien gv=new GiaoVien(maGV,hoTen,CCCD,ngaySinh,gioiTinh,diaChi,SDT,email,thamNien,bangCap,ngayVaoLam);
             bool ketQuaThem = dsGiaoVien.ThemGiaoVien(gv);
             if (ketQuaThem == true)
             {
@@ -84,11 +93,21 @@ namespace EnglishCenterManagement
         {
             viTri= e.RowIndex;
             GiaoVien gv = new GiaoVien();
+            gv = dsGiaoVien.DSGiaoVien[viTri];
             txtMaGV.Text = gv.maGV;
             txtHoTenGV.Text = gv.hoTenGV;
             txtCCCDGV.Text = gv.cccdgv;
             dtpNgaySinhGV.Value = gv.ngaySinhGV;
-            txtDiaChiGV.Text = gv.sdtGV;
+            string gioiTinh = gv.gioiTinh;
+            if(gioiTinh.Equals("Nam"))
+            {
+                radNamGV.Checked = true;
+            }
+            else if(gioiTinh.Equals("Nữ"))
+            {
+                radNuGV.Checked = true;
+            }
+            txtDiaChiGV.Text = gv.diaChiGV;
             txtSDTGV.Text = gv.sdtGV;
             txtEmail.Text = gv.email;
             cbbThamNien.Text = gv.thamNien.ToString();
@@ -151,6 +170,49 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Lỗi không đọc được file giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnTimTheoTen_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtHoTenGV.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên giáo viên cần tìm từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            List<GiaoVien> ketqua;
+            ketqua=dsGiaoVien.TimKiemTheoTen(txtHoTenGV.Text);
+            HienThi(dgvDanhSachGiaoVien, ketqua);
+        }
+
+        private void btnTimTheoThamNien_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(cbbThamNien.Text))
+            {
+                MessageBox.Show("Vui lòng nhập thâm niên giáo viên cần tìm !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            List<GiaoVien> ketQua;
+            ketQua = dsGiaoVien.TimTheoThamNien(int.Parse(cbbThamNien.Text));
+            HienThi(dgvDanhSachGiaoVien,ketQua);
+        }
+
+        private void btnTimTheoGioiTinh_Click(object sender, EventArgs e)
+        {
+            string gioiTinh = "";
+
+            if (radNamGV.Checked == true)
+                gioiTinh = "Nam";
+            else if (radNuGV.Checked == true)
+                gioiTinh = "Nữ";
+            else
+            {
+                MessageBox.Show("Vui lòng chọn giới tính cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            List<GiaoVien> ketQua = dsGiaoVien.TimTheoGioiTinh(gioiTinh);
+
+            HienThi(dgvDanhSachGiaoVien, ketQua);
         }
     }
 }
