@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EnglishCenterManagement
 {
@@ -67,7 +68,7 @@ namespace EnglishCenterManagement
                 fs.Close();
                 return true;
             }
-            catch
+            catch 
             {
                 return false;
             }
@@ -84,6 +85,7 @@ namespace EnglishCenterManagement
             }
             catch
             {
+           
                 return false;
             }
         }

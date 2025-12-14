@@ -75,8 +75,17 @@ namespace EnglishCenterManagement
         }
         private void UC_ThoiKhoaBieu_Load(object sender, EventArgs e)
         {
-            bool ketquadoc = dsct.docFileCT("DanhSachChuongTrinh.dat");
-            if (ketquadoc == true)
+            bool ketquadocTKB = DMTKB.DocFile("DanhSachThoiKhoaBieu.dat");
+            if (ketquadocTKB)
+            {
+                HienThi(dgvTKB, DMTKB.DSTKB);
+            }
+            else
+            {
+                MessageBox.Show("Lỗi không thể xem danh sách thiết bị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            bool ketquadocCT = dsct.docFileCT("DanhSachChuongTrinh.dat");
+            if (ketquadocCT == true)
             {
                 foreach (ChuongTrinhHoc ct in dsct.CTrinhHoc)
                 {
@@ -94,7 +103,7 @@ namespace EnglishCenterManagement
             string maTKB = txtMaTKB.Text;
             DateTime ngayBatDauHoc = dtpTGBDH.Value;
             DateTime ngayKetThuc = dtpTGKT.Value;
-            string maCTH = cbbCaHoc.Text;
+            string maCTH = cbbMaCTHoc.Text;
             string ngayHoc = cbbNgayHoc.Text;
             string cahoc = cbbCaHoc.Text;
             string phonghoc = cbbPhongHoc.Text;
@@ -123,19 +132,47 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lưu thời khóa biểu không thành công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }     
         }
+        //Chuc nang doc , neu can xai nut
+        //private void btnDocTKB_Click(object sender, EventArgs e)
+        //{
+        //    bool kiemtradoc = DMTKB.DocFile("DanhSachThoiKhoaBieu.dat");
+        //    if (kiemtradoc)
+        //    {
+        //        MessageBox.Show("Đã đọc thời khóa biểu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        HienThi(dgvTKB, DMTKB.DSTKB);
+        //    }
+        //    else 
+        //    {
+        //        MessageBox.Show("Đọc thời khóa biểu không thành công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
-        private void btnDocTKB_Click(object sender, EventArgs e)
+        private void btnTimTKB_Click(object sender, EventArgs e)
         {
-            bool kiemtradoc = DMTKB.DocFile("DanhSachThoiKhoaBieu.dat");
-            if (kiemtradoc)
+            List<ThoiKhoaBieu> ketqua = new List<ThoiKhoaBieu>();
+            if (cbbChonTimKiemTKB.Text == "Theo mã thời khóa biểu")
             {
-                MessageBox.Show("Đã đọc thời khóa biểu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThi(dgvTKB, DMTKB.DSTKB);
+                ketqua = DMTKB.KiemTheoMa(txtTimKiem.Text);
+                HienThi(dgvTKB, ketqua);
             }
-            else 
+            else if (cbbChonTimKiemTKB.Text == "Theo mã chương trình học")
             {
-                MessageBox.Show("Đọc thời khóa biểu không thành công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ketqua = DMTKB.KiemTheoMaCT(txtTimKiem.Text);
+                HienThi(dgvTKB, ketqua);
+            }
+            else if (cbbChonTimKiemTKB.Text == "Theo phòng học")
+            {
+                ketqua = DMTKB.KiemTheoPhongHoc(txtTimKiem.Text);
+                HienThi(dgvTKB, ketqua);
+            }
+            else
+            {
+                ketqua = DMTKB.KiemTheoCaHoc(txtTimKiem.Text);
+                HienThi(dgvTKB, ketqua);
+
             }
         }
+
+
     }
 }

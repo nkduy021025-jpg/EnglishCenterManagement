@@ -76,7 +76,6 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Bạn lựa chọn không xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
         private void btnSuaChuongTrinh_Click(object sender, EventArgs e)
         {
             if (vitri < 0 || vitri > dsct.CTrinhHoc.Count)
@@ -116,17 +115,41 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lưu không thành công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnDocFileChuongTrinh_Click(object sender, EventArgs e)
+        private void UC_ChuongTrinhHoc_Load(object sender, EventArgs e)
         {
-            if (dsct.docFileCT("DanhSachChuongTrinh.dat"))
+            bool kiemtradoc = dsct.docFileCT("DanhSachChuongTrinh.dat");
+            if (kiemtradoc)
             {
-                MessageBox.Show("Đã đọc thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HienThi(dgvChuongTrinh,dsct.CTrinhHoc);
             }
-            else 
+            else
             {
-                MessageBox.Show("Đọc không thành công!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi không thể xem danh sách chương trình học!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            List<ChuongTrinhHoc> ketqua = new List<ChuongTrinhHoc> ();
+            if (cbbTimKiem.Text =="Theo mã chương trình")
+            {
+                ketqua = dsct.TimKiemTheoMa(txtTimKiem.Text);
+                HienThi(dgvChuongTrinh,ketqua);
+            }
+            else if ((cbbTimKiem.Text == "Theo tên chương trình"))
+            {
+                ketqua = dsct.TimKiemTheoTenCT(txtTimKiem.Text);
+                HienThi(dgvChuongTrinh, ketqua);
+            }
+            else if ((cbbTimKiem.Text == "Theo học phí"))
+            {
+                ketqua = dsct.TimKiemTheoHocPhi(float.Parse(txtTimKiem.Text));
+                HienThi(dgvChuongTrinh, ketqua);
+            }
+            else
+            {
+                ketqua = dsct.TimKiemTheoDoiTuong(txtTimKiem.Text);
+                HienThi(dgvChuongTrinh, ketqua);
             }
         }
     }

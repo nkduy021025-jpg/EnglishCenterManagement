@@ -110,20 +110,6 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lưu file thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
           }
         }
-
-        private void btnDocFileTB_Click(object sender, EventArgs e)
-        {
-            if(dsThietBi.DocFile("DanhSachThietBi.dat"))
-            {
-                MessageBox.Show("Đọc file thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThi(dgvDanhSachThietBi, dsThietBi.DSThietBi);
-            }
-            else
-            {
-                MessageBox.Show("Đọc file thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btnTimTB_Click(object sender, EventArgs e)
         {
             ThietBi ketQua;
@@ -142,6 +128,19 @@ namespace EnglishCenterManagement
             }
             List<ThietBi> dsKetQua = dsThietBi.TimTheoTenTB(txtTenThietBi.Text);
             HienThi(dgvDanhSachThietBi, dsKetQua);
+        }
+
+        private void UC_ThietBi_Load(object sender, EventArgs e)
+        {
+            bool kiemtradoc = dsThietBi.DocFile("DanhSachThietBi.dat");
+            if (kiemtradoc)
+            {
+                HienThi(dgvDanhSachThietBi, dsThietBi.DSThietBi);
+            }
+            else 
+            {
+                MessageBox.Show("Lỗi không thể xem danh sách thiết bị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

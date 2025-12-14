@@ -13,7 +13,7 @@ namespace EnglishCenterManagement
     public partial class UC_GiaoVien : UserControl
     {
         private DanhSachGiaoVien dsGiaoVien = new DanhSachGiaoVien();
-        private int viTri = 0;
+        private int viTri = -1;
         public UC_GiaoVien()
         {
             InitializeComponent();
@@ -158,20 +158,6 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lỗi không lưu được file giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnDocFileGV_Click(object sender, EventArgs e)
-        {
-            if(dsGiaoVien.DocFileGV("DanhSachGiaoVien.dat")==true)
-            {
-                MessageBox.Show("Đã đọc file giáo viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThi(dgvDanhSachGiaoVien, dsGiaoVien.DSGiaoVien);
-            }
-            else
-            {
-                MessageBox.Show("Lỗi không đọc được file giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btnTimTheoTen_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtHoTenGV.Text))
@@ -213,6 +199,19 @@ namespace EnglishCenterManagement
             List<GiaoVien> ketQua = dsGiaoVien.TimTheoGioiTinh(gioiTinh);
 
             HienThi(dgvDanhSachGiaoVien, ketQua);
+        }
+
+        private void UC_GiaoVien_Load(object sender, EventArgs e)
+        {
+            bool kiemtradoc = dsGiaoVien.DocFileGV("DanhSachGiaoVien.dat");
+            if (kiemtradoc)
+            {
+                HienThi(dgvDanhSachGiaoVien, dsGiaoVien.DSGiaoVien);
+            }
+            else
+            {
+                MessageBox.Show("Lỗi không thể xem danh sách giáo viên!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

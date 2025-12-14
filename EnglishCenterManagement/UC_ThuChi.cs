@@ -115,20 +115,6 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lưu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void btnDocFilePhieuThuChi_Click(object sender, EventArgs e)
-        {
-            if (dsThuChi.DocFileThuChi("DanhSachThuChi.dat"))
-            {
-                MessageBox.Show("Đã đọc danh sách phiếu thu chi từ file!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThi(dgvDanhSachThuChi, dsThuChi.DSThuChi);
-            }
-            else
-            {
-                MessageBox.Show("Đọc thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btnTimPhieuThuChi_Click(object sender, EventArgs e)
         {
             ThuChi ketQua;
@@ -136,6 +122,19 @@ namespace EnglishCenterManagement
             List<ThuChi> dsKetQua = new List<ThuChi>();
             dsKetQua.Add(ketQua);
             HienThi(dgvDanhSachThuChi, dsKetQua);
+        }
+
+        private void UC_ThuChi_Load(object sender, EventArgs e)
+        {
+            bool kiemtradoc = dsThuChi.DocFileThuChi("DanhSachThuChi.dat");
+            if (kiemtradoc) 
+            {
+                HienThi(dgvDanhSachThuChi, dsThuChi.DSThuChi);
+            }
+            else
+            {
+                MessageBox.Show("Lỗi không thể xem danh sách thu chi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

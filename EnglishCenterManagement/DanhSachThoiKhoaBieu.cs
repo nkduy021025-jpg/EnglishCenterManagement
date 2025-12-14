@@ -68,6 +68,40 @@ namespace EnglishCenterManagement
                 }
             }return timkiem;
         }
+        public List <ThoiKhoaBieu> KiemTheoMaCT (string ma)
+        {
+            List <ThoiKhoaBieu> timkiem = new List<ThoiKhoaBieu> ();
+            foreach (ThoiKhoaBieu tkb in dsTKB)
+            {
+                if (tkb.MaChuongTrinhHoc.Equals(ma))
+                {
+                    timkiem.Add(tkb);
+                }
+            }return timkiem;
+        }
+        public List<ThoiKhoaBieu> KiemTheoPhongHoc(string PhongHoc) 
+        {
+            List<ThoiKhoaBieu> timkiem = new List<ThoiKhoaBieu>();
+            foreach (ThoiKhoaBieu tkb in dsTKB)
+            {
+                if (tkb.PhongHoc.Equals(PhongHoc))
+                {
+                    timkiem.Add(tkb);
+                }
+            }return timkiem;
+        }
+        public List<ThoiKhoaBieu> KiemTheoCaHoc(string caHoc) 
+        {
+            List<ThoiKhoaBieu> timkiem = new List<ThoiKhoaBieu>();
+            foreach (ThoiKhoaBieu tkb in dsTKB)
+            {
+                if (tkb.CaHoc.Equals(caHoc))
+                {
+                    timkiem.Add(tkb);
+                }
+            }return timkiem;
+        }
+
         public bool GhiFile (string tenFile)
         {
             try

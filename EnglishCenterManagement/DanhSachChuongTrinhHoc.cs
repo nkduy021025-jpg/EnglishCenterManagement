@@ -64,6 +64,39 @@ namespace EnglishCenterManagement
                 }
             }return chuongtrinh;
         }
+        public List<ChuongTrinhHoc> TimKiemTheoTenCT(string ten)
+        {
+            List<ChuongTrinhHoc> timkiem = new List<ChuongTrinhHoc>();
+            foreach (ChuongTrinhHoc cth in ctrinhHoc)
+            {
+                if (cth.TenChuongTrinh.Equals(ten)) 
+                {
+                    timkiem.Add(cth);
+                }
+            }return timkiem;
+        }
+        public List<ChuongTrinhHoc> TimKiemTheoHocPhi(float HocPhi)
+        {
+            List<ChuongTrinhHoc> timkiem = new List<ChuongTrinhHoc>();
+            foreach (ChuongTrinhHoc cth in ctrinhHoc)
+            {
+                if (cth.HocPhi.Equals(HocPhi))
+                {
+                    timkiem.Add(cth );
+                }
+            }return timkiem;
+        }
+        public List<ChuongTrinhHoc> TimKiemTheoDoiTuong (string DoiTuong)
+        {
+            List<ChuongTrinhHoc> timkiem = new List<ChuongTrinhHoc> ();
+            foreach (ChuongTrinhHoc cth in ctrinhHoc)
+            {
+                if (cth.DoiTuongHoc.Equals(DoiTuong))
+                {
+                    timkiem.Add(cth);
+                }
+            }return timkiem;
+        }
         public bool ghiFileCT(string tenFile)
         {
             try

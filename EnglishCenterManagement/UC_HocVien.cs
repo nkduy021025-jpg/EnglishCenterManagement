@@ -138,18 +138,6 @@ namespace EnglishCenterManagement
             dsKetQua.Add(ketQua);
             HienThiDanhSach(dgvDanhSachHocVien, dsKetQua);
         }
-        private void btnDocHV_Click(object sender, EventArgs e)
-        {
-            if(danhSachHocVien.DocFile("DanhSachHocVien.dat"))
-            {
-                MessageBox.Show("Đã đọc danh sách học viên từ file!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
-            }
-            else
-            {
-                MessageBox.Show("Đọc thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void btnLuuHV_Click(object sender, EventArgs e)
         {
             if(danhSachHocVien.GhiFile("DanhSachHocVien.dat"))
@@ -191,6 +179,19 @@ namespace EnglishCenterManagement
             List<HocVien> ketQua = danhSachHocVien.TimTheoGioiTinh(gioiTinh);
 
             HienThiDanhSach(dgvDanhSachHocVien, ketQua);
+        }
+
+        private void UC_HocVien_Load(object sender, EventArgs e)
+        {
+            bool kiemtradoc = danhSachHocVien.DocFile("DanhSachHocVien.dat");
+            if (kiemtradoc) 
+            {
+                HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
+            }
+            else
+            {
+                MessageBox.Show("Lỗi không thể xem danh sách học viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
