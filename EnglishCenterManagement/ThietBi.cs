@@ -55,5 +55,10 @@ namespace EnglishCenterManagement
             this.NgayNhap = ngayNhap;
             this.GiaTien = giaTien;
         }
+        public string TachTen()
+        {
+            string[] parts=tenTB.Trim().Split(' ');
+            return parts[parts.Length - 1];
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EnglishCenterManagement
 {
@@ -91,6 +92,18 @@ namespace EnglishCenterManagement
                     return tb;
             }
             return null;
+        }
+        public List<ThietBi> TimTheoTenTB(string ten)
+        {
+            List<ThietBi> ketQua = new List<ThietBi>();
+            foreach(ThietBi tb in this.dsThietBi)
+            {
+                if(tb.TachTen().Equals(ten))
+                {
+                    ketQua.Add(tb);
+                }
+            }
+            return ketQua;
         }
     }
 }

@@ -133,6 +133,15 @@ namespace EnglishCenterManagement
             HienThi(dgvDanhSachThietBi, dsKetQua);
         }
 
-     
+        private void bthTimThietBiTheoTen_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty( txtTenThietBi.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên thiết bị để tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            List<ThietBi> dsKetQua = dsThietBi.TimTheoTenTB(txtTenThietBi.Text);
+            HienThi(dgvDanhSachThietBi, dsKetQua);
+        }
     }
 }
