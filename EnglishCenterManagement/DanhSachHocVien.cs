@@ -83,14 +83,17 @@ namespace EnglishCenterManagement
                 return false;
             }
         }
-        public HocVien TimKiemHocVien(string maHV)
+        public List<HocVien> TimKiemHocVien(string maHV)
         {
+            List<HocVien> timkiem = new List<HocVien>();
             foreach(HocVien hv in this.dsHocVien)
             {
                 if (hv.maHV.Equals(maHV))
-                    return hv;
+                {
+                    timkiem.Add(hv);
+                }
             }
-            return null;
+            return timkiem;
         }
         public List<HocVien> TimKiemTheoTen(string ten)
         {

@@ -5,6 +5,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace EnglishCenterManagement
 {
@@ -54,14 +55,38 @@ namespace EnglishCenterManagement
             DSThuChi[viTri] = tc;
             return true;
         }
-        public ThuChi TimPhieuThuChi(string ma)
+        public List<ThuChi> TimKiemTheoMa(string ma)
         {
+            List<ThuChi> TimKiem = new List<ThuChi>();          
             foreach(ThuChi tc in DSThuChi)
             {
                 if (tc.maThuChi.Equals(ma))
-                    return tc;
+                    TimKiem.Add(tc);
+                    
             }
-            return null;
+            return TimKiem;
+        }
+        public List<ThuChi> TimKiemTheoSoTien (float sotien)
+        {
+            List<ThuChi> TimKiem = new List<ThuChi> ();     
+            foreach (ThuChi tc in dsThuChi)
+            {
+                if (tc.soTien.Equals(sotien))
+                {
+                    TimKiem.Add(tc);
+                }
+            }return TimKiem;
+        }
+        public List<ThuChi> TimTheoThoiGian (DateTime thoigian)
+        {
+            List<ThuChi> TimKiem = new List<ThuChi>();
+            foreach (ThuChi thuChi in dsThuChi)
+            {
+                if (thuChi.ngayThuChi.Equals(thoigian))
+                {
+                    TimKiem.Add(thuChi);
+                }
+            }return TimKiem;
         }
         public bool DocFileThuChi(string tenFile)
         {
@@ -69,14 +94,26 @@ namespace EnglishCenterManagement
             {
                 FileStream fs = new FileStream(tenFile,FileMode.Open);
                 BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(fs, DSThuChi);
+                DSThuChi = (List<ThuChi>)bf.Deserialize(fs);
                 fs.Close();
                 return true;
             }
-            catch
+            catch (Exception ex )
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
+        }
+        public double TongThuChiThang (string thuchi ,int thang)
+        {
+            double tong=0;
+            foreach (ThuChi tc in dsThuChi) 
+            {
+                if ( tc.luaChonThuChi.Equals(thuchi) && tc.ngayThuChi.Month.Equals(thang))
+                {
+                    tong += tc.soTien;
+                }
+            }return tong;
         }
         public bool GhiFileThuChi(string tenFile)
         {
@@ -84,12 +121,14 @@ namespace EnglishCenterManagement
             {
                 FileStream fs = new FileStream(tenFile, FileMode.Create);
                 BinaryFormatter bf = new BinaryFormatter();
-                DSThuChi = (List<ThuChi>)bf.Deserialize(fs);
+                
+                bf.Serialize(fs, DSThuChi);
                 fs.Close();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex )
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }

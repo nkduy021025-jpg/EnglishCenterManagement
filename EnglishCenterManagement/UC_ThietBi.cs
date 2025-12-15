@@ -65,6 +65,7 @@ namespace EnglishCenterManagement
         {
             viTri= e.RowIndex;
             ThietBi tb = new ThietBi();
+            tb = dsThietBi.DSThietBi[viTri];
             txtMaThietBi.Text = tb.maTB;
             txtTenThietBi.Text = tb.tenTB;
             cbbTinhTrang.Text = tb.tinhTrang;
@@ -112,23 +113,34 @@ namespace EnglishCenterManagement
         }
         private void btnTimTB_Click(object sender, EventArgs e)
         {
-            ThietBi ketQua;
-            ketQua = dsThietBi.TimKiemThietBi(txtMaThietBi.Text);
-            List<ThietBi> dsKetQua = new List<ThietBi>();
-            dsKetQua.Add(ketQua);
-            HienThi(dgvDanhSachThietBi, dsKetQua);
-        }
-
-        private void bthTimThietBiTheoTen_Click(object sender, EventArgs e)
-        {
-            if(string.IsNullOrEmpty( txtTenThietBi.Text))
+            List<ThietBi> ketqua = new List<ThietBi>();
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text) || string.IsNullOrWhiteSpace(cbbTimKiem.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên thiết bị để tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            List<ThietBi> dsKetQua = dsThietBi.TimTheoTenTB(txtTenThietBi.Text);
-            HienThi(dgvDanhSachThietBi, dsKetQua);
+            if (cbbTimKiem.Text =="Tìm theo mã")
+            {
+                ketqua = dsThietBi.TimKiemThietBi(txtTimKiem.Text);
+                HienThi(dgvDanhSachThietBi,ketqua);
+            }
+            else
+            {
+                ketqua = dsThietBi.TimTheoTenTB(txtTimKiem.Text);
+                HienThi(dgvDanhSachThietBi, ketqua);
+            }
         }
+
+        //private void bthTimThietBiTheoTen_Click(object sender, EventArgs e)
+        //{
+        //    if(string.IsNullOrEmpty( txtTenThietBi.Text))
+        //    {
+        //        MessageBox.Show("Vui lòng nhập tên thiết bị để tìm kiếm.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //        return;
+        //    }
+        //    List<ThietBi> dsKetQua = dsThietBi.TimTheoTenTB(txtTenThietBi.Text);
+        //    HienThi(dgvDanhSachThietBi, dsKetQua);
+        //}
 
         private void UC_ThietBi_Load(object sender, EventArgs e)
         {
@@ -141,6 +153,11 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Lỗi không thể xem danh sách thiết bị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            HienThi(dgvDanhSachThietBi,dsThietBi.DSThietBi);        
         }
     }
 }

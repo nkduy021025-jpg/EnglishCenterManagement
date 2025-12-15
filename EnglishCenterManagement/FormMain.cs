@@ -63,5 +63,10 @@ namespace EnglishCenterManagement
             UC_ChuongTrinhHoc ucCTH = new UC_ChuongTrinhHoc();
             AddUserControl(ucCTH);
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

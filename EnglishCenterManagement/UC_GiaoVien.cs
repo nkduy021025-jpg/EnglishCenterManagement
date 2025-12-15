@@ -133,20 +133,6 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Không xóa!", "Lựa chọn", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void btnTimGV_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtMaGV.Text))
-            {
-                MessageBox.Show("Vui lòng chọn giáo viên cần tìm từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            GiaoVien gv = dsGiaoVien.TimKiemGV(txtMaGV.Text);
-            List<GiaoVien> ketQua = new List<GiaoVien>();
-            ketQua.Add(gv);
-            HienThi(dgvDanhSachGiaoVien, ketQua);
-        }
-
         private void btnLuuGV_Click(object sender, EventArgs e)
         {
             if (dsGiaoVien.GhiFileGV("DanhSachGiaoVien.dat") == true)
@@ -158,48 +144,77 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lỗi không lưu được file giáo viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void btnTimTheoTen_Click(object sender, EventArgs e)
+        private void btnTimGV_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtHoTenGV.Text))
+            List<GiaoVien> ketqua = new List<GiaoVien>();
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text) || string.IsNullOrWhiteSpace(cbbTimKiem.Text))
             {
-                MessageBox.Show("Vui lòng nhập tên giáo viên cần tìm từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            List<GiaoVien> ketqua;
-            ketqua=dsGiaoVien.TimKiemTheoTen(txtHoTenGV.Text);
-            HienThi(dgvDanhSachGiaoVien, ketqua);
-        }
-
-        private void btnTimTheoThamNien_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(cbbThamNien.Text))
+            if (cbbTimKiem.Text == "Tìm theo mã")
             {
-                MessageBox.Show("Vui lòng nhập thâm niên giáo viên cần tìm !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                ketqua = dsGiaoVien.TimKiemGV(txtTimKiem.Text);
+                HienThi(dgvDanhSachGiaoVien, ketqua);
             }
-            List<GiaoVien> ketQua;
-            ketQua = dsGiaoVien.TimTheoThamNien(int.Parse(cbbThamNien.Text));
-            HienThi(dgvDanhSachGiaoVien,ketQua);
-        }
-
-        private void btnTimTheoGioiTinh_Click(object sender, EventArgs e)
-        {
-            string gioiTinh = "";
-
-            if (radNamGV.Checked == true)
-                gioiTinh = "Nam";
-            else if (radNuGV.Checked == true)
-                gioiTinh = "Nữ";
+            else if (cbbTimKiem.Text == "Tìm theo tên")
+            {
+                ketqua = dsGiaoVien.TimKiemTheoTen(txtTimKiem.Text);
+                HienThi(dgvDanhSachGiaoVien, ketqua);
+            }
+            else if (cbbTimKiem.Text == "Tìm theo thâm niên")
+            {
+                ketqua = dsGiaoVien.TimTheoThamNien(int.Parse(txtTimKiem.Text));
+                HienThi(dgvDanhSachGiaoVien, ketqua);
+            }
             else
             {
-                MessageBox.Show("Vui lòng chọn giới tính cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                ketqua = dsGiaoVien.TimTheoGioiTinh(radNamGV.Text);
+                HienThi(dgvDanhSachGiaoVien, ketqua);
             }
-
-            List<GiaoVien> ketQua = dsGiaoVien.TimTheoGioiTinh(gioiTinh);
-
-            HienThi(dgvDanhSachGiaoVien, ketQua);
         }
+        //private void btnTimTheoTen_Click(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(txtHoTenGV.Text))
+        //    {
+        //        MessageBox.Show("Vui lòng nhập tên giáo viên cần tìm từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
+        //    List<GiaoVien> ketqua;
+        //    ketqua=dsGiaoVien.TimKiemTheoTen(txtHoTenGV.Text);
+        //    HienThi(dgvDanhSachGiaoVien, ketqua);
+        //}
+
+        //private void btnTimTheoThamNien_Click(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(cbbThamNien.Text))
+        //    {
+        //        MessageBox.Show("Vui lòng nhập thâm niên giáo viên cần tìm !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
+        //    List<GiaoVien> ketQua;
+        //    ketQua = dsGiaoVien.TimTheoThamNien(int.Parse(cbbThamNien.Text));
+        //    HienThi(dgvDanhSachGiaoVien,ketQua);
+        //}
+
+        //private void btnTimTheoGioiTinh_Click(object sender, EventArgs e)
+        //{
+        //    string gioiTinh = "";
+
+        //    if (radNamGV.Checked == true)
+        //        gioiTinh = "Nam";
+        //    else if (radNuGV.Checked == true)
+        //        gioiTinh = "Nữ";
+        //    else
+        //    {
+        //        MessageBox.Show("Vui lòng chọn giới tính cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
+
+        //    List<GiaoVien> ketQua = dsGiaoVien.TimTheoGioiTinh(gioiTinh);
+
+        //    HienThi(dgvDanhSachGiaoVien, ketQua);
+        //}
 
         private void UC_GiaoVien_Load(object sender, EventArgs e)
         {
@@ -212,6 +227,11 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Lỗi không thể xem danh sách giáo viên!","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            HienThi(dgvDanhSachGiaoVien, dsGiaoVien.DSGiaoVien);
         }
     }
 }

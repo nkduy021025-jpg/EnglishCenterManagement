@@ -103,7 +103,6 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Lỗi không sửa được");
             }
         }
-
         private void btnLuuPhieuThuChi_Click(object sender, EventArgs e)
         {
             if (dsThuChi.GhiFileThuChi("DanhSachThuChi.dat"))
@@ -117,11 +116,26 @@ namespace EnglishCenterManagement
         }
         private void btnTimPhieuThuChi_Click(object sender, EventArgs e)
         {
-            ThuChi ketQua;
-            ketQua = dsThuChi.TimPhieuThuChi(txtMaPhieu.Text);
-            List<ThuChi> dsKetQua = new List<ThuChi>();
-            dsKetQua.Add(ketQua);
-            HienThi(dgvDanhSachThuChi, dsKetQua);
+            List<ThuChi> KetQua = new List<ThuChi>();
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text) || string.IsNullOrWhiteSpace(cbbLuaChonTimKiem.Text))
+            {
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if ( txtTimKiem.Text == "Tìm theo mã phiếu")
+            {
+                KetQua = dsThuChi.TimKiemTheoMa(txtTimKiem.Text);
+                HienThi(dgvDanhSachThuChi, KetQua);
+            }
+            else if (txtTimKiem.Text == "Tìm theo số tiền")
+            {
+                KetQua = dsThuChi.TimKiemTheoSoTien(float.Parse(txtTimKiem.Text));
+                HienThi(dgvDanhSachThuChi, KetQua);
+            }
+            else
+            {
+                KetQua = dsThuChi.TimTheoThoiGian(DateTime.Parse(txtTimKiem.Text));
+            }
         }
 
         private void UC_ThuChi_Load(object sender, EventArgs e)
@@ -135,6 +149,25 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Lỗi không thể xem danh sách thu chi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnTinhDoanhThu_Click(object sender, EventArgs e)
+        {
+            double tong = dsThuChi.TongThuChiThang (cbbThuChiTheoThang.Text,int.Parse(txtThangThuChi.Text));
+            if (cbbThuChiTheoThang.Text.Equals("Thu"))
+            { 
+                txtKetQuaThuChi.Text = "Số tiền đã thu là " + tong.ToString();
+            }
+            else
+            {
+                txtKetQuaThuChi.Text = "Số tiền đã chi là " + tong.ToString();
+            }
+
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            HienThi(dgvDanhSachThuChi, dsThuChi.DSThuChi);
         }
     }
 }

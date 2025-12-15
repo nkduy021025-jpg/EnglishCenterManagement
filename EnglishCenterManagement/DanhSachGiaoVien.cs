@@ -89,14 +89,15 @@ namespace EnglishCenterManagement
                 return false;
             }
         }
-        public GiaoVien TimKiemGV(string ma)
+        public List<GiaoVien> TimKiemGV(string ma)
         {
+            List<GiaoVien> timkiem = new List<GiaoVien>();
             foreach(GiaoVien gv in this.dsGiaoVien)
             {
                 if (gv.maGV.Equals(ma))
-                    return gv;
+                    timkiem.Add(gv);
             }
-            return null;
+            return timkiem;
         }
         public List<GiaoVien> TimKiemTheoTen(string ten)
         {

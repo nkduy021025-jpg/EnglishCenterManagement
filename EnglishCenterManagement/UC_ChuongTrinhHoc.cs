@@ -131,6 +131,11 @@ namespace EnglishCenterManagement
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             List<ChuongTrinhHoc> ketqua = new List<ChuongTrinhHoc> ();
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text)  || string.IsNullOrWhiteSpace(cbbTimKiem.Text)  )
+            {
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!" ,"Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             if (cbbTimKiem.Text =="Theo mã chương trình")
             {
                 ketqua = dsct.TimKiemTheoMa(txtTimKiem.Text);
@@ -152,5 +157,12 @@ namespace EnglishCenterManagement
                 HienThi(dgvChuongTrinh, ketqua);
             }
         }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            HienThi(dgvChuongTrinh, dsct.CTrinhHoc);
+        }
+
+      
     }
 }

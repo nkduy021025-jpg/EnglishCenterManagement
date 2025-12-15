@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -150,6 +151,11 @@ namespace EnglishCenterManagement
         private void btnTimTKB_Click(object sender, EventArgs e)
         {
             List<ThoiKhoaBieu> ketqua = new List<ThoiKhoaBieu>();
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text) || string.IsNullOrWhiteSpace(cbbChonTimKiemTKB.Text))
+            {
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (cbbChonTimKiemTKB.Text == "Theo mã thời khóa biểu")
             {
                 ketqua = DMTKB.KiemTheoMa(txtTimKiem.Text);
@@ -173,6 +179,9 @@ namespace EnglishCenterManagement
             }
         }
 
-
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            HienThi(dgvTKB, DMTKB.DSTKB);
+        }
     }
 }

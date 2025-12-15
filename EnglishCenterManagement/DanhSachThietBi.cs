@@ -84,19 +84,20 @@ namespace EnglishCenterManagement
                 return false;
             }
         }
-        public ThietBi TimKiemThietBi(string maTB)
+        public List<ThietBi> TimKiemThietBi(string ma)
         {
-            foreach (ThietBi tb in this.dsThietBi)
+            List<ThietBi> timkiem = new List<ThietBi>();
+            foreach (ThietBi tb in dsThietBi)
             {
-                if (tb.maTB.Equals(maTB))
-                    return tb;
+                if (tb.maTB.Equals(ma))
+                    timkiem.Add(tb);
             }
-            return null;
+            return timkiem;
         }
         public List<ThietBi> TimTheoTenTB(string ten)
         {
             List<ThietBi> ketQua = new List<ThietBi>();
-            foreach(ThietBi tb in this.dsThietBi)
+            foreach(ThietBi tb in dsThietBi)
             {
                 if(tb.TachTen().Equals(ten))
                 {

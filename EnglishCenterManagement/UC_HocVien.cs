@@ -132,11 +132,27 @@ namespace EnglishCenterManagement
         }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            HocVien ketQua;
-            ketQua = danhSachHocVien.TimKiemHocVien(txtMaHV.Text);
-            List<HocVien> dsKetQua = new List<HocVien>();
-            dsKetQua.Add(ketQua);
-            HienThiDanhSach(dgvDanhSachHocVien, dsKetQua);
+            List<HocVien> ketqua = new List<HocVien>();
+            if (string.IsNullOrWhiteSpace(txtTimKiem.Text) || string.IsNullOrWhiteSpace(cbbTimKiem.Text))
+            {
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtTimKiem.Text == "Tìm theo tên")
+            {
+                ketqua = danhSachHocVien.TimKiemTheoTen(txtTimKiem.Text);
+                HienThiDanhSach(dgvDanhSachHocVien, ketqua);
+            }
+            else if (txtTimKiem.Text =="Tìm theo mã")
+            {
+                ketqua = danhSachHocVien.TimKiemHocVien(txtTimKiem.Text);
+                HienThiDanhSach(dgvDanhSachHocVien, ketqua);
+            }
+            else
+            {
+                ketqua = danhSachHocVien.TimTheoGioiTinh(txtTimKiem.Text);
+                HienThiDanhSach (dgvDanhSachHocVien, ketqua);
+            }
         }
         private void btnLuuHV_Click(object sender, EventArgs e)
         {
@@ -150,36 +166,36 @@ namespace EnglishCenterManagement
             }
         }
 
-        private void btnTimTheoTen_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtHoTen.Text))
-            {
-                MessageBox.Show("Vui lòng nhập tên học viên cần tìm từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            List<HocVien> ketqua;
-            ketqua = danhSachHocVien.TimKiemTheoTen(txtHoTen.Text);
-            HienThiDanhSach(dgvDanhSachHocVien, ketqua);
-        }
+        //private void btnTimTheoTen_Click(object sender, EventArgs e)
+        //{
+        //    if (string.IsNullOrEmpty(txtHoTen.Text))
+        //    {
+        //        MessageBox.Show("Vui lòng nhập tên học viên cần tìm từ bảng danh sách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
+        //    List<HocVien> ketqua;
+        //    ketqua = danhSachHocVien.TimKiemTheoTen(txtHoTen.Text);
+        //    HienThiDanhSach(dgvDanhSachHocVien, ketqua);
+        //}
 
-        private void btnTimTheoGioiTinh_Click(object sender, EventArgs e)
-        {
-            string gioiTinh = "";
+        //private void btnTimTheoGioiTinh_Click(object sender, EventArgs e)
+        //{
+        //    string gioiTinh = "";
 
-            if (radNam.Checked == true)
-                gioiTinh = "Nam";
-            else if (radNu.Checked == true)
-                gioiTinh = "Nữ";
-            else
-            {
-                MessageBox.Show("Vui lòng chọn giới tính cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+        //    if (radNam.Checked == true)
+        //        gioiTinh = "Nam";
+        //    else if (radNu.Checked == true)
+        //        gioiTinh = "Nữ";
+        //    else
+        //    {
+        //        MessageBox.Show("Vui lòng chọn giới tính cần tìm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //        return;
+        //    }
 
-            List<HocVien> ketQua = danhSachHocVien.TimTheoGioiTinh(gioiTinh);
+        //    List<HocVien> ketQua = danhSachHocVien.TimTheoGioiTinh(gioiTinh);
 
-            HienThiDanhSach(dgvDanhSachHocVien, ketQua);
-        }
+        //    HienThiDanhSach(dgvDanhSachHocVien, ketQua);
+        //}
 
         private void UC_HocVien_Load(object sender, EventArgs e)
         {
@@ -192,6 +208,11 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Lỗi không thể xem danh sách học viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
         }
     }
 }
