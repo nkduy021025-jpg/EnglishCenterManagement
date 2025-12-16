@@ -64,7 +64,8 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Vui lòng chọn thời khóa biểu để xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error );
             }
-            DialogResult ketqua = MessageBox.Show("Bạn có chắc muốn xóa thời khóa biểu này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult ketqua = MessageBox.Show("Bạn có chắc muốn xóa thời khóa biểu này không?", "Thông báo", MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Warning);
             if (ketqua == DialogResult.Yes)
             {
                 DMTKB.XoaTKB(vitri);    
@@ -171,7 +172,7 @@ namespace EnglishCenterManagement
                 ketqua = DMTKB.KiemTheoPhongHoc(txtTimKiem.Text);
                 HienThi(dgvTKB, ketqua);
             }
-            else
+            else if (cbbChonTimKiemTKB.Text == "Theo ca học")
             {
                 ketqua = DMTKB.KiemTheoCaHoc(txtTimKiem.Text);
                 HienThi(dgvTKB, ketqua);

@@ -71,8 +71,8 @@
             this.lblMaTKB = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.grpChucNang = new System.Windows.Forms.GroupBox();
-            this.cbbTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.cbbTimKiem = new System.Windows.Forms.ComboBox();
             this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocVien)).BeginInit();
             this.gbGioTinh.SuspendLayout();
@@ -287,7 +287,7 @@
             this.radNu.Location = new System.Drawing.Point(80, 21);
             this.radNu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNu.Name = "radNu";
-            this.radNu.Size = new System.Drawing.Size(42, 20);
+            this.radNu.Size = new System.Drawing.Size(45, 20);
             this.radNu.TabIndex = 1;
             this.radNu.TabStop = true;
             this.radNu.Text = "Nữ";
@@ -299,7 +299,7 @@
             this.radNam.Location = new System.Drawing.Point(5, 21);
             this.radNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNam.Name = "radNam";
-            this.radNam.Size = new System.Drawing.Size(54, 20);
+            this.radNam.Size = new System.Drawing.Size(57, 20);
             this.radNam.TabIndex = 0;
             this.radNam.TabStop = true;
             this.radNam.Text = "Nam";
@@ -461,7 +461,7 @@
             this.label2.ForeColor = System.Drawing.Color.DarkCyan;
             this.label2.Location = new System.Drawing.Point(371, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(233, 31);
+            this.label2.Size = new System.Drawing.Size(293, 39);
             this.label2.TabIndex = 61;
             this.label2.Text = "Quản Lý Học Viên";
             // 
@@ -473,7 +473,7 @@
             this.lblTenTT.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblTenTT.Location = new System.Drawing.Point(177, 9);
             this.lblTenTT.Name = "lblTenTT";
-            this.lblTenTT.Size = new System.Drawing.Size(587, 46);
+            this.lblTenTT.Size = new System.Drawing.Size(729, 58);
             this.lblTenTT.TabIndex = 60;
             this.lblTenTT.Text = "ENGLISH CENTER DOUBLE D";
             // 
@@ -499,7 +499,7 @@
             "CA3CHAN",
             "CA4CHAN"});
             this.comboBox1.Location = new System.Drawing.Point(543, 338);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(225, 24);
             this.comboBox1.TabIndex = 90;
@@ -520,6 +520,13 @@
             this.grpChucNang.TabStop = false;
             this.grpChucNang.Text = "Chức năng";
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(17, 259);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(183, 22);
+            this.txtTimKiem.TabIndex = 87;
+            // 
             // cbbTimKiem
             // 
             this.cbbTimKiem.FormattingEnabled = true;
@@ -531,13 +538,6 @@
             this.cbbTimKiem.Name = "cbbTimKiem";
             this.cbbTimKiem.Size = new System.Drawing.Size(91, 24);
             this.cbbTimKiem.TabIndex = 86;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(17, 259);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(183, 22);
-            this.txtTimKiem.TabIndex = 87;
             // 
             // btnLoad
             // 
@@ -582,7 +582,7 @@
             this.Controls.Add(this.lblTenTT);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_HocVien";
-            this.Size = new System.Drawing.Size(1228, 629);
+            this.Size = new System.Drawing.Size(1168, 629);
             this.Load += new System.EventHandler(this.UC_HocVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocVien)).EndInit();
             this.gbGioTinh.ResumeLayout(false);

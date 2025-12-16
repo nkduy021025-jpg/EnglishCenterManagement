@@ -106,5 +106,15 @@ namespace EnglishCenterManagement
             }
             return ketQua;
         }
+        public List<ThietBi> TimTheoTinhTrang(string tinhTrang)
+        {
+            List<ThietBi> ketQua=new List<ThietBi>();
+            foreach(ThietBi tb in dsThietBi)
+            {
+                if(tb.tinhTrang.Equals(tinhTrang))
+                    ketQua.Add(tb);
+            }
+            return ketQua;
+        }
     }
 }

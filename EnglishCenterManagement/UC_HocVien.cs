@@ -115,7 +115,8 @@ namespace EnglishCenterManagement
         private void btnXoa_Click_1(object sender, EventArgs e)
         {
 
-            DialogResult ketQuaChon = MessageBox.Show("Bạn có chắc chắn muốn xóa học viên này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult ketQuaChon = MessageBox.Show("Bạn có chắc chắn muốn xóa học viên này không?", "Thông báo", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
             if (ketQuaChon == DialogResult.Yes)
             {
                 bool ketQuaXoa = danhSachHocVien.XoaHocVien(viTri);
@@ -135,7 +136,8 @@ namespace EnglishCenterManagement
             List<HocVien> ketqua = new List<HocVien>();
             if (string.IsNullOrWhiteSpace(txtTimKiem.Text) || string.IsNullOrWhiteSpace(cbbTimKiem.Text))
             {
-                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
             if (txtTimKiem.Text == "Tìm theo tên")
@@ -148,7 +150,7 @@ namespace EnglishCenterManagement
                 ketqua = danhSachHocVien.TimKiemHocVien(txtTimKiem.Text);
                 HienThiDanhSach(dgvDanhSachHocVien, ketqua);
             }
-            else
+            else if( txtTimKiem.Text =="Tìm theo giới tính")
             {
                 ketqua = danhSachHocVien.TimTheoGioiTinh(txtTimKiem.Text);
                 HienThiDanhSach (dgvDanhSachHocVien, ketqua);

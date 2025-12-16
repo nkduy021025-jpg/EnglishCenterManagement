@@ -45,7 +45,8 @@ namespace EnglishCenterManagement
 
         private void btnXoaTB_Click(object sender, EventArgs e)
         {
-            DialogResult chon = MessageBox.Show("Bạn có chắc chắn muốn xóa thiết bị này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult chon = MessageBox.Show("Bạn có chắc chắn muốn xóa thiết bị này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Question);
             if (chon == DialogResult.Yes)
             {
                 if (viTri >= 0 && viTri < dsThietBi.DSThietBi.Count)
@@ -116,7 +117,8 @@ namespace EnglishCenterManagement
             List<ThietBi> ketqua = new List<ThietBi>();
             if (string.IsNullOrWhiteSpace(txtTimKiem.Text) || string.IsNullOrWhiteSpace(cbbTimKiem.Text))
             {
-                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
             if (cbbTimKiem.Text =="Tìm theo mã")
@@ -124,9 +126,14 @@ namespace EnglishCenterManagement
                 ketqua = dsThietBi.TimKiemThietBi(txtTimKiem.Text);
                 HienThi(dgvDanhSachThietBi,ketqua);
             }
-            else
+            else if (cbbTimKiem.Text =="Tìm theo tên")
             {
                 ketqua = dsThietBi.TimTheoTenTB(txtTimKiem.Text);
+                HienThi(dgvDanhSachThietBi, ketqua);
+            }
+            else if (cbbTimKiem.Text =="Tìm theo tình trạng")
+            {
+                ketqua = dsThietBi.TimTheoTinhTrang(txtTimKiem.Text);
                 HienThi(dgvDanhSachThietBi, ketqua);
             }
         }

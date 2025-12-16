@@ -52,8 +52,8 @@
             this.lblQuanLyThietBi = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.grpChucNang = new System.Windows.Forms.GroupBox();
-            this.cbbTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.cbbTimKiem = new System.Windows.Forms.ComboBox();
             this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThietBi)).BeginInit();
             this.grpChucNang.SuspendLayout();
@@ -274,7 +274,7 @@
             this.lblQuanLyThietBi.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblQuanLyThietBi.Location = new System.Drawing.Point(403, 86);
             this.lblQuanLyThietBi.Name = "lblQuanLyThietBi";
-            this.lblQuanLyThietBi.Size = new System.Drawing.Size(215, 31);
+            this.lblQuanLyThietBi.Size = new System.Drawing.Size(270, 39);
             this.lblQuanLyThietBi.TabIndex = 81;
             this.lblQuanLyThietBi.Text = "Quản Lý Thiết Bị";
             // 
@@ -286,7 +286,7 @@
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label4.Location = new System.Drawing.Point(193, 18);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(587, 46);
+            this.label4.Size = new System.Drawing.Size(729, 58);
             this.label4.TabIndex = 80;
             this.label4.Text = "ENGLISH CENTER DOUBLE D";
             // 
@@ -306,23 +306,24 @@
             this.grpChucNang.TabStop = false;
             this.grpChucNang.Text = "Chức năng";
             // 
-            // cbbTimKiem
-            // 
-            this.cbbTimKiem.FormattingEnabled = true;
-            this.cbbTimKiem.Items.AddRange(new object[] {
-            "Tìm theo mã",
-            "Tìm theo tên"});
-            this.cbbTimKiem.Location = new System.Drawing.Point(114, 210);
-            this.cbbTimKiem.Name = "cbbTimKiem";
-            this.cbbTimKiem.Size = new System.Drawing.Size(81, 24);
-            this.cbbTimKiem.TabIndex = 98;
-            // 
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(15, 242);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(172, 22);
             this.txtTimKiem.TabIndex = 99;
+            // 
+            // cbbTimKiem
+            // 
+            this.cbbTimKiem.FormattingEnabled = true;
+            this.cbbTimKiem.Items.AddRange(new object[] {
+            "Tìm theo mã",
+            "Tìm theo tên",
+            "Tìm theo tình trạng"});
+            this.cbbTimKiem.Location = new System.Drawing.Point(114, 210);
+            this.cbbTimKiem.Name = "cbbTimKiem";
+            this.cbbTimKiem.Size = new System.Drawing.Size(81, 24);
+            this.cbbTimKiem.TabIndex = 98;
             // 
             // btnLoad
             // 
@@ -355,7 +356,7 @@
             this.Controls.Add(this.label4);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_ThietBi";
-            this.Size = new System.Drawing.Size(1175, 682);
+            this.Size = new System.Drawing.Size(1165, 679);
             this.Load += new System.EventHandler(this.UC_ThietBi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThietBi)).EndInit();
             this.grpChucNang.ResumeLayout(false);

@@ -142,7 +142,7 @@
             this.dgvTKB.Name = "dgvTKB";
             this.dgvTKB.RowHeadersWidth = 51;
             this.dgvTKB.RowTemplate.Height = 24;
-            this.dgvTKB.Size = new System.Drawing.Size(888, 220);
+            this.dgvTKB.Size = new System.Drawing.Size(930, 220);
             this.dgvTKB.TabIndex = 111;
             this.dgvTKB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTKB_CellClick);
             // 
@@ -150,50 +150,64 @@
             // 
             this.MaTKB.DataPropertyName = "MaThoiKhoaBieu";
             this.MaTKB.HeaderText = "Mã thời khóa biểu";
+            this.MaTKB.MinimumWidth = 6;
             this.MaTKB.Name = "MaTKB";
             this.MaTKB.ReadOnly = true;
+            this.MaTKB.Width = 125;
             // 
             // ThoiGianBDHoc
             // 
             this.ThoiGianBDHoc.DataPropertyName = "NgayBatDauHoc";
             this.ThoiGianBDHoc.HeaderText = "Thời gian bắt đầu học";
+            this.ThoiGianBDHoc.MinimumWidth = 6;
             this.ThoiGianBDHoc.Name = "ThoiGianBDHoc";
             this.ThoiGianBDHoc.ReadOnly = true;
+            this.ThoiGianBDHoc.Width = 125;
             // 
             // ThoiGianKT
             // 
             this.ThoiGianKT.DataPropertyName = "NgayKetThuc";
             this.ThoiGianKT.HeaderText = "Thời gian kết thúc";
+            this.ThoiGianKT.MinimumWidth = 6;
             this.ThoiGianKT.Name = "ThoiGianKT";
             this.ThoiGianKT.ReadOnly = true;
+            this.ThoiGianKT.Width = 125;
             // 
             // MaCTH
             // 
             this.MaCTH.DataPropertyName = "MaChuongTrinhHoc";
             this.MaCTH.HeaderText = "Mã chương trình học";
+            this.MaCTH.MinimumWidth = 6;
             this.MaCTH.Name = "MaCTH";
             this.MaCTH.ReadOnly = true;
+            this.MaCTH.Width = 125;
             // 
             // NgayHoc
             // 
             this.NgayHoc.DataPropertyName = "NgayHoc";
             this.NgayHoc.HeaderText = "Ngày học";
+            this.NgayHoc.MinimumWidth = 6;
             this.NgayHoc.Name = "NgayHoc";
             this.NgayHoc.ReadOnly = true;
+            this.NgayHoc.Width = 125;
             // 
             // CaHoc
             // 
             this.CaHoc.DataPropertyName = "CaHoc";
             this.CaHoc.HeaderText = "Ca học";
+            this.CaHoc.MinimumWidth = 6;
             this.CaHoc.Name = "CaHoc";
             this.CaHoc.ReadOnly = true;
+            this.CaHoc.Width = 125;
             // 
             // PhongHoc
             // 
             this.PhongHoc.DataPropertyName = "PhongHoc";
             this.PhongHoc.HeaderText = "Phòng học";
+            this.PhongHoc.MinimumWidth = 6;
             this.PhongHoc.Name = "PhongHoc";
             this.PhongHoc.ReadOnly = true;
+            this.PhongHoc.Width = 125;
             // 
             // txtMaTKB
             // 
@@ -255,7 +269,7 @@
             this.lblThoiKhoaBieu.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblThoiKhoaBieu.Location = new System.Drawing.Point(373, 80);
             this.lblThoiKhoaBieu.Name = "lblThoiKhoaBieu";
-            this.lblThoiKhoaBieu.Size = new System.Drawing.Size(191, 31);
+            this.lblThoiKhoaBieu.Size = new System.Drawing.Size(241, 39);
             this.lblThoiKhoaBieu.TabIndex = 100;
             this.lblThoiKhoaBieu.Text = "Thời khóa biểu";
             // 
@@ -267,14 +281,14 @@
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label4.Location = new System.Drawing.Point(164, 12);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(587, 46);
+            this.label4.Size = new System.Drawing.Size(729, 58);
             this.label4.TabIndex = 99;
             this.label4.Text = "ENGLISH CENTER DOUBLE D";
             // 
             // dtpTGBDH
             // 
             this.dtpTGBDH.Location = new System.Drawing.Point(163, 193);
-            this.dtpTGBDH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTGBDH.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTGBDH.Name = "dtpTGBDH";
             this.dtpTGBDH.Size = new System.Drawing.Size(231, 22);
             this.dtpTGBDH.TabIndex = 118;
@@ -282,7 +296,7 @@
             // dtpTGKT
             // 
             this.dtpTGKT.Location = new System.Drawing.Point(163, 245);
-            this.dtpTGKT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpTGKT.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTGKT.Name = "dtpTGKT";
             this.dtpTGKT.Size = new System.Drawing.Size(231, 22);
             this.dtpTGKT.TabIndex = 119;
@@ -295,7 +309,7 @@
             "Thứ 3, 5, 7",
             ""});
             this.cbbNgayHoc.Location = new System.Drawing.Point(528, 146);
-            this.cbbNgayHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbNgayHoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbbNgayHoc.Name = "cbbNgayHoc";
             this.cbbNgayHoc.Size = new System.Drawing.Size(232, 24);
             this.cbbNgayHoc.TabIndex = 120;
@@ -309,7 +323,7 @@
             "Ca 3 (17h30 - 19h30)",
             "Ca 4 (20h - 22h)"});
             this.cbbCaHoc.Location = new System.Drawing.Point(528, 197);
-            this.cbbCaHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbCaHoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbbCaHoc.Name = "cbbCaHoc";
             this.cbbCaHoc.Size = new System.Drawing.Size(232, 24);
             this.cbbCaHoc.TabIndex = 121;
@@ -333,7 +347,7 @@
             "PB.2",
             "PC.1"});
             this.cbbPhongHoc.Location = new System.Drawing.Point(528, 241);
-            this.cbbPhongHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbPhongHoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbbPhongHoc.Name = "cbbPhongHoc";
             this.cbbPhongHoc.Size = new System.Drawing.Size(232, 24);
             this.cbbPhongHoc.TabIndex = 123;
@@ -342,7 +356,7 @@
             // 
             this.cbbMaCTHoc.FormattingEnabled = true;
             this.cbbMaCTHoc.Location = new System.Drawing.Point(163, 297);
-            this.cbbMaCTHoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbMaCTHoc.Margin = new System.Windows.Forms.Padding(4);
             this.cbbMaCTHoc.Name = "cbbMaCTHoc";
             this.cbbMaCTHoc.Size = new System.Drawing.Size(224, 24);
             this.cbbMaCTHoc.TabIndex = 124;
@@ -366,9 +380,9 @@
             this.grpChucNang.Controls.Add(this.btnXoaTKB);
             this.grpChucNang.Controls.Add(this.btnThemTKB);
             this.grpChucNang.Location = new System.Drawing.Point(769, 80);
-            this.grpChucNang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpChucNang.Margin = new System.Windows.Forms.Padding(4);
             this.grpChucNang.Name = "grpChucNang";
-            this.grpChucNang.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpChucNang.Padding = new System.Windows.Forms.Padding(4);
             this.grpChucNang.Size = new System.Drawing.Size(266, 287);
             this.grpChucNang.TabIndex = 126;
             this.grpChucNang.TabStop = false;
@@ -377,7 +391,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(21, 245);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(137, 22);
             this.txtTimKiem.TabIndex = 118;
@@ -391,7 +405,7 @@
             "Theo phòng học",
             "Theo ca học"});
             this.cbbChonTimKiemTKB.Location = new System.Drawing.Point(134, 209);
-            this.cbbChonTimKiemTKB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbChonTimKiemTKB.Margin = new System.Windows.Forms.Padding(4);
             this.cbbChonTimKiemTKB.Name = "cbbChonTimKiemTKB";
             this.cbbChonTimKiemTKB.Size = new System.Drawing.Size(121, 24);
             this.cbbChonTimKiemTKB.TabIndex = 117;
@@ -429,7 +443,7 @@
             this.Controls.Add(this.lblMaThietBi);
             this.Controls.Add(this.lblThoiKhoaBieu);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_ThoiKhoaBieu";
             this.Size = new System.Drawing.Size(1141, 662);
             this.Load += new System.EventHandler(this.UC_ThoiKhoaBieu_Load);

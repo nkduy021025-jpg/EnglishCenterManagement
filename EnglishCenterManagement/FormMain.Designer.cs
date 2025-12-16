@@ -34,20 +34,20 @@
             this.btnGiaoVien = new System.Windows.Forms.Button();
             this.btnThietBi = new System.Windows.Forms.Button();
             this.grpChucNang = new System.Windows.Forms.GroupBox();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.btnChuongTrinhHoc = new System.Windows.Forms.Button();
             this.btnThuChi = new System.Windows.Forms.Button();
             this.btnThoiKhoaBieu = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.grpChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
             // pannelMEnu
             // 
             this.pannelMEnu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pannelMEnu.Location = new System.Drawing.Point(81, 0);
+            this.pannelMEnu.Location = new System.Drawing.Point(-314, 0);
             this.pannelMEnu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pannelMEnu.Name = "pannelMEnu";
-            this.pannelMEnu.Size = new System.Drawing.Size(1099, 624);
+            this.pannelMEnu.Size = new System.Drawing.Size(1099, 473);
             this.pannelMEnu.TabIndex = 0;
             // 
             // btnHocVien
@@ -105,6 +105,18 @@
             this.grpChucNang.TabStop = false;
             this.grpChucNang.Text = "Chức năng";
             // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnThoat.Location = new System.Drawing.Point(0, 419);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 49);
+            this.btnThoat.TabIndex = 7;
+            this.btnThoat.Text = "Thoát!";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // btnChuongTrinhHoc
             // 
             this.btnChuongTrinhHoc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -141,23 +153,11 @@
             this.btnThoiKhoaBieu.UseVisualStyleBackColor = false;
             this.btnThoiKhoaBieu.Click += new System.EventHandler(this.btnThoiKhoaBieu_Click);
             // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btnThoat.Location = new System.Drawing.Point(0, 419);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 49);
-            this.btnThoat.TabIndex = 7;
-            this.btnThoat.Text = "Thoát!";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1180, 624);
+            this.ClientSize = new System.Drawing.Size(785, 473);
             this.Controls.Add(this.grpChucNang);
             this.Controls.Add(this.pannelMEnu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

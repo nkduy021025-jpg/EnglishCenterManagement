@@ -36,7 +36,8 @@ namespace EnglishCenterManagement
             }
             else
             {
-                MessageBox.Show("Mã phiếu thu chi này đã tồn tại, vui lòng nhập 1 mã khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Mã phiếu thu chi này đã tồn tại, vui lòng nhập 1 mã khác!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
 
             }
         }
@@ -59,7 +60,8 @@ namespace EnglishCenterManagement
 
         private void btnXoaPhieuThuChi_Click(object sender, EventArgs e)
         {
-            DialogResult ketQuaChon = MessageBox.Show("Bạn có chắc chắn muốn xóa phiếu thu chi này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult ketQuaChon = MessageBox.Show("Bạn có chắc chắn muốn xóa phiếu thu chi này không?", "Thông báo", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
             if (ketQuaChon == DialogResult.Yes)
             {
                 bool ketQuaXoa = dsThuChi.XoaPhieuThuChi(viTri);
@@ -119,7 +121,8 @@ namespace EnglishCenterManagement
             List<ThuChi> KetQua = new List<ThuChi>();
             if (string.IsNullOrWhiteSpace(txtTimKiem.Text) || string.IsNullOrWhiteSpace(cbbLuaChonTimKiem.Text))
             {
-                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn chức năng hoặc nhập đầy đủ vào thanh tìm kiếm!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
             if ( txtTimKiem.Text == "Tìm theo mã phiếu")
@@ -132,7 +135,7 @@ namespace EnglishCenterManagement
                 KetQua = dsThuChi.TimKiemTheoSoTien(float.Parse(txtTimKiem.Text));
                 HienThi(dgvDanhSachThuChi, KetQua);
             }
-            else
+            else if (txtTimKiem.Text == "Tìm theo thời gian")
             {
                 KetQua = dsThuChi.TimTheoThoiGian(DateTime.Parse(txtTimKiem.Text));
             }

@@ -73,9 +73,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.lblCCCDGV = new System.Windows.Forms.Label();
             this.grpChucNang = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.cbbTimKiem = new System.Windows.Forms.ComboBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.cbbTimKiem = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnLoad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachGiaoVien)).BeginInit();
             this.gbGioiTinhGV.SuspendLayout();
@@ -327,7 +327,7 @@
             this.radNuGV.Location = new System.Drawing.Point(80, 21);
             this.radNuGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNuGV.Name = "radNuGV";
-            this.radNuGV.Size = new System.Drawing.Size(42, 20);
+            this.radNuGV.Size = new System.Drawing.Size(45, 20);
             this.radNuGV.TabIndex = 1;
             this.radNuGV.TabStop = true;
             this.radNuGV.Text = "Nữ";
@@ -339,7 +339,7 @@
             this.radNamGV.Location = new System.Drawing.Point(5, 21);
             this.radNamGV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNamGV.Name = "radNamGV";
-            this.radNamGV.Size = new System.Drawing.Size(54, 20);
+            this.radNamGV.Size = new System.Drawing.Size(57, 20);
             this.radNamGV.TabIndex = 0;
             this.radNamGV.TabStop = true;
             this.radNamGV.Text = "Nam";
@@ -494,7 +494,7 @@
             this.lblQuanLyGiaoVien.ForeColor = System.Drawing.Color.DarkCyan;
             this.lblQuanLyGiaoVien.Location = new System.Drawing.Point(377, 79);
             this.lblQuanLyGiaoVien.Name = "lblQuanLyGiaoVien";
-            this.lblQuanLyGiaoVien.Size = new System.Drawing.Size(241, 31);
+            this.lblQuanLyGiaoVien.Size = new System.Drawing.Size(304, 39);
             this.lblQuanLyGiaoVien.TabIndex = 91;
             this.lblQuanLyGiaoVien.Text = "Quản Lý Giáo Viên";
             // 
@@ -506,7 +506,7 @@
             this.label14.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label14.Location = new System.Drawing.Point(191, 21);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(587, 46);
+            this.label14.Size = new System.Drawing.Size(729, 58);
             this.label14.TabIndex = 90;
             this.label14.Text = "ENGLISH CENTER DOUBLE D";
             // 
@@ -535,6 +535,13 @@
             this.grpChucNang.TabStop = false;
             this.grpChucNang.Text = "Chức năng";
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(19, 253);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(198, 22);
+            this.txtTimKiem.TabIndex = 116;
+            // 
             // cbbTimKiem
             // 
             this.cbbTimKiem.FormattingEnabled = true;
@@ -547,13 +554,6 @@
             this.cbbTimKiem.Name = "cbbTimKiem";
             this.cbbTimKiem.Size = new System.Drawing.Size(106, 24);
             this.cbbTimKiem.TabIndex = 115;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(19, 253);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(198, 22);
-            this.txtTimKiem.TabIndex = 116;
             // 
             // btnLoad
             // 
@@ -598,7 +598,7 @@
             this.Controls.Add(this.label14);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_GiaoVien";
-            this.Size = new System.Drawing.Size(1157, 633);
+            this.Size = new System.Drawing.Size(1196, 633);
             this.Load += new System.EventHandler(this.UC_GiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachGiaoVien)).EndInit();
             this.gbGioiTinhGV.ResumeLayout(false);
