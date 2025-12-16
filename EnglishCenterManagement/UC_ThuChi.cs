@@ -125,17 +125,17 @@ namespace EnglishCenterManagement
                     MessageBoxIcon.Error);
                 return;
             }
-            if ( txtTimKiem.Text == "Tìm theo mã phiếu")
+            if ( cbbLuaChonTimKiem.Text == "Tìm theo mã phiếu")
             {
                 KetQua = dsThuChi.TimKiemTheoMa(txtTimKiem.Text);
                 HienThi(dgvDanhSachThuChi, KetQua);
             }
-            else if (txtTimKiem.Text == "Tìm theo số tiền")
+            else if (cbbLuaChonTimKiem.Text == "Tìm theo số tiền")
             {
                 KetQua = dsThuChi.TimKiemTheoSoTien(float.Parse(txtTimKiem.Text));
                 HienThi(dgvDanhSachThuChi, KetQua);
             }
-            else if (txtTimKiem.Text == "Tìm theo thời gian")
+            else if (cbbLuaChonTimKiem.Text == "Tìm theo thời gian")
             {
                 KetQua = dsThuChi.TimTheoThoiGian(DateTime.Parse(txtTimKiem.Text));
             }

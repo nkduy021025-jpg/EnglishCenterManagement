@@ -66,7 +66,11 @@ namespace EnglishCenterManagement
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

@@ -140,17 +140,17 @@ namespace EnglishCenterManagement
                     MessageBoxIcon.Error);
                 return;
             }
-            if (txtTimKiem.Text == "Tìm theo tên")
+            if (cbbTimKiem.Text == "Tìm theo tên")
             {
                 ketqua = danhSachHocVien.TimKiemTheoTen(txtTimKiem.Text);
                 HienThiDanhSach(dgvDanhSachHocVien, ketqua);
             }
-            else if (txtTimKiem.Text =="Tìm theo mã")
+            else if (cbbTimKiem.Text =="Tìm theo mã")
             {
                 ketqua = danhSachHocVien.TimKiemHocVien(txtTimKiem.Text);
                 HienThiDanhSach(dgvDanhSachHocVien, ketqua);
             }
-            else if( txtTimKiem.Text =="Tìm theo giới tính")
+            else if( cbbTimKiem.Text =="Tìm theo giới tính")
             {
                 ketqua = danhSachHocVien.TimTheoGioiTinh(txtTimKiem.Text);
                 HienThiDanhSach (dgvDanhSachHocVien, ketqua);

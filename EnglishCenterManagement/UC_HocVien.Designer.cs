@@ -515,7 +515,7 @@
             this.grpChucNang.Controls.Add(this.btnThem);
             this.grpChucNang.Location = new System.Drawing.Point(786, 81);
             this.grpChucNang.Name = "grpChucNang";
-            this.grpChucNang.Size = new System.Drawing.Size(262, 303);
+            this.grpChucNang.Size = new System.Drawing.Size(285, 303);
             this.grpChucNang.TabIndex = 91;
             this.grpChucNang.TabStop = false;
             this.grpChucNang.Text = "Chức năng";
@@ -536,7 +536,7 @@
             "Tìm theo giới tính"});
             this.cbbTimKiem.Location = new System.Drawing.Point(116, 213);
             this.cbbTimKiem.Name = "cbbTimKiem";
-            this.cbbTimKiem.Size = new System.Drawing.Size(91, 24);
+            this.cbbTimKiem.Size = new System.Drawing.Size(163, 24);
             this.cbbTimKiem.TabIndex = 86;
             // 
             // btnLoad
