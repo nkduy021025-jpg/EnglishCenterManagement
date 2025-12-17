@@ -28,19 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimTKB = new System.Windows.Forms.Button();
             this.btnLuuTKB = new System.Windows.Forms.Button();
             this.btnSuaTKB = new System.Windows.Forms.Button();
             this.btnXoaTKB = new System.Windows.Forms.Button();
             this.btnThemTKB = new System.Windows.Forms.Button();
             this.dgvTKB = new System.Windows.Forms.DataGridView();
-            this.MaTKB = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianBDHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGianKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCTH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CaHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhongHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMaTKB = new System.Windows.Forms.TextBox();
             this.lblTinhTrang = new System.Windows.Forms.Label();
             this.lblNgayNhap = new System.Windows.Forms.Label();
@@ -64,6 +59,13 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MaTKB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianBDHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGianKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaCTH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CaHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhongHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTKB)).BeginInit();
             this.grpChucNang.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +74,7 @@
             // 
             this.btnTimTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimTKB.Location = new System.Drawing.Point(16, 164);
-            this.btnTimTKB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimTKB.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimTKB.Name = "btnTimTKB";
             this.btnTimTKB.Size = new System.Drawing.Size(70, 30);
             this.btnTimTKB.TabIndex = 116;
@@ -84,7 +86,7 @@
             // 
             this.btnLuuTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuTKB.Location = new System.Drawing.Point(16, 130);
-            this.btnLuuTKB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuuTKB.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuuTKB.Name = "btnLuuTKB";
             this.btnLuuTKB.Size = new System.Drawing.Size(70, 30);
             this.btnLuuTKB.TabIndex = 115;
@@ -96,7 +98,7 @@
             // 
             this.btnSuaTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaTKB.Location = new System.Drawing.Point(16, 92);
-            this.btnSuaTKB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaTKB.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaTKB.Name = "btnSuaTKB";
             this.btnSuaTKB.Size = new System.Drawing.Size(70, 30);
             this.btnSuaTKB.TabIndex = 114;
@@ -108,7 +110,7 @@
             // 
             this.btnXoaTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaTKB.Location = new System.Drawing.Point(16, 52);
-            this.btnXoaTKB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaTKB.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaTKB.Name = "btnXoaTKB";
             this.btnXoaTKB.Size = new System.Drawing.Size(70, 30);
             this.btnXoaTKB.TabIndex = 113;
@@ -120,7 +122,7 @@
             // 
             this.btnThemTKB.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemTKB.Location = new System.Drawing.Point(16, 12);
-            this.btnThemTKB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemTKB.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemTKB.Name = "btnThemTKB";
             this.btnThemTKB.Size = new System.Drawing.Size(70, 30);
             this.btnThemTKB.TabIndex = 112;
@@ -140,81 +142,18 @@
             this.CaHoc,
             this.PhongHoc});
             this.dgvTKB.Location = new System.Drawing.Point(9, 303);
-            this.dgvTKB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTKB.Margin = new System.Windows.Forms.Padding(2);
             this.dgvTKB.Name = "dgvTKB";
             this.dgvTKB.RowHeadersWidth = 51;
             this.dgvTKB.RowTemplate.Height = 24;
-            this.dgvTKB.Size = new System.Drawing.Size(698, 179);
+            this.dgvTKB.Size = new System.Drawing.Size(768, 179);
             this.dgvTKB.TabIndex = 111;
             this.dgvTKB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTKB_CellClick);
-            // 
-            // MaTKB
-            // 
-            this.MaTKB.DataPropertyName = "MaThoiKhoaBieu";
-            this.MaTKB.HeaderText = "Mã thời khóa biểu";
-            this.MaTKB.MinimumWidth = 6;
-            this.MaTKB.Name = "MaTKB";
-            this.MaTKB.ReadOnly = true;
-            this.MaTKB.Width = 125;
-            // 
-            // ThoiGianBDHoc
-            // 
-            this.ThoiGianBDHoc.DataPropertyName = "NgayBatDauHoc";
-            this.ThoiGianBDHoc.HeaderText = "Thời gian bắt đầu học";
-            this.ThoiGianBDHoc.MinimumWidth = 6;
-            this.ThoiGianBDHoc.Name = "ThoiGianBDHoc";
-            this.ThoiGianBDHoc.ReadOnly = true;
-            this.ThoiGianBDHoc.Width = 125;
-            // 
-            // ThoiGianKT
-            // 
-            this.ThoiGianKT.DataPropertyName = "NgayKetThuc";
-            this.ThoiGianKT.HeaderText = "Thời gian kết thúc";
-            this.ThoiGianKT.MinimumWidth = 6;
-            this.ThoiGianKT.Name = "ThoiGianKT";
-            this.ThoiGianKT.ReadOnly = true;
-            this.ThoiGianKT.Width = 125;
-            // 
-            // MaCTH
-            // 
-            this.MaCTH.DataPropertyName = "MaChuongTrinhHoc";
-            this.MaCTH.HeaderText = "Mã chương trình học";
-            this.MaCTH.MinimumWidth = 6;
-            this.MaCTH.Name = "MaCTH";
-            this.MaCTH.ReadOnly = true;
-            this.MaCTH.Width = 125;
-            // 
-            // NgayHoc
-            // 
-            this.NgayHoc.DataPropertyName = "NgayHoc";
-            this.NgayHoc.HeaderText = "Ngày học";
-            this.NgayHoc.MinimumWidth = 6;
-            this.NgayHoc.Name = "NgayHoc";
-            this.NgayHoc.ReadOnly = true;
-            this.NgayHoc.Width = 125;
-            // 
-            // CaHoc
-            // 
-            this.CaHoc.DataPropertyName = "CaHoc";
-            this.CaHoc.HeaderText = "Ca học";
-            this.CaHoc.MinimumWidth = 6;
-            this.CaHoc.Name = "CaHoc";
-            this.CaHoc.ReadOnly = true;
-            this.CaHoc.Width = 125;
-            // 
-            // PhongHoc
-            // 
-            this.PhongHoc.DataPropertyName = "PhongHoc";
-            this.PhongHoc.HeaderText = "Phòng học";
-            this.PhongHoc.MinimumWidth = 6;
-            this.PhongHoc.Name = "PhongHoc";
-            this.PhongHoc.ReadOnly = true;
-            this.PhongHoc.Width = 125;
             // 
             // txtMaTKB
             // 
             this.txtMaTKB.Location = new System.Drawing.Point(122, 117);
-            this.txtMaTKB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaTKB.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaTKB.Name = "txtMaTKB";
             this.txtMaTKB.Size = new System.Drawing.Size(175, 20);
             this.txtMaTKB.TabIndex = 106;
@@ -297,6 +236,8 @@
             // 
             // dtpTGBDH
             // 
+            this.dtpTGBDH.CustomFormat = "dd/MM/yyyy";
+            this.dtpTGBDH.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTGBDH.Location = new System.Drawing.Point(122, 157);
             this.dtpTGBDH.Name = "dtpTGBDH";
             this.dtpTGBDH.Size = new System.Drawing.Size(174, 20);
@@ -304,6 +245,8 @@
             // 
             // dtpTGKT
             // 
+            this.dtpTGKT.CustomFormat = "dd/MM/yyyy";
+            this.dtpTGKT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTGKT.Location = new System.Drawing.Point(122, 199);
             this.dtpTGKT.Name = "dtpTGKT";
             this.dtpTGKT.Size = new System.Drawing.Size(174, 20);
@@ -420,7 +363,7 @@
             // btnLoad
             // 
             this.btnLoad.Location = new System.Drawing.Point(9, 274);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(67, 25);
             this.btnLoad.TabIndex = 179;
@@ -446,6 +389,73 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(129, 72);
             this.panel1.TabIndex = 185;
+            // 
+            // MaTKB
+            // 
+            this.MaTKB.DataPropertyName = "MaThoiKhoaBieu";
+            this.MaTKB.HeaderText = "Mã thời khóa biểu";
+            this.MaTKB.MinimumWidth = 6;
+            this.MaTKB.Name = "MaTKB";
+            this.MaTKB.ReadOnly = true;
+            this.MaTKB.Width = 125;
+            // 
+            // ThoiGianBDHoc
+            // 
+            this.ThoiGianBDHoc.DataPropertyName = "NgayBatDauHoc";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.ThoiGianBDHoc.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ThoiGianBDHoc.HeaderText = "Thời gian bắt đầu học";
+            this.ThoiGianBDHoc.MinimumWidth = 6;
+            this.ThoiGianBDHoc.Name = "ThoiGianBDHoc";
+            this.ThoiGianBDHoc.ReadOnly = true;
+            this.ThoiGianBDHoc.Width = 125;
+            // 
+            // ThoiGianKT
+            // 
+            this.ThoiGianKT.DataPropertyName = "NgayKetThuc";
+            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
+            this.ThoiGianKT.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ThoiGianKT.HeaderText = "Thời gian kết thúc";
+            this.ThoiGianKT.MinimumWidth = 6;
+            this.ThoiGianKT.Name = "ThoiGianKT";
+            this.ThoiGianKT.ReadOnly = true;
+            this.ThoiGianKT.Width = 125;
+            // 
+            // MaCTH
+            // 
+            this.MaCTH.DataPropertyName = "MaChuongTrinhHoc";
+            this.MaCTH.HeaderText = "Mã chương trình học";
+            this.MaCTH.MinimumWidth = 6;
+            this.MaCTH.Name = "MaCTH";
+            this.MaCTH.ReadOnly = true;
+            this.MaCTH.Width = 125;
+            // 
+            // NgayHoc
+            // 
+            this.NgayHoc.DataPropertyName = "NgayHoc";
+            this.NgayHoc.HeaderText = "Ngày học";
+            this.NgayHoc.MinimumWidth = 6;
+            this.NgayHoc.Name = "NgayHoc";
+            this.NgayHoc.ReadOnly = true;
+            this.NgayHoc.Width = 125;
+            // 
+            // CaHoc
+            // 
+            this.CaHoc.DataPropertyName = "CaHoc";
+            this.CaHoc.HeaderText = "Ca học";
+            this.CaHoc.MinimumWidth = 6;
+            this.CaHoc.Name = "CaHoc";
+            this.CaHoc.ReadOnly = true;
+            this.CaHoc.Width = 125;
+            // 
+            // PhongHoc
+            // 
+            this.PhongHoc.DataPropertyName = "PhongHoc";
+            this.PhongHoc.HeaderText = "Phòng học";
+            this.PhongHoc.MinimumWidth = 6;
+            this.PhongHoc.Name = "PhongHoc";
+            this.PhongHoc.ReadOnly = true;
+            this.PhongHoc.Width = 125;
             // 
             // UC_ThoiKhoaBieu
             // 
@@ -473,7 +483,7 @@
             this.Controls.Add(this.lblThoiKhoaBieu);
             this.Controls.Add(this.label4);
             this.Name = "UC_ThoiKhoaBieu";
-            this.Size = new System.Drawing.Size(856, 538);
+            this.Size = new System.Drawing.Size(1030, 586);
             this.Load += new System.EventHandler(this.UC_ThoiKhoaBieu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTKB)).EndInit();
             this.grpChucNang.ResumeLayout(false);
@@ -510,6 +520,9 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.ComboBox cbbChonTimKiemTKB;
         private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaTKB;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianBDHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianKT;
@@ -517,8 +530,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn CaHoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn PhongHoc;
-        private System.Windows.Forms.Button btnLoad;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
     }
 }

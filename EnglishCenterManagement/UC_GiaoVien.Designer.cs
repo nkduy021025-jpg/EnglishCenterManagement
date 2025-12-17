@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.cbbBangCap = new System.Windows.Forms.ComboBox();
@@ -87,7 +89,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(389, 129);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(159, 20);
             this.txtEmail.TabIndex = 118;
@@ -115,7 +117,7 @@
             "C1",
             "C2"});
             this.cbbBangCap.Location = new System.Drawing.Point(389, 226);
-            this.cbbBangCap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbBangCap.Margin = new System.Windows.Forms.Padding(2);
             this.cbbBangCap.Name = "cbbBangCap";
             this.cbbBangCap.Size = new System.Drawing.Size(159, 21);
             this.cbbBangCap.TabIndex = 116;
@@ -129,7 +131,7 @@
             "10",
             "15"});
             this.cbbThamNien.Location = new System.Drawing.Point(389, 192);
-            this.cbbThamNien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbThamNien.Margin = new System.Windows.Forms.Padding(2);
             this.cbbThamNien.Name = "cbbThamNien";
             this.cbbThamNien.Size = new System.Drawing.Size(159, 21);
             this.cbbThamNien.TabIndex = 115;
@@ -139,7 +141,7 @@
             // 
             this.btnTimGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimGV.Location = new System.Drawing.Point(10, 168);
-            this.btnTimGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimGV.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimGV.Name = "btnTimGV";
             this.btnTimGV.Size = new System.Drawing.Size(70, 32);
             this.btnTimGV.TabIndex = 114;
@@ -151,7 +153,7 @@
             // 
             this.btnLuuGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuGV.Location = new System.Drawing.Point(10, 132);
-            this.btnLuuGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuuGV.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuuGV.Name = "btnLuuGV";
             this.btnLuuGV.Size = new System.Drawing.Size(70, 32);
             this.btnLuuGV.TabIndex = 113;
@@ -163,7 +165,7 @@
             // 
             this.btnSuaGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaGV.Location = new System.Drawing.Point(10, 97);
-            this.btnSuaGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaGV.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaGV.Name = "btnSuaGV";
             this.btnSuaGV.Size = new System.Drawing.Size(70, 32);
             this.btnSuaGV.TabIndex = 112;
@@ -175,7 +177,7 @@
             // 
             this.btnXoaGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaGV.Location = new System.Drawing.Point(10, 56);
-            this.btnXoaGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaGV.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaGV.Name = "btnXoaGV";
             this.btnXoaGV.Size = new System.Drawing.Size(70, 32);
             this.btnXoaGV.TabIndex = 111;
@@ -187,7 +189,7 @@
             // 
             this.btnThemGV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemGV.Location = new System.Drawing.Point(10, 16);
-            this.btnThemGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemGV.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemGV.Name = "btnThemGV";
             this.btnThemGV.Size = new System.Drawing.Size(70, 32);
             this.btnThemGV.TabIndex = 110;
@@ -212,11 +214,11 @@
             this.dataGridViewTextBoxColumn10,
             this.luong});
             this.dgvDanhSachGiaoVien.Location = new System.Drawing.Point(15, 315);
-            this.dgvDanhSachGiaoVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDanhSachGiaoVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDanhSachGiaoVien.Name = "dgvDanhSachGiaoVien";
             this.dgvDanhSachGiaoVien.RowHeadersWidth = 51;
             this.dgvDanhSachGiaoVien.RowTemplate.Height = 24;
-            this.dgvDanhSachGiaoVien.Size = new System.Drawing.Size(995, 208);
+            this.dgvDanhSachGiaoVien.Size = new System.Drawing.Size(763, 208);
             this.dgvDanhSachGiaoVien.TabIndex = 109;
             this.dgvDanhSachGiaoVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachGiaoVien_CellClick);
             // 
@@ -225,9 +227,9 @@
             this.gbGioiTinhGV.Controls.Add(this.radNuGV);
             this.gbGioiTinhGV.Controls.Add(this.radNamGV);
             this.gbGioiTinhGV.Location = new System.Drawing.Point(101, 236);
-            this.gbGioiTinhGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGioiTinhGV.Margin = new System.Windows.Forms.Padding(2);
             this.gbGioiTinhGV.Name = "gbGioiTinhGV";
-            this.gbGioiTinhGV.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbGioiTinhGV.Padding = new System.Windows.Forms.Padding(2);
             this.gbGioiTinhGV.Size = new System.Drawing.Size(105, 46);
             this.gbGioiTinhGV.TabIndex = 108;
             this.gbGioiTinhGV.TabStop = false;
@@ -237,7 +239,7 @@
             // 
             this.radNuGV.AutoSize = true;
             this.radNuGV.Location = new System.Drawing.Point(60, 17);
-            this.radNuGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radNuGV.Margin = new System.Windows.Forms.Padding(2);
             this.radNuGV.Name = "radNuGV";
             this.radNuGV.Size = new System.Drawing.Size(39, 17);
             this.radNuGV.TabIndex = 1;
@@ -250,7 +252,7 @@
             this.radNamGV.AutoSize = true;
             this.radNamGV.Checked = true;
             this.radNamGV.Location = new System.Drawing.Point(4, 17);
-            this.radNamGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radNamGV.Margin = new System.Windows.Forms.Padding(2);
             this.radNamGV.Name = "radNamGV";
             this.radNamGV.Size = new System.Drawing.Size(47, 17);
             this.radNamGV.TabIndex = 0;
@@ -260,16 +262,20 @@
             // 
             // dtpNgayVaoLam
             // 
+            this.dtpNgayVaoLam.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayVaoLam.Location = new System.Drawing.Point(389, 259);
-            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgayVaoLam.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
             this.dtpNgayVaoLam.Size = new System.Drawing.Size(172, 20);
             this.dtpNgayVaoLam.TabIndex = 107;
             // 
             // dtpNgaySinhGV
             // 
+            this.dtpNgaySinhGV.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgaySinhGV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinhGV.Location = new System.Drawing.Point(101, 203);
-            this.dtpNgaySinhGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpNgaySinhGV.Margin = new System.Windows.Forms.Padding(2);
             this.dtpNgaySinhGV.Name = "dtpNgaySinhGV";
             this.dtpNgaySinhGV.Size = new System.Drawing.Size(176, 20);
             this.dtpNgaySinhGV.TabIndex = 106;
@@ -277,7 +283,7 @@
             // txtSDTGV
             // 
             this.txtSDTGV.Location = new System.Drawing.Point(389, 160);
-            this.txtSDTGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSDTGV.Margin = new System.Windows.Forms.Padding(2);
             this.txtSDTGV.Name = "txtSDTGV";
             this.txtSDTGV.Size = new System.Drawing.Size(159, 20);
             this.txtSDTGV.TabIndex = 105;
@@ -286,7 +292,7 @@
             // txtDiaChiGV
             // 
             this.txtDiaChiGV.Location = new System.Drawing.Point(389, 102);
-            this.txtDiaChiGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDiaChiGV.Margin = new System.Windows.Forms.Padding(2);
             this.txtDiaChiGV.Name = "txtDiaChiGV";
             this.txtDiaChiGV.Size = new System.Drawing.Size(159, 20);
             this.txtDiaChiGV.TabIndex = 104;
@@ -295,7 +301,7 @@
             // txtCCCDGV
             // 
             this.txtCCCDGV.Location = new System.Drawing.Point(101, 168);
-            this.txtCCCDGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCCCDGV.Margin = new System.Windows.Forms.Padding(2);
             this.txtCCCDGV.Name = "txtCCCDGV";
             this.txtCCCDGV.Size = new System.Drawing.Size(165, 20);
             this.txtCCCDGV.TabIndex = 103;
@@ -304,7 +310,7 @@
             // txtHoTenGV
             // 
             this.txtHoTenGV.Location = new System.Drawing.Point(101, 137);
-            this.txtHoTenGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHoTenGV.Margin = new System.Windows.Forms.Padding(2);
             this.txtHoTenGV.Name = "txtHoTenGV";
             this.txtHoTenGV.Size = new System.Drawing.Size(165, 20);
             this.txtHoTenGV.TabIndex = 102;
@@ -313,7 +319,7 @@
             // txtMaGV
             // 
             this.txtMaGV.Location = new System.Drawing.Point(101, 105);
-            this.txtMaGV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaGV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaGV.Name = "txtMaGV";
             this.txtMaGV.Size = new System.Drawing.Size(165, 20);
             this.txtMaGV.TabIndex = 101;
@@ -454,9 +460,9 @@
             this.grpChucNang.Controls.Add(this.btnXoaGV);
             this.grpChucNang.Controls.Add(this.btnThemGV);
             this.grpChucNang.Location = new System.Drawing.Point(570, 67);
-            this.grpChucNang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpChucNang.Margin = new System.Windows.Forms.Padding(2);
             this.grpChucNang.Name = "grpChucNang";
-            this.grpChucNang.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpChucNang.Padding = new System.Windows.Forms.Padding(2);
             this.grpChucNang.Size = new System.Drawing.Size(208, 235);
             this.grpChucNang.TabIndex = 124;
             this.grpChucNang.TabStop = false;
@@ -465,7 +471,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Location = new System.Drawing.Point(14, 206);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(150, 20);
             this.txtTimKiem.TabIndex = 116;
@@ -479,7 +485,7 @@
             "Tìm theo thâm niên",
             "Tìm theo giới tính"});
             this.cbbTimKiem.Location = new System.Drawing.Point(84, 169);
-            this.cbbTimKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.cbbTimKiem.Name = "cbbTimKiem";
             this.cbbTimKiem.Size = new System.Drawing.Size(80, 21);
             this.cbbTimKiem.TabIndex = 115;
@@ -487,7 +493,7 @@
             // btnLoad
             // 
             this.btnLoad.Location = new System.Drawing.Point(15, 286);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(67, 25);
             this.btnLoad.TabIndex = 181;
@@ -542,6 +548,8 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ngaySinhGV";
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn4.HeaderText = "Ngày sinh";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -598,6 +606,8 @@
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "ngayVaoLam";
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn10.HeaderText = "Ngày vào làm";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
@@ -644,9 +654,9 @@
             this.Controls.Add(this.lblMaGiaoVien);
             this.Controls.Add(this.lblQuanLyGiaoVien);
             this.Controls.Add(this.label14);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_GiaoVien";
-            this.Size = new System.Drawing.Size(1037, 536);
+            this.Size = new System.Drawing.Size(1196, 636);
             this.Load += new System.EventHandler(this.UC_GiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachGiaoVien)).EndInit();
             this.gbGioiTinhGV.ResumeLayout(false);

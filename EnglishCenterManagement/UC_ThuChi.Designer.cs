@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNoiDung = new System.Windows.Forms.Label();
             this.cbbLyDo = new System.Windows.Forms.ComboBox();
             this.dtpNgayThuChi = new System.Windows.Forms.DateTimePicker();
@@ -37,12 +38,6 @@
             this.btnXoaPhieuThuChi = new System.Windows.Forms.Button();
             this.btnThemPhieuThuChi = new System.Windows.Forms.Button();
             this.dgvDanhSachThuChi = new System.Windows.Forms.DataGridView();
-            this.MaPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LuaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LyDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMaPhieu = new System.Windows.Forms.TextBox();
             this.lblMucDich = new System.Windows.Forms.Label();
             this.lblNgayNhap = new System.Windows.Forms.Label();
@@ -64,6 +59,12 @@
             this.btnLoad = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MaPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LuaChon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LyDo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NoiDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachThuChi)).BeginInit();
             this.grpChucNang.SuspendLayout();
             this.SuspendLayout();
@@ -96,16 +97,19 @@
             // 
             // dtpNgayThuChi
             // 
+            this.dtpNgayThuChi.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayThuChi.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayThuChi.Location = new System.Drawing.Point(129, 227);
             this.dtpNgayThuChi.Name = "dtpNgayThuChi";
             this.dtpNgayThuChi.Size = new System.Drawing.Size(174, 20);
             this.dtpNgayThuChi.TabIndex = 140;
+            this.dtpNgayThuChi.Value = new System.DateTime(2025, 12, 17, 14, 6, 8, 0);
             // 
             // btnTimPhieuThuChi
             // 
             this.btnTimPhieuThuChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimPhieuThuChi.Location = new System.Drawing.Point(5, 153);
-            this.btnTimPhieuThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimPhieuThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimPhieuThuChi.Name = "btnTimPhieuThuChi";
             this.btnTimPhieuThuChi.Size = new System.Drawing.Size(70, 30);
             this.btnTimPhieuThuChi.TabIndex = 137;
@@ -117,7 +121,7 @@
             // 
             this.btnLuuPhieuThuChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuuPhieuThuChi.Location = new System.Drawing.Point(5, 119);
-            this.btnLuuPhieuThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLuuPhieuThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuuPhieuThuChi.Name = "btnLuuPhieuThuChi";
             this.btnLuuPhieuThuChi.Size = new System.Drawing.Size(70, 30);
             this.btnLuuPhieuThuChi.TabIndex = 136;
@@ -129,7 +133,7 @@
             // 
             this.btnSuaPhieuThuChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaPhieuThuChi.Location = new System.Drawing.Point(5, 83);
-            this.btnSuaPhieuThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaPhieuThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaPhieuThuChi.Name = "btnSuaPhieuThuChi";
             this.btnSuaPhieuThuChi.Size = new System.Drawing.Size(70, 30);
             this.btnSuaPhieuThuChi.TabIndex = 135;
@@ -141,7 +145,7 @@
             // 
             this.btnXoaPhieuThuChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaPhieuThuChi.Location = new System.Drawing.Point(5, 51);
-            this.btnXoaPhieuThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaPhieuThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaPhieuThuChi.Name = "btnXoaPhieuThuChi";
             this.btnXoaPhieuThuChi.Size = new System.Drawing.Size(70, 30);
             this.btnXoaPhieuThuChi.TabIndex = 134;
@@ -153,7 +157,7 @@
             // 
             this.btnThemPhieuThuChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemPhieuThuChi.Location = new System.Drawing.Point(5, 18);
-            this.btnThemPhieuThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemPhieuThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemPhieuThuChi.Name = "btnThemPhieuThuChi";
             this.btnThemPhieuThuChi.Size = new System.Drawing.Size(70, 30);
             this.btnThemPhieuThuChi.TabIndex = 133;
@@ -172,66 +176,18 @@
             this.LyDo,
             this.NoiDung});
             this.dgvDanhSachThuChi.Location = new System.Drawing.Point(12, 339);
-            this.dgvDanhSachThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDanhSachThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDanhSachThuChi.Name = "dgvDanhSachThuChi";
             this.dgvDanhSachThuChi.RowHeadersWidth = 51;
             this.dgvDanhSachThuChi.RowTemplate.Height = 24;
-            this.dgvDanhSachThuChi.Size = new System.Drawing.Size(804, 138);
+            this.dgvDanhSachThuChi.Size = new System.Drawing.Size(789, 138);
             this.dgvDanhSachThuChi.TabIndex = 132;
             this.dgvDanhSachThuChi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThuChi_CellClick);
-            // 
-            // MaPhieu
-            // 
-            this.MaPhieu.DataPropertyName = "maThuChi";
-            this.MaPhieu.HeaderText = "Mã phiếu";
-            this.MaPhieu.MinimumWidth = 6;
-            this.MaPhieu.Name = "MaPhieu";
-            this.MaPhieu.Width = 125;
-            // 
-            // LuaChon
-            // 
-            this.LuaChon.DataPropertyName = "luaChonThuChi";
-            this.LuaChon.HeaderText = "Lựa chọn";
-            this.LuaChon.MinimumWidth = 6;
-            this.LuaChon.Name = "LuaChon";
-            this.LuaChon.Width = 125;
-            // 
-            // ThoiGian
-            // 
-            this.ThoiGian.DataPropertyName = "ngayThuChi";
-            this.ThoiGian.HeaderText = "Thời gian";
-            this.ThoiGian.MinimumWidth = 6;
-            this.ThoiGian.Name = "ThoiGian";
-            this.ThoiGian.Width = 125;
-            // 
-            // SoTien
-            // 
-            this.SoTien.DataPropertyName = "soTien";
-            this.SoTien.HeaderText = "Số tiền";
-            this.SoTien.MinimumWidth = 6;
-            this.SoTien.Name = "SoTien";
-            this.SoTien.Width = 125;
-            // 
-            // LyDo
-            // 
-            this.LyDo.DataPropertyName = "lyDo";
-            this.LyDo.HeaderText = "Lý do";
-            this.LyDo.MinimumWidth = 6;
-            this.LyDo.Name = "LyDo";
-            this.LyDo.Width = 125;
-            // 
-            // NoiDung
-            // 
-            this.NoiDung.DataPropertyName = "noiDung";
-            this.NoiDung.HeaderText = "Nội dung";
-            this.NoiDung.MinimumWidth = 6;
-            this.NoiDung.Name = "NoiDung";
-            this.NoiDung.Width = 125;
             // 
             // txtMaPhieu
             // 
             this.txtMaPhieu.Location = new System.Drawing.Point(129, 152);
-            this.txtMaPhieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaPhieu.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaPhieu.Name = "txtMaPhieu";
             this.txtMaPhieu.Size = new System.Drawing.Size(175, 20);
             this.txtMaPhieu.TabIndex = 131;
@@ -292,7 +248,7 @@
             this.lblThoiKhoaBieu.AutoSize = true;
             this.lblThoiKhoaBieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.lblThoiKhoaBieu.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblThoiKhoaBieu.Location = new System.Drawing.Point(278, 100);
+            this.lblThoiKhoaBieu.Location = new System.Drawing.Point(286, 79);
             this.lblThoiKhoaBieu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblThoiKhoaBieu.Name = "lblThoiKhoaBieu";
             this.lblThoiKhoaBieu.Size = new System.Drawing.Size(194, 31);
@@ -305,7 +261,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F);
             this.label4.ForeColor = System.Drawing.Color.Crimson;
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Location = new System.Drawing.Point(149, 43);
+            this.label4.Location = new System.Drawing.Point(149, 17);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(587, 46);
@@ -327,7 +283,7 @@
             // txtSoTienThuChi
             // 
             this.txtSoTienThuChi.Location = new System.Drawing.Point(405, 157);
-            this.txtSoTienThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoTienThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoTienThuChi.Name = "txtSoTienThuChi";
             this.txtSoTienThuChi.Size = new System.Drawing.Size(175, 20);
             this.txtSoTienThuChi.TabIndex = 146;
@@ -336,7 +292,7 @@
             // txtNoiDung
             // 
             this.txtNoiDung.Location = new System.Drawing.Point(405, 231);
-            this.txtNoiDung.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNoiDung.Margin = new System.Windows.Forms.Padding(2);
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.Size = new System.Drawing.Size(175, 20);
             this.txtNoiDung.TabIndex = 147;
@@ -365,7 +321,7 @@
             // txtKetQuaThuChi
             // 
             this.txtKetQuaThuChi.Location = new System.Drawing.Point(80, 86);
-            this.txtKetQuaThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKetQuaThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtKetQuaThuChi.Name = "txtKetQuaThuChi";
             this.txtKetQuaThuChi.ReadOnly = true;
             this.txtKetQuaThuChi.Size = new System.Drawing.Size(132, 20);
@@ -374,7 +330,7 @@
             // txtThangThuChi
             // 
             this.txtThangThuChi.Location = new System.Drawing.Point(125, 62);
-            this.txtThangThuChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtThangThuChi.Margin = new System.Windows.Forms.Padding(2);
             this.txtThangThuChi.Name = "txtThangThuChi";
             this.txtThangThuChi.Size = new System.Drawing.Size(39, 20);
             this.txtThangThuChi.TabIndex = 142;
@@ -386,7 +342,7 @@
             "Thu",
             "Chi"});
             this.cbbThuChiTheoThang.Location = new System.Drawing.Point(80, 62);
-            this.cbbThuChiTheoThang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbbThuChiTheoThang.Margin = new System.Windows.Forms.Padding(2);
             this.cbbThuChiTheoThang.Name = "cbbThuChiTheoThang";
             this.cbbThuChiTheoThang.Size = new System.Drawing.Size(42, 21);
             this.cbbThuChiTheoThang.TabIndex = 141;
@@ -395,7 +351,7 @@
             // 
             this.btnTinhDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTinhDoanhThu.Location = new System.Drawing.Point(80, 15);
-            this.btnTinhDoanhThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTinhDoanhThu.Margin = new System.Windows.Forms.Padding(2);
             this.btnTinhDoanhThu.Name = "btnTinhDoanhThu";
             this.btnTinhDoanhThu.Size = new System.Drawing.Size(124, 42);
             this.btnTinhDoanhThu.TabIndex = 140;
@@ -425,7 +381,7 @@
             // btnLoad
             // 
             this.btnLoad.Location = new System.Drawing.Point(12, 309);
-            this.btnLoad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(67, 25);
             this.btnLoad.TabIndex = 180;
@@ -437,7 +393,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(223, 84);
+            this.label1.Location = new System.Drawing.Point(231, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(307, 16);
             this.label1.TabIndex = 184;
@@ -451,6 +407,56 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(129, 72);
             this.panel1.TabIndex = 185;
+            // 
+            // MaPhieu
+            // 
+            this.MaPhieu.DataPropertyName = "maThuChi";
+            this.MaPhieu.HeaderText = "Mã phiếu";
+            this.MaPhieu.MinimumWidth = 6;
+            this.MaPhieu.Name = "MaPhieu";
+            this.MaPhieu.Width = 125;
+            // 
+            // LuaChon
+            // 
+            this.LuaChon.DataPropertyName = "luaChonThuChi";
+            this.LuaChon.HeaderText = "Lựa chọn";
+            this.LuaChon.MinimumWidth = 6;
+            this.LuaChon.Name = "LuaChon";
+            this.LuaChon.Width = 125;
+            // 
+            // ThoiGian
+            // 
+            this.ThoiGian.DataPropertyName = "ngayThuChi";
+            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
+            this.ThoiGian.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ThoiGian.HeaderText = "Thời gian";
+            this.ThoiGian.MinimumWidth = 6;
+            this.ThoiGian.Name = "ThoiGian";
+            this.ThoiGian.Width = 125;
+            // 
+            // SoTien
+            // 
+            this.SoTien.DataPropertyName = "soTien";
+            this.SoTien.HeaderText = "Số tiền";
+            this.SoTien.MinimumWidth = 6;
+            this.SoTien.Name = "SoTien";
+            this.SoTien.Width = 125;
+            // 
+            // LyDo
+            // 
+            this.LyDo.DataPropertyName = "lyDo";
+            this.LyDo.HeaderText = "Lý do";
+            this.LyDo.MinimumWidth = 6;
+            this.LyDo.Name = "LyDo";
+            this.LyDo.Width = 125;
+            // 
+            // NoiDung
+            // 
+            this.NoiDung.DataPropertyName = "noiDung";
+            this.NoiDung.HeaderText = "Nội dung";
+            this.NoiDung.MinimumWidth = 6;
+            this.NoiDung.Name = "NoiDung";
+            this.NoiDung.Width = 125;
             // 
             // UC_ThuChi
             // 
@@ -507,12 +513,6 @@
         private System.Windows.Forms.ComboBox cbbLuaChonThuChi;
         private System.Windows.Forms.TextBox txtSoTienThuChi;
         private System.Windows.Forms.TextBox txtNoiDung;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LuaChon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGian;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LyDo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoiDung;
         private System.Windows.Forms.GroupBox grpChucNang;
         private System.Windows.Forms.ComboBox cbbLuaChonTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
@@ -523,5 +523,11 @@
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhieu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LuaChon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGian;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LyDo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoiDung;
     }
 }
