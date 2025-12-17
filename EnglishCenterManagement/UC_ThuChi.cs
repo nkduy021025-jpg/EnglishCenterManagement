@@ -50,6 +50,7 @@ namespace EnglishCenterManagement
         {
             viTri = e.RowIndex;
             ThuChi tc = new ThuChi();
+            tc = dsThuChi.DSThuChi[viTri];
             txtMaPhieu.Text = tc.maThuChi;
             cbbLuaChonThuChi.Text = tc.luaChonThuChi;
             dtpNgayThuChi.Value = tc.ngayThuChi;

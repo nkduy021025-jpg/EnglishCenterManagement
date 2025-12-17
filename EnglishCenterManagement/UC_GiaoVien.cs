@@ -32,6 +32,7 @@ namespace EnglishCenterManagement
                 gv.maGV = txtMaGV.Text;
                 gv.hoTenGV = txtHoTenGV.Text;
                 gv.cccdgv = txtCCCDGV.Text;
+                gv.diaChiGV = txtDiaChiGV.Text;
                 gv.ngaySinhGV = dtpNgaySinhGV.Value;
                 if (radNamGV.Checked == true)
                     gv.gioiTinh = "Nam";
@@ -234,6 +235,11 @@ namespace EnglishCenterManagement
         private void btnLoad_Click(object sender, EventArgs e)
         {
             HienThi(dgvDanhSachGiaoVien, dsGiaoVien.DSGiaoVien);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

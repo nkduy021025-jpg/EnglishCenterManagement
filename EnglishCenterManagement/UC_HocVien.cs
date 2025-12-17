@@ -13,6 +13,9 @@ namespace EnglishCenterManagement
     public partial class UC_HocVien : UserControl
     {
         private DanhSachHocVien danhSachHocVien = new DanhSachHocVien();
+        private DanhSachChuongTrinhHoc dsct = new DanhSachChuongTrinhHoc();
+        private DanhSachThoiKhoaBieu tkb = new DanhSachThoiKhoaBieu();
+        
         private int viTri = 0;
         public UC_HocVien()
         {
@@ -210,11 +213,29 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Lỗi không thể xem danh sách học viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            bool ketquadocCT = dsct.docFileCT("DanhSachChuongTrinh.dat");
+            if (ketquadocCT == true)
+            {
+                foreach (ChuongTrinhHoc ct in dsct.CTrinhHoc)
+                {
+                    cbbChuongTrinhHoc.Items.Add(ct.MaChuongTrinh);
+                }
+            }
+            bool ketquadocTKB = tkb.DocFile("DanhSachThoiKhoaBieu.dat");
+            if(ketquadocTKB == true)
+            {
+                foreach (ThoiKhoaBieu tkb in tkb.DSTKB)
+                {
+                    cbbLuaChonTKB.Items.Add(tkb.MaThoiKhoaBieu);
+                }
+            }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
             HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
         }
+
+      
     }
 }

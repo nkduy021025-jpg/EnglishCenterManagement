@@ -32,6 +32,7 @@ namespace EnglishCenterManagement
         {
             UC_HocVien ucHV = new UC_HocVien();
             AddUserControl(ucHV);
+
         }
 
         private void btnGiaoVien_Click(object sender, EventArgs e)
@@ -72,5 +73,7 @@ namespace EnglishCenterManagement
                 this.Close();
             }
         }
+
+      
     }
 }
