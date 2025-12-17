@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimTB = new System.Windows.Forms.Button();
             this.btnLuuTB = new System.Windows.Forms.Button();
             this.btnSuaTB = new System.Windows.Forms.Button();
@@ -136,7 +136,7 @@
             this.dgvDanhSachThietBi.Name = "dgvDanhSachThietBi";
             this.dgvDanhSachThietBi.RowHeadersWidth = 51;
             this.dgvDanhSachThietBi.RowTemplate.Height = 24;
-            this.dgvDanhSachThietBi.Size = new System.Drawing.Size(743, 136);
+            this.dgvDanhSachThietBi.Size = new System.Drawing.Size(820, 136);
             this.dgvDanhSachThietBi.TabIndex = 92;
             this.dgvDanhSachThietBi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachThietBi_CellClick);
             // 
@@ -280,7 +280,7 @@
             this.grpChucNang.Margin = new System.Windows.Forms.Padding(2);
             this.grpChucNang.Name = "grpChucNang";
             this.grpChucNang.Padding = new System.Windows.Forms.Padding(2);
-            this.grpChucNang.Size = new System.Drawing.Size(157, 234);
+            this.grpChucNang.Size = new System.Drawing.Size(234, 234);
             this.grpChucNang.TabIndex = 98;
             this.grpChucNang.TabStop = false;
             this.grpChucNang.Text = "Chức năng";
@@ -303,7 +303,7 @@
             this.cbbTimKiem.Location = new System.Drawing.Point(86, 171);
             this.cbbTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.cbbTimKiem.Name = "cbbTimKiem";
-            this.cbbTimKiem.Size = new System.Drawing.Size(62, 21);
+            this.cbbTimKiem.Size = new System.Drawing.Size(143, 21);
             this.cbbTimKiem.TabIndex = 98;
             // 
             // btnLoad
@@ -363,8 +363,8 @@
             // NgayNhap
             // 
             this.NgayNhap.DataPropertyName = "ngayNhap";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.NgayNhap.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.NgayNhap.DefaultCellStyle = dataGridViewCellStyle3;
             this.NgayNhap.HeaderText = "Ngày nhập";
             this.NgayNhap.MinimumWidth = 6;
             this.NgayNhap.Name = "NgayNhap";

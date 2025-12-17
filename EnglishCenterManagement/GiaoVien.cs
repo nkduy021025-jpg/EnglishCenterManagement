@@ -87,15 +87,15 @@ namespace EnglishCenterManagement
             double luong = 0;
             if (thamNien <= 5)
             {
-                luong = thamNien * 2000;
+                luong = thamNien * 2000000;
             }
             else if (thamNien > 5 && thamNien <= 10)
             {
-                luong = thamNien * 3000;
+                luong = thamNien * 3000000;
             }
             else if (thamNien > 10)
             {
-                luong = thamNien * 3500;
+                luong = thamNien * 5000000;
             }
             return luong;
         }

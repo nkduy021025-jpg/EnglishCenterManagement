@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimTKB = new System.Windows.Forms.Button();
             this.btnLuuTKB = new System.Windows.Forms.Button();
             this.btnSuaTKB = new System.Windows.Forms.Button();
@@ -146,7 +146,7 @@
             this.dgvTKB.Name = "dgvTKB";
             this.dgvTKB.RowHeadersWidth = 51;
             this.dgvTKB.RowTemplate.Height = 24;
-            this.dgvTKB.Size = new System.Drawing.Size(768, 179);
+            this.dgvTKB.Size = new System.Drawing.Size(829, 179);
             this.dgvTKB.TabIndex = 111;
             this.dgvTKB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTKB_CellClick);
             // 
@@ -258,8 +258,11 @@
             this.cbbNgayHoc.Items.AddRange(new object[] {
             "Thứ 2, 4, 6",
             "Thứ 3, 5, 7",
-            "Khác..",
-            ""});
+            "Thứ 2, 3 , 4",
+            "Thứ 3, 4, 5",
+            "Thứ 5, 6, 7",
+            "Cuối tuần (T7,CN)",
+            "Khác.."});
             this.cbbNgayHoc.Location = new System.Drawing.Point(396, 119);
             this.cbbNgayHoc.Name = "cbbNgayHoc";
             this.cbbNgayHoc.Size = new System.Drawing.Size(175, 21);
@@ -335,7 +338,7 @@
             this.grpChucNang.Controls.Add(this.btnThemTKB);
             this.grpChucNang.Location = new System.Drawing.Point(577, 65);
             this.grpChucNang.Name = "grpChucNang";
-            this.grpChucNang.Size = new System.Drawing.Size(200, 233);
+            this.grpChucNang.Size = new System.Drawing.Size(261, 233);
             this.grpChucNang.TabIndex = 126;
             this.grpChucNang.TabStop = false;
             this.grpChucNang.Text = "Chức năng";
@@ -357,7 +360,7 @@
             "Theo ca học"});
             this.cbbChonTimKiemTKB.Location = new System.Drawing.Point(100, 170);
             this.cbbChonTimKiemTKB.Name = "cbbChonTimKiemTKB";
-            this.cbbChonTimKiemTKB.Size = new System.Drawing.Size(92, 21);
+            this.cbbChonTimKiemTKB.Size = new System.Drawing.Size(155, 21);
             this.cbbChonTimKiemTKB.TabIndex = 117;
             // 
             // btnLoad
@@ -402,8 +405,8 @@
             // ThoiGianBDHoc
             // 
             this.ThoiGianBDHoc.DataPropertyName = "NgayBatDauHoc";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.ThoiGianBDHoc.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.ThoiGianBDHoc.DefaultCellStyle = dataGridViewCellStyle5;
             this.ThoiGianBDHoc.HeaderText = "Thời gian bắt đầu học";
             this.ThoiGianBDHoc.MinimumWidth = 6;
             this.ThoiGianBDHoc.Name = "ThoiGianBDHoc";
@@ -413,8 +416,8 @@
             // ThoiGianKT
             // 
             this.ThoiGianKT.DataPropertyName = "NgayKetThuc";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.ThoiGianKT.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            this.ThoiGianKT.DefaultCellStyle = dataGridViewCellStyle6;
             this.ThoiGianKT.HeaderText = "Thời gian kết thúc";
             this.ThoiGianKT.MinimumWidth = 6;
             this.ThoiGianKT.Name = "ThoiGianKT";

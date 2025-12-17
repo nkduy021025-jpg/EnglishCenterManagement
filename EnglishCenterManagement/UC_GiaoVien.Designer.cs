@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.cbbBangCap = new System.Windows.Forms.ComboBox();
@@ -127,7 +127,10 @@
             // 
             this.cbbThamNien.FormattingEnabled = true;
             this.cbbThamNien.Items.AddRange(new object[] {
-            "5",
+            "1",
+            "3",
+            "5 ",
+            "7",
             "10",
             "15"});
             this.cbbThamNien.Location = new System.Drawing.Point(389, 192);
@@ -213,7 +216,7 @@
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10,
             this.luong});
-            this.dgvDanhSachGiaoVien.Location = new System.Drawing.Point(15, 315);
+            this.dgvDanhSachGiaoVien.Location = new System.Drawing.Point(9, 360);
             this.dgvDanhSachGiaoVien.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDanhSachGiaoVien.Name = "dgvDanhSachGiaoVien";
             this.dgvDanhSachGiaoVien.RowHeadersWidth = 51;
@@ -487,12 +490,12 @@
             this.cbbTimKiem.Location = new System.Drawing.Point(84, 169);
             this.cbbTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.cbbTimKiem.Name = "cbbTimKiem";
-            this.cbbTimKiem.Size = new System.Drawing.Size(80, 21);
+            this.cbbTimKiem.Size = new System.Drawing.Size(124, 21);
             this.cbbTimKiem.TabIndex = 115;
             // 
             // btnLoad
             // 
-            this.btnLoad.Location = new System.Drawing.Point(15, 286);
+            this.btnLoad.Location = new System.Drawing.Point(9, 331);
             this.btnLoad.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(67, 25);
@@ -548,8 +551,8 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "ngaySinhGV";
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn4.HeaderText = "Ngày sinh";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -606,8 +609,8 @@
             // dataGridViewTextBoxColumn10
             // 
             this.dataGridViewTextBoxColumn10.DataPropertyName = "ngayVaoLam";
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Format = "dd/MM/yyyy";
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewTextBoxColumn10.HeaderText = "Ngày vào làm";
             this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";

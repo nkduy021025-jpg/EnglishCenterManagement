@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbbChuongTrinhHoc = new System.Windows.Forms.ComboBox();
             this.cbbTrinhDo = new System.Windows.Forms.ComboBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
@@ -97,15 +97,13 @@
             // 
             this.cbbTrinhDo.FormattingEnabled = true;
             this.cbbTrinhDo.Items.AddRange(new object[] {
+            "Level A1 (Căn bản)",
+            "Level A2 (Sơ cấp)",
+            "Level B1 (Trung cấp)",
+            "Level B2 (Trên trung cấp)",
+            "Level C1 (Cao cấp)",
             "Mất gốc",
-            "Toeic 2 KN 450 - 600 ",
-            "Toeic 4 KN 450 - 600 ",
-            "Toeic 2,4 KN > 600",
-            "Ielts 4.5 - 6.5",
-            "Ielts 6.5 - 8.0",
-            "Khác....",
-            "",
-            ""});
+            "Khác...."});
             this.cbbTrinhDo.Location = new System.Drawing.Point(406, 174);
             this.cbbTrinhDo.Margin = new System.Windows.Forms.Padding(2);
             this.cbbTrinhDo.Name = "cbbTrinhDo";
@@ -537,8 +535,8 @@
             // ngaySinh
             // 
             this.ngaySinh.DataPropertyName = "ngaySinh";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.ngaySinh.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.ngaySinh.DefaultCellStyle = dataGridViewCellStyle5;
             this.ngaySinh.HeaderText = "Ngày sinh";
             this.ngaySinh.MinimumWidth = 6;
             this.ngaySinh.Name = "ngaySinh";
@@ -587,8 +585,8 @@
             // ngayDangKy
             // 
             this.ngayDangKy.DataPropertyName = "ngayDangKy";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.ngayDangKy.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
+            this.ngayDangKy.DefaultCellStyle = dataGridViewCellStyle6;
             this.ngayDangKy.HeaderText = "Ngày đăng ký";
             this.ngayDangKy.MinimumWidth = 6;
             this.ngayDangKy.Name = "ngayDangKy";

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNoiDung = new System.Windows.Forms.Label();
             this.cbbLyDo = new System.Windows.Forms.ComboBox();
             this.dtpNgayThuChi = new System.Windows.Forms.DateTimePicker();
@@ -88,7 +88,9 @@
             "Bảo trì cơ sở vật chất",
             "Hoàn học phí cho học viên",
             "Lương cho nhân viên",
-            "Khác"});
+            "Chi phí điện nước",
+            "Chi phí duy trì",
+            "Khác..."});
             this.cbbLyDo.Location = new System.Drawing.Point(405, 194);
             this.cbbLyDo.Name = "cbbLyDo";
             this.cbbLyDo.Size = new System.Drawing.Size(175, 21);
@@ -375,7 +377,7 @@
             "Tìm theo thời gian"});
             this.cbbLuaChonTimKiem.Location = new System.Drawing.Point(80, 159);
             this.cbbLuaChonTimKiem.Name = "cbbLuaChonTimKiem";
-            this.cbbLuaChonTimKiem.Size = new System.Drawing.Size(84, 21);
+            this.cbbLuaChonTimKiem.Size = new System.Drawing.Size(137, 21);
             this.cbbLuaChonTimKiem.TabIndex = 138;
             // 
             // btnLoad
@@ -427,8 +429,8 @@
             // ThoiGian
             // 
             this.ThoiGian.DataPropertyName = "ngayThuChi";
-            dataGridViewCellStyle1.Format = "dd/MM/yyyy";
-            this.ThoiGian.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "dd/MM/yyyy";
+            this.ThoiGian.DefaultCellStyle = dataGridViewCellStyle3;
             this.ThoiGian.HeaderText = "Thời gian";
             this.ThoiGian.MinimumWidth = 6;
             this.ThoiGian.Name = "ThoiGian";
