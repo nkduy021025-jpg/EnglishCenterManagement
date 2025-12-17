@@ -42,7 +42,7 @@ namespace EnglishCenterManagement
             }
             else
             {
-                MessageBox.Show("Thêm một thời khóa biểu không thành công!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mã thời khóa biểu đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void dgvTKB_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -68,7 +68,9 @@ namespace EnglishCenterManagement
                 MessageBoxIcon.Warning);
             if (ketqua == DialogResult.Yes)
             {
-                DMTKB.XoaTKB(vitri);    
+                DMTKB.XoaTKB(vitri);
+                MessageBox.Show("Xóa thời khóa biểu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThi(dgvTKB, DMTKB.DSTKB);
             }
             else
             {

@@ -41,7 +41,7 @@ namespace EnglishCenterManagement
             }
             else
             {
-                MessageBox.Show("Thêm 1 chương trình học không thành công!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mã chương trình học này đã có!", "Thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -68,6 +68,7 @@ namespace EnglishCenterManagement
             DialogResult ketqua = MessageBox.Show ("Bạn chắc chắn muốn xóa chương trình học này không", "Cảnh báo" , MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (ketqua == DialogResult.Yes)
             {
+                MessageBox.Show("Đã xóa chương trình học!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 bool kiemtra = dsct.Xoa(vitri);
                 HienThi(dgvChuongTrinh, dsct.CTrinhHoc);
             }

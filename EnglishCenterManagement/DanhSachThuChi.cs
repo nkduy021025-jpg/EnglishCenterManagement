@@ -82,7 +82,7 @@ namespace EnglishCenterManagement
             List<ThuChi> TimKiem = new List<ThuChi>();
             foreach (ThuChi thuChi in dsThuChi)
             {
-                if (thuChi.ngayThuChi.Equals(thoigian))
+                if (thuChi.ngayThuChi.Date.Equals(thoigian.Date))
                 {
                     TimKiem.Add(thuChi);
                 }

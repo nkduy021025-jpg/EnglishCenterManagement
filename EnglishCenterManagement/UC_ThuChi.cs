@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,8 +37,8 @@ namespace EnglishCenterManagement
             }
             else
             {
-                MessageBox.Show("Mã phiếu thu chi này đã tồn tại, vui lòng nhập 1 mã khác!", "Thông báo", MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                MessageBox.Show("Mã phiếu đã tồn tại!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
 
             }
         }
@@ -68,7 +69,7 @@ namespace EnglishCenterManagement
                 bool ketQuaXoa = dsThuChi.XoaPhieuThuChi(viTri);
                 if (ketQuaXoa == true)
                 {
-                    MessageBox.Show("Đã xóa học phiếu thu chi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đã xóa thành công phiếu thu chi.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     HienThi(dgvDanhSachThuChi, dsThuChi.DSThuChi);
                 }
             }
@@ -136,9 +137,10 @@ namespace EnglishCenterManagement
                 KetQua = dsThuChi.TimKiemTheoSoTien(float.Parse(txtTimKiem.Text));
                 HienThi(dgvDanhSachThuChi, KetQua);
             }
-            else if (cbbLuaChonTimKiem.Text == "Tìm theo thời gian")
+            else 
             {
-                KetQua = dsThuChi.TimTheoThoiGian(DateTime.Parse(txtTimKiem.Text));
+                KetQua = dsThuChi.TimTheoThoiGian(DateTime.ParseExact(txtTimKiem.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture));
+                HienThi(dgvDanhSachThuChi, KetQua);
             }
         }
 
