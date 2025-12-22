@@ -12,15 +12,25 @@ namespace EnglishCenterManagement
 {
     public partial class DangNhap : Form
     {
+        DanhSachDangNhap DMDN = new DanhSachDangNhap();
         int LanNhap = 0;
+
         public DangNhap()
         {
             InitializeComponent();
         }
-
+        private void DangNhap_Load(object sender, EventArgs e)
+        {
+            DMDN.DocFileDN("TaiKhoanDangNhap.dat");
+        }
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (txtTaiKhoan.Text == "Dung" && txtMatKhau.Text == "1")
+            if (string.IsNullOrEmpty(txtTaiKhoan.Text) || string.IsNullOrEmpty(txtMatKhau.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ tài khoản và mật khẩu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (DMDN.KiemTraDangNhap(txtTaiKhoan.Text,txtMatKhau.Text))
             {
                 FormMain qlhv = new FormMain();
                 qlhv.FormClosed += (s, args) => this.Close();
@@ -32,8 +42,8 @@ namespace EnglishCenterManagement
                 LanNhap++;
                 DialogResult NhapSai = MessageBox.Show
                     (
-                    "Bạn còn " + (3 - LanNhap) + " lần nhập. Vui lòng nhập lại! "
-                    , "Sai tài khoản hoặc mật khẩu!"
+                    "Sai tài khoản hoặc mật khẩu, bạn còn " + (3 - LanNhap) + " lần nhập. Vui lòng nhập lại! "
+                    ,"Sai tài khoản hoặc mật khẩu!"
                     , MessageBoxButtons.OK
                     , MessageBoxIcon.Error
                     );
@@ -49,7 +59,13 @@ namespace EnglishCenterManagement
                 
             }
         }
-
-      
+        private void btnTaoTaiKhoan_Click(object sender, EventArgs e)
+        {
+            DangKy dktk = new DangKy();
+            this.Hide();
+            dktk.ShowDialog();
+            DMDN.DocFileDN("TaiKhoanDangNhap.dat");
+            this.Show();
+        }
     }
 }

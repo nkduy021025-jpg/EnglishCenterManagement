@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnTaoTaiKhoan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTenTT
@@ -93,7 +94,7 @@
             // btnDangNhap
             // 
             this.btnDangNhap.ForeColor = System.Drawing.Color.Teal;
-            this.btnDangNhap.Location = new System.Drawing.Point(171, 261);
+            this.btnDangNhap.Location = new System.Drawing.Point(149, 228);
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(82, 25);
@@ -133,6 +134,18 @@
             this.label4.TabIndex = 40;
             this.label4.Text = "---------------------------------------------------------------------------\r\n";
             // 
+            // btnTaoTaiKhoan
+            // 
+            this.btnTaoTaiKhoan.ForeColor = System.Drawing.Color.Teal;
+            this.btnTaoTaiKhoan.Location = new System.Drawing.Point(149, 257);
+            this.btnTaoTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
+            this.btnTaoTaiKhoan.Size = new System.Drawing.Size(132, 31);
+            this.btnTaoTaiKhoan.TabIndex = 41;
+            this.btnTaoTaiKhoan.Text = "Hoặc tạo tài khoản mới";
+            this.btnTaoTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnTaoTaiKhoan.Click += new System.EventHandler(this.btnTaoTaiKhoan_Click);
+            // 
             // DangNhap
             // 
             this.AcceptButton = this.btnDangNhap;
@@ -140,6 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(669, 311);
+            this.Controls.Add(this.btnTaoTaiKhoan);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -154,6 +168,7 @@
             this.Name = "DangNhap";
             this.Text = "DangNhap";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.DangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,5 +185,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnTaoTaiKhoan;
     }
 }
