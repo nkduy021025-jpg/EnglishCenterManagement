@@ -77,12 +77,6 @@ namespace EnglishCenterManagement
         }
         public bool KiemTraDangNhap(string taikhoan, string matkhau)
         {
-            if (dsDN.Count == 0)
-            {
-                System.Windows.Forms.MessageBox.Show("List đang trống trơn! Mày chưa đọc được file hoặc file rỗng!");
-                return false;
-            }
-
             foreach (TaiKhoanDangNhap tkdn in dsDN)
             {
 
