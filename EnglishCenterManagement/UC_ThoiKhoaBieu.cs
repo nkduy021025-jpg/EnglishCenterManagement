@@ -86,7 +86,7 @@ namespace EnglishCenterManagement
             }
             else
             {
-                MessageBox.Show("Lỗi không thể xem danh sách thiết bị!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi không thể xem danh sách thời khóa biểu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             bool ketquadocCT = dsct.docFileCT("DanhSachChuongTrinh.dat");
             if (ketquadocCT == true)

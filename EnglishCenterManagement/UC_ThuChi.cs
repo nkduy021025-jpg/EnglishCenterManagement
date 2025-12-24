@@ -85,7 +85,7 @@ namespace EnglishCenterManagement
             {
                 if (string.IsNullOrWhiteSpace(txtMaPhieu.Text))
                 {
-                    MessageBox.Show("Vui lòng nhập mã phiếu thu chi cần sửa");
+                    MessageBox.Show("Vui lòng chọn phiếu thu chi cần sửa");
                     return;
                 }
                 ThuChi tc=new ThuChi();

@@ -22,7 +22,7 @@ namespace EnglishCenterManagement
         {
             InitializeComponent();
         }
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private void btnDangKy_Click(object sender, EventArgs e)
         {
             string taikhoan = txtTaiKhoan.Text;
             string matkhau = txtMatKhau.Text;

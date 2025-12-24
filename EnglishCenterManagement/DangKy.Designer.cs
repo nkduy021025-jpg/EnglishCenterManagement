@@ -31,7 +31,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblDangKy = new System.Windows.Forms.Label();
-            this.btnDangNhap = new System.Windows.Forms.Button();
+            this.btnDangKy = new System.Windows.Forms.Button();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -75,17 +75,17 @@
             this.lblDangKy.TabIndex = 47;
             this.lblDangKy.Text = "Đăng ký";
             // 
-            // btnDangNhap
+            // btnDangKy
             // 
-            this.btnDangNhap.ForeColor = System.Drawing.Color.Teal;
-            this.btnDangNhap.Location = new System.Drawing.Point(214, 286);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(132, 25);
-            this.btnDangNhap.TabIndex = 46;
-            this.btnDangNhap.Text = "Đăng ký tài khoản";
-            this.btnDangNhap.UseVisualStyleBackColor = true;
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
+            this.btnDangKy.ForeColor = System.Drawing.Color.Teal;
+            this.btnDangKy.Location = new System.Drawing.Point(214, 286);
+            this.btnDangKy.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Size = new System.Drawing.Size(132, 25);
+            this.btnDangKy.TabIndex = 46;
+            this.btnDangKy.Text = "Đăng ký tài khoản";
+            this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // txtMatKhau
             // 
@@ -200,7 +200,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblDangKy);
-            this.Controls.Add(this.btnDangNhap);
+            this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.label3);
@@ -219,7 +219,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblDangKy;
-        private System.Windows.Forms.Button btnDangNhap;
+        private System.Windows.Forms.Button btnDangKy;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label label3;
