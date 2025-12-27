@@ -20,6 +20,8 @@ namespace EnglishCenterManagement
         private string TrinhDo;
         private string ChuongTrinhHoc;
         private DateTime NgayDangKy;
+        private string danhGia;
+        //private string ghiChu;
 
         public string maHV
         {
@@ -71,6 +73,12 @@ namespace EnglishCenterManagement
             get { return this.NgayDangKy; }
             set { this.NgayDangKy = value; }
         }
+        public string DanhGia
+        {
+            get { return this.danhGia; }
+            set { this.danhGia = value;}
+        }
+       
         public HocVien() { 
         MaHV = "";
         HoTen = "";
@@ -82,8 +90,10 @@ namespace EnglishCenterManagement
         TrinhDo = "";
         ChuongTrinhHoc = "";
         NgayDangKy = DateTime.Now;
+        DanhGia="";
+        //GhiChu = "";
         }
-        public HocVien(string maHV, string hoTen, string cccdhv, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt, string trinhDo, string chuongTrinhHoc, DateTime ngayDangKy)
+        public HocVien(string maHV, string hoTen, string cccdhv, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt, string trinhDo, string chuongTrinhHoc, DateTime ngayDangKy, string danhGia)
         {
             MaHV = maHV;
             HoTen = hoTen;
@@ -95,7 +105,27 @@ namespace EnglishCenterManagement
             TrinhDo = trinhDo;
             ChuongTrinhHoc = chuongTrinhHoc;
             NgayDangKy = ngayDangKy;
+            DanhGia = danhGia;
         }
+            //GhiChu = ghiChu;
+        public HocVien Clone()
+        {
+            return new HocVien(
+                this.maHV,
+                this.hoTen,
+                this.cccdhv,
+                this.ngaySinh,
+                this.gioiTinh,
+                this.diaChi,
+                this.SDT,
+                this.trinhDo,
+                this.chuongTrinhHoc,
+                this.ngayDangKy,
+                this.DanhGia
+                //this.GhiChu
+            );
+        }
+
         public string TachTen()
         {
             string[] parts=hoTen.Trim().Split(' ');

@@ -121,5 +121,31 @@ namespace EnglishCenterManagement
 
             return ketQua;
         }
+        public List<HocVien> TimTheoLop(string lop)
+        {
+            List<HocVien> ketQua = new List<HocVien>();
+            foreach(HocVien hv in this.dsHocVien)
+            {
+                if (hv.chuongTrinhHoc.Equals(lop))
+                    ketQua.Add(hv);
+            }
+            return ketQua;
+        }
+        public List<HocVien> ChuyenLop(string lopCu,string lopMoi)
+        {
+            List<HocVien> ketQua = new List<HocVien>();
+            if(string.IsNullOrEmpty(lopCu)||string.IsNullOrEmpty(lopMoi))
+                return ketQua;
+           foreach(HocVien hv in this.dsHocVien)
+            {
+                if(hv.chuongTrinhHoc!=null&&hv.chuongTrinhHoc.Equals(lopCu,StringComparison.CurrentCultureIgnoreCase)&& !string.IsNullOrWhiteSpace(hv.DanhGia) && hv.DanhGia.Equals("Đạt", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    HocVien copy=hv.Clone();
+                    copy.chuongTrinhHoc = lopMoi;
+                    ketQua.Add(copy);
+                }
+            }
+            return ketQua;
+        }
     }
 }

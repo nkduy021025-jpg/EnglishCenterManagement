@@ -33,12 +33,13 @@ namespace EnglishCenterManagement
             string trinhDo = cbbTrinhDo.Text;
             string chuongTrinhHoc = cbbChuongTrinhHoc.Text;
             DateTime ngayDangKy = dtpNgayDangKy.Value;
+            string DanhGia = cboDanhGia.Text;
             string gioiTinh = null;
             if (radNam.Checked == true)
                 gioiTinh = "Nam";
             else
                 gioiTinh = "Nữ";
-            HocVien hv = new HocVien(maHV, hoTen, cccd, ngaySinh, gioiTinh, diaChi, sdt, trinhDo, chuongTrinhHoc, ngayDangKy);
+            HocVien hv = new HocVien(maHV, hoTen, cccd, ngaySinh, gioiTinh, diaChi, sdt, trinhDo, chuongTrinhHoc, ngayDangKy,DanhGia);
             bool ketQuaThem = danhSachHocVien.ThemHocVien(hv);
             if (ketQuaThem == true)
             {
@@ -55,32 +56,28 @@ namespace EnglishCenterManagement
         {
             dgv.DataSource = ds.ToList();
         }
-        private void dgvDanhSachHocVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                viTri = e.RowIndex;
-                HocVien hv = new HocVien();
-                hv = danhSachHocVien.DSHocVien[viTri];
-                txtMaHV.Text = hv.maHV;
-                txtHoTen.Text = hv.hoTen;
-                dtpNgaySinh.Value = hv.ngaySinh;
-                txtDiaChi.Text = hv.diaChi;
-                txtSDT.Text = hv.SDT.ToString();
-                txtCCCD.Text = hv.cccdhv;
-                cbbTrinhDo.Text = hv.trinhDo;
-                cbbChuongTrinhHoc.Text = hv.chuongTrinhHoc;
-                dtpNgayDangKy.Value = hv.ngayDangKy;
-                if (gioiTinh.Equals("Nam"))
-                    radNam.Checked = true;
-                else
-                    radNu.Checked = true;
-            }
-            catch (Exception)
-            {
+        //private void dgvDanhSachHocVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
 
-            }
-        }
+        //        viTri = e.RowIndex;
+        //        HocVien hv = new HocVien();
+        //        hv = danhSachHocVien.DSHocVien[viTri];
+        //        txtMaHV.Text = hv.maHV;
+        //        txtHoTen.Text = hv.hoTen;
+        //        dtpNgaySinh.Value = hv.ngaySinh;
+        //        txtDiaChi.Text = hv.diaChi;
+        //        txtSDT.Text = hv.SDT.ToString();
+        //        txtCCCD.Text = hv.cccdhv;
+        //        cbbTrinhDo.Text = hv.trinhDo;
+        //        cbbChuongTrinhHoc.Text = hv.chuongTrinhHoc;
+        //        dtpNgayDangKy.Value = hv.ngayDangKy;
+        //        cboDanhGia.Text = hv.DanhGia;
+        //        if (hv.gioiTinh.Equals("Nam"))
+        //            radNam.Checked = true;
+        //        else
+        //            radNu.Checked = true;
+           
+        //}
         private void btnSua_Click(object sender, EventArgs e)
         {
             try
@@ -100,6 +97,7 @@ namespace EnglishCenterManagement
                 hv.trinhDo = cbbTrinhDo.Text;
                 hv.chuongTrinhHoc = cbbChuongTrinhHoc.Text;
                 hv.ngayDangKy = dtpNgayDangKy.Value;
+                hv.DanhGia=cboDanhGia.Text;
                 if (radNam.Checked == true)
                     hv.gioiTinh = "Nam";
                 else
@@ -148,15 +146,20 @@ namespace EnglishCenterManagement
                 ketqua = danhSachHocVien.TimKiemTheoTen(txtTimKiem.Text);
                 HienThiDanhSach(dgvDanhSachHocVien, ketqua);
             }
-            else if (cbbTimKiem.Text =="Tìm theo mã")
+            else if (cbbTimKiem.Text == "Tìm theo mã")
             {
                 ketqua = danhSachHocVien.TimKiemHocVien(txtTimKiem.Text);
                 HienThiDanhSach(dgvDanhSachHocVien, ketqua);
             }
-            else if( cbbTimKiem.Text =="Tìm theo giới tính")
+            else if (cbbTimKiem.Text == "Tìm theo giới tính")
             {
                 ketqua = danhSachHocVien.TimTheoGioiTinh(txtTimKiem.Text);
-                HienThiDanhSach (dgvDanhSachHocVien, ketqua);
+                HienThiDanhSach(dgvDanhSachHocVien, ketqua);
+            }
+            else if (cbbTimKiem.Text == "Tìm theo lớp")
+            {
+                ketqua = danhSachHocVien.TimTheoLop(txtTimKiem.Text);
+                HienThiDanhSach(dgvDanhSachHocVien, ketqua);
             }
         }
         private void btnLuuHV_Click(object sender, EventArgs e)
@@ -219,8 +222,11 @@ namespace EnglishCenterManagement
                 foreach (ChuongTrinhHoc ct in dsct.CTrinhHoc)
                 {
                     cbbChuongTrinhHoc.Items.Add(ct.MaChuongTrinh);
+                    if (cbbChuongTrinhHocMoi != null)
+                        cbbChuongTrinhHocMoi.Items.Add(ct.MaChuongTrinh);
                 }
             }
+
             bool ketquadocTKB = tkb.DocFile("DanhSachThoiKhoaBieu.dat");
             if(ketquadocTKB == true)
             {
@@ -236,6 +242,72 @@ namespace EnglishCenterManagement
             HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
         }
 
-      
+        private void btnChuyenLop_Click(object sender, EventArgs e)
+        {
+            string lopCu = cbbChuongTrinhHoc.Text;
+            string lopMoi = cbbChuongTrinhHocMoi != null ? cbbChuongTrinhHocMoi.Text : string.Empty;
+            if (string.IsNullOrWhiteSpace(lopCu))
+            {
+                MessageBox.Show("Vui lòng chọn lớp cũ (nguồn).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(lopMoi))
+            {
+                MessageBox.Show("Vui lòng chọn lớp mới (đích).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            List<HocVien> ketQua = danhSachHocVien.ChuyenLop(lopCu, lopMoi);
+            if (ketQua == null || ketQua.Count == 0)
+            {
+                MessageBox.Show("Không có học viên đạt trong lớp nguồn để chuyển.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            DanhSachHocVien dsChuyen = new DanhSachHocVien(ketQua);
+            if (dsChuyen.GhiFile("DanhSachHocVienChuyenLop.dat"))
+            {
+                MessageBox.Show("Đã lưu danh sách học viên chuyển lớp vào file!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Lưu file danh sách chuyển lớp thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Display the new-class list (copied students)
+            HienThiDanhSach(dgvDanhSachHocVien, ketQua);
+        }
+
+        private void dgvDanhSachHocVien_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            viTri = e.RowIndex;
+            HocVien hv = new HocVien();
+            hv = danhSachHocVien.DSHocVien[viTri];
+            txtMaHV.Text = hv.maHV;
+            txtHoTen.Text = hv.hoTen;
+            dtpNgaySinh.Value = hv.ngaySinh;
+            txtDiaChi.Text = hv.diaChi;
+            txtSDT.Text = hv.SDT.ToString();
+            txtCCCD.Text = hv.cccdhv;
+            cbbTrinhDo.Text = hv.trinhDo;
+            cbbChuongTrinhHoc.Text = hv.chuongTrinhHoc;
+            dtpNgayDangKy.Value = hv.ngayDangKy;
+            cboDanhGia.Text = hv.DanhGia;
+            if (hv.gioiTinh.Equals("Nam"))
+                radNam.Checked = true;
+            else
+                radNu.Checked = true;
+        }
+
+        private void btnXemDanhSachChuyenLop_Click(object sender, EventArgs e)
+        {
+            bool kiemtradoc = danhSachHocVien.DocFile("DanhSachHocVienChuyenLop.dat");
+            if (kiemtradoc)
+            {
+                HienThiDanhSach(dgvDanhSachHocVien, danhSachHocVien.DSHocVien);
+            }
+            else
+            {
+                MessageBox.Show("Lỗi không thể xem danh sách học viên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
