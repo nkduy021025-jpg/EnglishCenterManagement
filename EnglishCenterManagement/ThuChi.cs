@@ -16,6 +16,7 @@ namespace EnglishCenterManagement
         private double SoTien;
         private string LyDo;
         private string NoiDung;
+        private string maChuongTrinh;
 
         public ThuChi()
         {
@@ -25,8 +26,9 @@ namespace EnglishCenterManagement
             this.SoTien = 0;
             this.LyDo = null;
             this.NoiDung = null;
+            maChuongTrinh = null;
         }
-        public ThuChi(string maThuChi, string luaChonThuChi, DateTime ngayThuChi, double soTien, string lyDo, string noiDung)
+        public ThuChi(string maThuChi, string luaChonThuChi, DateTime ngayThuChi, double soTien, string lyDo, string noiDung,string maChuongTrinh)
         {
             this.MaThuChi = maThuChi;
             this.LuaChonThuChi = luaChonThuChi;
@@ -34,7 +36,14 @@ namespace EnglishCenterManagement
             this.SoTien = soTien;
             this.LyDo = lyDo;
             this.NoiDung = noiDung;
+            this.maChuongTrinh = maChuongTrinh;
         }
+        public string MaChuongTrinh
+        {
+            get { return this.maChuongTrinh; }
+            set { maChuongTrinh = value; }
+        }
+
         public string maThuChi
         {
             get { return this.MaThuChi; }

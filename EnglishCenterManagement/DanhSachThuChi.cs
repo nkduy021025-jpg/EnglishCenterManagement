@@ -104,6 +104,30 @@ namespace EnglishCenterManagement
                 return false;
             }
         }
+        public double TongTienTheoKhoa(string mact)
+        {
+            double tong = 0;
+            foreach (ThuChi tc in dsThuChi)
+            {
+                if (tc.MaChuongTrinh.Equals(mact))
+                {
+                    tong += tc.soTien;
+                }
+            }
+            return tong;
+        }
+        public double TongTienTheoKhoaQuy(string noidung)
+        {
+            double tong = 0;
+            foreach (ThuChi tc in dsThuChi)
+            {
+                if (tc.noiDung.Equals(noidung))
+                {
+                    tong += tc.soTien;
+                }
+            }
+            return tong;
+        }
         public double TongThuChiThang (string thuchi ,int thang)
         {
             double tong=0;

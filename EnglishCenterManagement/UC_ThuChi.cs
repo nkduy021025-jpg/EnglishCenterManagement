@@ -13,7 +13,8 @@ namespace EnglishCenterManagement
 {
     public partial class UC_ThuChi : UserControl
     {
-        private DanhSachThuChi dsThuChi=new DanhSachThuChi();
+        private DanhSachThuChi dsThuChi = new DanhSachThuChi();
+        private DanhSachChuongTrinhHoc dsCT = new DanhSachChuongTrinhHoc();
         int viTri = -1;
         public UC_ThuChi()
         {
@@ -23,12 +24,13 @@ namespace EnglishCenterManagement
         private void btnThemPhieuThuChi_Click(object sender, EventArgs e)
         {
             string maThuChi = txtMaPhieu.Text;
-            string luachon=cbbLuaChonThuChi.Text;
+            string luachon = cbbLuaChonThuChi.Text;
             DateTime ngay = dtpNgayThuChi.Value;
             double soTien = double.Parse(txtSoTienThuChi.Text);
             string lyDo = cbbLyDo.Text;
             string noiDung = txtNoiDung.Text;
-            ThuChi tc = new ThuChi(maThuChi, luachon, ngay, soTien, lyDo, noiDung);
+            string maChuongTrinh = cbbMaCT.Text;
+            ThuChi tc = new ThuChi(maThuChi, luachon, ngay, soTien, lyDo, noiDung, maChuongTrinh);
             bool ketQua = dsThuChi.ThemPhieuThuChi(tc);
             if (ketQua == true)
             {
@@ -42,7 +44,7 @@ namespace EnglishCenterManagement
 
             }
         }
-        private void HienThi(DataGridView dgv,List<ThuChi> ds)
+        private void HienThi(DataGridView dgv, List<ThuChi> ds)
         {
             dgv.DataSource = ds.ToList();
         }
@@ -58,6 +60,8 @@ namespace EnglishCenterManagement
             txtSoTienThuChi.Text = tc.soTien.ToString();
             cbbLyDo.Text = tc.lyDo;
             txtNoiDung.Text = tc.noiDung;
+            txtMaKhoaHoc.Text = tc.MaChuongTrinh;
+            cbbMaCT.Text = tc.MaChuongTrinh;
         }
 
         private void btnXoaPhieuThuChi_Click(object sender, EventArgs e)
@@ -88,13 +92,14 @@ namespace EnglishCenterManagement
                     MessageBox.Show("Vui lòng chọn phiếu thu chi cần sửa");
                     return;
                 }
-                ThuChi tc=new ThuChi();
-                tc.maThuChi= txtMaPhieu.Text;
-                tc.luaChonThuChi= cbbLuaChonThuChi.Text;
-                tc.ngayThuChi= dtpNgayThuChi.Value;
-                tc.soTien= double.Parse( txtSoTienThuChi.Text);
-                tc.lyDo= cbbLyDo.Text;
-                tc.noiDung= txtNoiDung.Text;
+                ThuChi tc = new ThuChi();
+                tc.maThuChi = txtMaPhieu.Text;
+                tc.luaChonThuChi = cbbLuaChonThuChi.Text;
+                tc.ngayThuChi = dtpNgayThuChi.Value;
+                tc.soTien = double.Parse(txtSoTienThuChi.Text);
+                tc.lyDo = cbbLyDo.Text;
+                tc.noiDung = txtNoiDung.Text;
+                tc.MaChuongTrinh = cbbMaCT.Text;
 
                 if (dsThuChi.SuaPhieuThuChi(tc, viTri) == true)
                 {
@@ -127,7 +132,7 @@ namespace EnglishCenterManagement
                     MessageBoxIcon.Error);
                 return;
             }
-            if ( cbbLuaChonTimKiem.Text == "Tìm theo mã phiếu")
+            if (cbbLuaChonTimKiem.Text == "Tìm theo mã phiếu")
             {
                 KetQua = dsThuChi.TimKiemTheoMa(txtTimKiem.Text);
                 HienThi(dgvDanhSachThuChi, KetQua);
@@ -137,7 +142,7 @@ namespace EnglishCenterManagement
                 KetQua = dsThuChi.TimKiemTheoSoTien(float.Parse(txtTimKiem.Text));
                 HienThi(dgvDanhSachThuChi, KetQua);
             }
-            else 
+            else
             {
                 KetQua = dsThuChi.TimTheoThoiGian(DateTime.ParseExact(txtTimKiem.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture));
                 HienThi(dgvDanhSachThuChi, KetQua);
@@ -147,7 +152,7 @@ namespace EnglishCenterManagement
         private void UC_ThuChi_Load(object sender, EventArgs e)
         {
             bool kiemtradoc = dsThuChi.DocFileThuChi("DanhSachThuChi.dat");
-            if (kiemtradoc) 
+            if (kiemtradoc)
             {
                 HienThi(dgvDanhSachThuChi, dsThuChi.DSThuChi);
             }
@@ -155,25 +160,46 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Lỗi không thể xem danh sách thu chi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            bool kiemtramaCT = dsCT.docFileCT("DanhSachChuongTrinh.dat");
+            if (kiemtramaCT)
+            {
+                foreach (ChuongTrinhHoc ct in dsCT.CTrinhHoc)
+                {
+                    cbbMaCT.Items.Add(ct.MaChuongTrinh);
+                }
+            }
         }
 
         private void btnTinhDoanhThu_Click(object sender, EventArgs e)
         {
-            double tong = dsThuChi.TongThuChiThang (cbbThuChiTheoThang.Text,int.Parse(txtThangThuChi.Text));
+            double tong = dsThuChi.TongThuChiThang(cbbThuChiTheoThang.Text, int.Parse(txtThangThuChi.Text));
             if (cbbThuChiTheoThang.Text.Equals("Thu"))
-            { 
-                txtKetQuaThuChi.Text = "Số tiền đã thu là " + tong.ToString();
+            {
+                MessageBox.Show( "Số tiền đã thu trong tháng: " +txtThangThuChi.Text+" là " + tong.ToString(),"Tính thu/chi theo tháng",MessageBoxButtons.OK);
             }
             else
             {
-                txtKetQuaThuChi.Text = "Số tiền đã chi là " + tong.ToString();
+                MessageBox.Show("Số tiền đã chi trong tháng: " + txtThangThuChi.Text + " là " + tong.ToString(), "Tính thu/chi theo tháng", MessageBoxButtons.OK);
             }
-
         }
-
         private void btnLoad_Click(object sender, EventArgs e)
         {
             HienThi(dgvDanhSachThuChi, dsThuChi.DSThuChi);
+        }
+
+
+        private void btnTinhTienTheoKhoa_Click_1(object sender, EventArgs e)
+        {
+            double tong = 0;
+            tong = dsThuChi.TongTienTheoKhoa(txtMaKhoaHoc.Text);
+            MessageBox.Show("Học phí đã thu từ học viên từ khóa này là: " + tong, "Tính tiền theo khóa ", MessageBoxButtons.OK);
+        }
+     
+        private void btnBieuDoThuChiTheoThang_Click(object sender, EventArgs e)
+        {
+            BieuDoThuChi bdtc = new BieuDoThuChi();
+            bdtc.ShowDialog();
+           
         }
     }
 }

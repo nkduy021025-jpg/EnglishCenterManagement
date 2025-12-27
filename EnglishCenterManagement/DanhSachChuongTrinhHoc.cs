@@ -97,6 +97,7 @@ namespace EnglishCenterManagement
                 }
             }return timkiem;
         }
+
         public bool ghiFileCT(string tenFile)
         {
             try

@@ -38,6 +38,13 @@ namespace EnglishCenterManagement
             {
                 MessageBox.Show("Đã thêm 1 chương trình học mới!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 HienThi(dgvChuongTrinh, dsct.CTrinhHoc);
+                string maHienTai = txtMaChuongTrinhHoc.Text.Trim();
+                string phanSo = maHienTai.Substring(2);
+                if (int.TryParse(phanSo, out int so))
+                {
+                    so++;
+                    txtMaChuongTrinhHoc.Text = "CT" + so.ToString("D2");
+                }
             }
             else
             {
@@ -81,7 +88,7 @@ namespace EnglishCenterManagement
         {
             if (vitri < 0 || vitri > dsct.CTrinhHoc.Count)
             {
-                MessageBox.Show ("Vui lòng chọn chương trình bạn muốn sửa!" , "Thông báo" , MessageBoxButtons .OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng chọn chương trình bạn muốn sửa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string maChuongTrinh = txtMaChuongTrinhHoc.Text;
@@ -90,9 +97,9 @@ namespace EnglishCenterManagement
             string loTrinh = cbbLoTrinh.Text;
             string doiTuong = cbbDoiTuongHoc.Text;
             float hocPhi = float.Parse(txtHocPhi.Text);
-            string mota = txtMoTaCTH.Text;  
-            ChuongTrinhHoc ct = new ChuongTrinhHoc(maChuongTrinh,tenChuongTrinh,thoiGianHoc,loTrinh,hocPhi,doiTuong,mota);
-            bool kiemTraSua = dsct.Sua(vitri,ct);
+            string mota = txtMoTaCTH.Text;
+            ChuongTrinhHoc ct = new ChuongTrinhHoc(maChuongTrinh, tenChuongTrinh, thoiGianHoc, loTrinh, hocPhi, doiTuong, mota);
+            bool kiemTraSua = dsct.Sua(vitri, ct);
             if (kiemTraSua)
             {
                 MessageBox.Show("Đã sửa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,7 +110,6 @@ namespace EnglishCenterManagement
                 MessageBox.Show("Sửa không thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void btnLuuChuongTrinh_Click(object sender, EventArgs e)
         {
             if (dsct.ghiFileCT("DanhSachChuongTrinh.dat"))
@@ -164,6 +170,9 @@ namespace EnglishCenterManagement
             HienThi(dgvChuongTrinh, dsct.CTrinhHoc);
         }
 
-      
+        private void txtMaChuongTrinhHoc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
